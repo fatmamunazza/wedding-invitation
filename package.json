@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/generate-social-previews.js",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {

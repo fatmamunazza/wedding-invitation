@@ -1,12 +1,11 @@
 # Munazza Fatma & Tajdar Abbas Rizvi Wedding Invitation
 
-A mobile-first React invitation with six screens, a guest-specific welcome, event details, background music, and statically generated social-sharing previews.
+A mobile-first React invitation with six screens, a guest-specific welcome, event details, and background music.
 
 ## Requirements
 
 - Node.js 20.19+ or 22.12+.
 - npm, included with Node.js.
-- A public HTTPS origin for production preview metadata, such as `https://invite.example.com`.
 
 ## Run Locally
 
@@ -15,60 +14,17 @@ npm install
 npm run dev
 ```
 
-Open the Vite URL printed in the terminal, usually `http://localhost:5173`. Local development does not generate social preview pages; those are created by the production build.
+Open the Vite URL printed in the terminal, usually `http://localhost:5173`.
 
 ## Production Build
 
-`SITE_URL` must be the public HTTPS origin, with no path after the domain:
-
 ```bash
-SITE_URL=https://invite.example.com npm run build
+npm run build
 ```
 
-The build writes the deployable site to `dist/`. Upload the complete contents of that folder to the same HTTPS origin configured in `SITE_URL`. The generator rejects HTTP URLs and subdirectory URLs because Open Graph tags need absolute public URLs.
+The build writes the deployable site to `dist/`. Upload the complete contents of that folder to your hosting provider.
 
-The build generates:
-
-- `dist/index.html` with the generic invitation metadata.
-- `dist/404.html` with generic metadata for unknown invitation IDs.
-- `dist/invite/<guestId>/index.html` with guest-specific metadata for each configured guest.
-- `dist/og/generic.svg` and `dist/og/<guestId>.svg` social preview artwork.
-
-Configure the static host to serve each directory's `index.html`, and to use `404.html` as its not-found page. This lets social crawlers read the metadata without executing React. After changing preview metadata, clear or refresh the share cache in the social platform; platforms commonly cache previews.
-
-Guest links are personalized but are not access-controlled. Guest names and event details are present in the generated HTML and should not be treated as private data.
-
-## Project Map
-
-```text
-index.html                          Generic metadata template for the build
-scripts/
-	generate-social-previews.js       Creates guest HTML and preview assets
-	socialPreviewTemplate.js          Reusable SVG preview design
-src/
-	App.jsx                           Routes for root and guest invitations
-	main.jsx                          React entry point and global styles
-	styles.css                        Layout, component, and responsive rules
-	styles/theme.css                  Editable fonts, colors, type sizes, backgrounds
-	components/                       Reusable invitation sections and controls
-		EnvelopeOpening.jsx               Personalized welcome and opening action
-		IslamicBlessingsPage.jsx           Arabic and English blessing screen
-		WeddingCeremonyPage.jsx           Formal wedding ceremony screen
-		EventSection.jsx                   Reusable Haldi and Baraat screens
-		LocationMap.jsx                    Reusable Google Maps link control
-		WeddingBackdropArtwork.jsx        Shared mandap-and-couple artwork
-	data/
-		guests.js                       Guest IDs and personalized display names
-		invitationCopy.js               Welcome, blessings, ceremony, and closing copy
-		weddingDetails.js               Wedding facts, event dates, times, and addresses
-		animationSettings.js            Page transition and dwell time
-		mediaSettings.js                Background audio URL and start position
-	pages/WeddingInvitation.jsx       Assembles the invitation pages
-	services/guestResolver.js         Validates a guest ID and resolves its settings
-public/assets/                      Public images and optional audio
-```
-
-Components own their markup and interactions. Shared visual settings belong in `src/styles/theme.css`; layout and component selectors belong in `src/styles.css`. Invitation copy, guest names, and wedding facts belong in the data files rather than component markup.
+The app uses the static image `public/assets/preview.png` as the social-sharing preview for WhatsApp and other platforms. Keep the image at that path so the Open Graph and Twitter metadata resolves correctly when shared.
 
 ## Change Fonts
 
@@ -128,8 +84,6 @@ The same responsive image is used on the welcome and every invitation screen. Ke
 
 For public assets, use URLs such as `/assets/file.webp`; do not include `public` in the browser URL. The `public/` directory name is only used on disk.
 
-The social preview image is a separate 1200 × 630 SVG. Its shared layout is in `scripts/socialPreviewTemplate.js`; the build supplies each guest name and their configured event details. Edit that template if the preview artwork itself needs different composition, colors, or typography.
-
 ## Change Invitation Content
 
 - Add or update a guest in `src/data/guests.js`. The object key becomes the `guestId` in `/invite/<guestId>` and `name` is the displayed greeting.
@@ -163,10 +117,6 @@ export const invitationMotionSettings = {
 ## Background Music
 
 Place an audio file at `public/assets/wedding-music.mp3`. Edit `src/data/mediaSettings.js` to change its public URL or start position (`backgroundMusicStartSeconds`, measured from zero). Playback starts at that point after the visitor opens the invitation, then loops. The music control can pause or resume it. Browsers require a user interaction before playing audio.
-
-## Social Preview Notes
-
-Open Graph metadata is generated into each guest's static HTML page, rather than added by React. `og:url` and `og:image` use the HTTPS `SITE_URL`; the preview SVG is also served from that origin. A social platform may keep showing a cached preview after deployment, so use its link preview debugger or wait for its cache to expire.
 
 ## Reduced Motion
 
