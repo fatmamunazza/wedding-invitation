@@ -1,0 +1,157 @@
+:root {
+  /* Brand palette */
+  --color-paper: #fff9f3;
+  --color-blush: #f3d6d0;
+  --color-blush-deep: #e8b6ad;
+  --color-rose: #8c332f;
+  --color-rose-muted: #a95b54;
+  --color-gold: #a98158;
+  --color-ink: #4d2927;
+  --color-app-background: #ead0ca;
+  --color-page-background: #f0d4cf;
+  --color-scene-background: #f0d1cb;
+  --color-line: rgba(140, 51, 47, .28);
+  --color-border-rose: rgba(140, 51, 47, .35);
+  --color-border-rose-strong: rgba(140, 51, 47, .45);
+  --color-border-gold: rgba(169, 129, 88, .45);
+  --color-surface-opening: rgba(255, 249, 243, .65);
+  --color-surface-card: rgba(255, 249, 243, .56);
+  --color-surface-control: rgba(255, 255, 255, .72);
+  --color-surface-music: rgba(255, 249, 243, .75);
+  --color-surface-navigation: rgba(255, 249, 243, .88);
+  --color-surface-illustration: rgba(255, 255, 255, .65);
+  --color-border-navigation: rgba(140, 51, 47, .25);
+  --color-shadow-soft: rgba(92, 44, 40, .10);
+  --color-shadow-card: rgba(91, 47, 42, .07);
+  --color-shadow-control: rgba(60, 20, 15, .12);
+  --color-shadow-music: rgba(60, 20, 15, .10);
+  --color-bride-skin: #b87965;
+  --color-groom-skin: #9a624f;
+  --color-veil: rgba(255, 240, 235, .83);
+  --color-veil-border: rgba(140, 51, 47, .18);
+  --color-bride-dress-shadow: #d99b95;
+  --color-bride-dress-light: #f2d0c8;
+  --color-bride-dress: #c77d76;
+  --color-groom-suit: #e9e2dc;
+  --color-lapel: #a78e83;
+  --color-bouquet: #e5b6aa;
+  --color-bouquet-shadow-one: #d69c91;
+  --color-bouquet-shadow-two: #f1d6cf;
+  /* Font families. Add a matching font import in styles.css when using a web font. */
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Great Vibes', cursive;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-arabic: serif;
+
+  /* Mobile-first type scale; tablet and desktop overrides follow below. */
+  --font-size-body: 17px;
+  --font-size-small: 15px;
+  --font-size-eyebrow: 10px;
+  --font-size-hint: 12px;
+  --font-size-arabic: 32px;
+  --font-size-arabic-large: 35px;
+  --font-size-script: 25px;
+  --font-size-event-icon: 25px;
+  --font-size-event-date: 18px;
+  --font-size-event-date-emphasis: 23px;
+  --font-size-control: 14px;
+  --font-size-control-icon: 20px;
+  --font-size-control-count: 13px;
+  --font-size-opening-names: 42px;
+  --font-size-greeting: 40px;
+  --font-size-couple: 38px;
+  --font-size-plaque-title: 32px;
+  --font-size-event-title: 46px;
+  --font-size-event-venue: 18px;
+  --font-size-closing-title: 34px;
+  --font-size-closing-names: 30px;
+  --font-size-details-date: 21px;
+  --font-size-details-year: 34px;
+  --font-size-details-label: 16px;
+  --font-size-ceremony-arabic: 21px;
+  --font-size-ceremony-copy: 13px;
+  --font-size-ceremony-title: 23px;
+  --font-size-ceremony-name: 34px;
+  --opening-image-width: clamp(128px, 28vw, 220px);
+  --opening-image-height: clamp(56px, 8vw, 88px);
+
+  /* Responsive artwork fills the viewport without cropping. */
+  --invitation-background-image: url('/assets/mobile-background.png');
+
+  /* Compatibility aliases used by the existing component stylesheet. */
+  --ivory: var(--color-paper);
+  --blush: var(--color-blush);
+  --blush-deep: var(--color-blush-deep);
+  --rose: var(--color-rose);
+  --rose-soft: var(--color-rose-muted);
+  --gold: var(--color-gold);
+  --ink: var(--color-ink);
+  --line: var(--color-line);
+}
+
+@media (max-width: 380px) {
+  :root {
+    --font-size-opening-names: 38px;
+    --font-size-greeting: 36px;
+    --font-size-couple: 34px;
+    --font-size-event-title: 42px;
+    --font-size-ceremony-copy: 12px;
+    --font-size-ceremony-name: 31px;
+  }
+}
+
+@media (min-width: 700px) {
+  :root {
+    --invitation-background-image: url('/assets/desktop-background.png');
+    --font-size-body: 18px;
+    --font-size-small: 16px;
+    --font-size-opening-names: 46px;
+    --font-size-greeting: 44px;
+    --font-size-couple: 42px;
+    --font-size-plaque-title: 36px;
+    --font-size-event-title: 50px;
+    --font-size-event-venue: 20px;
+    --font-size-closing-title: 38px;
+    --font-size-closing-names: 33px;
+    --font-size-details-date: 23px;
+    --font-size-details-year: 38px;
+    --font-size-details-label: 17px;
+    --font-size-ceremony-arabic: 23px;
+    --font-size-ceremony-copy: 14px;
+    --font-size-ceremony-title: 26px;
+    --font-size-ceremony-name: 38px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --font-size-body: 21px;
+    --font-size-small: 18px;
+    --font-size-eyebrow: 12px;
+    --font-size-hint: 14px;
+    --font-size-arabic: 40px;
+    --font-size-arabic-large: 44px;
+    --font-size-script: 32px;
+    --font-size-event-icon: 30px;
+    --font-size-event-date: 22px;
+    --font-size-event-date-emphasis: 28px;
+    --font-size-control: 17px;
+    --font-size-control-icon: 23px;
+    --font-size-control-count: 16px;
+    --font-size-opening-names: 62px;
+    --font-size-greeting: 60px;
+    --font-size-couple: 58px;
+    --font-size-plaque-title: 44px;
+    --font-size-event-title: 68px;
+    --font-size-event-venue: 26px;
+    --font-size-closing-title: 50px;
+    --font-size-closing-names: 42px;
+    --font-size-details-date: 30px;
+    --font-size-details-year: 48px;
+    --font-size-details-label: 22px;
+    --font-size-ceremony-arabic: 34px;
+    --font-size-ceremony-copy: 20px;
+    --font-size-ceremony-title: 36px;
+    --font-size-ceremony-name: 54px;
+  }
+}
