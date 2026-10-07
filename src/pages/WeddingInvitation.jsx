@@ -104,6 +104,25 @@ export default function WeddingInvitation() {
   }, [opened, autoAdvance, activeSlide, slides.length, goToSlide]);
 
   const updateMusicPlaying = (playing) => setMusicPlaying(playing);
+  const pageTransitionProps = backgroundStage >= 2
+    ? {
+        initial: false,
+        animate: { opacity: 1, filter: 'none', scale: 1 },
+        exit: { opacity: 1, filter: 'none', scale: 1 },
+        transition: { duration: 0 }
+      }
+    : createPageTransition({
+        duration: activeSlide === 0 && firstPageRevealStarted
+          ? 4
+          : activeSlide === 0 && opened
+            ? 1
+            : invitationMotionSettings.transitionSeconds,
+        visible: activeSlide !== 0 || firstPageRevealStarted,
+        useBrightness: activeSlide !== 0,
+        ease: activeSlide === 0 && firstPageRevealStarted
+          ? [0.42, 0, 0.58, 1]
+          : 'easeInOut'
+      });
 
   return (
     <main className={`wedding-app${backgroundStage === 1 ? ' wedding-app--haldi' : ''}${backgroundStage >= 2 ? ' wedding-app--nikah' : ''}`}>
@@ -134,21 +153,7 @@ export default function WeddingInvitation() {
                 key={activeSlide}
                 ref={invitationSlideRef}
                 className={`invitation-slide invitation-slide--background-${paperRollStarted ? rollingBackgroundStage : backgroundStage}${activeSlide === 0 ? ' invitation-slide--first-reveal' : ''}${paperRollStarted ? ' invitation-slide--folding' : ''}`}
-                {...createPageTransition({
-                  duration: activeSlide === 0 && firstPageRevealStarted
-                      ? 4
-                      : activeSlide === 0 && opened
-                        ? 1
-                        : invitationMotionSettings.transitionSeconds,
-                  visible: activeSlide !== 0 || firstPageRevealStarted,
-                  useBrightness: activeSlide !== 0,
-                  ease: activeSlide === 0 && firstPageRevealStarted
-                    ? [0.42, 0, 0.58, 1]
-                    : 'easeInOut'
-                })}
-                transition={activeSlide === 0 && firstPageRevealStarted && !opened
-                    ? { opacity: { duration: 4, ease: [0.42, 0, 0.58, 1] } }
-                    : { duration: activeSlide === 0 && opened ? 1 : invitationMotionSettings.transitionSeconds, ease: 'easeInOut' }}
+                {...pageTransitionProps}
               >
                 {slides[activeSlide]}
               </motion.div>
