@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { invitationMotionSettings } from '../data/animationSettings.js';
+import { invitationMotionSettings } from '../../data/animationSettings.js';
 
 export default function CoupleSection() {
   return (

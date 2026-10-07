@@ -25,42 +25,41 @@ a { color: inherit; }
 }
 .invitation-content { position: relative; }
 
-.opening-screen {
-  min-height: 100svh;
-  display: grid;
-  place-items: center;
-  align-content: center;
-  padding: 40px 22px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  background: transparent;
-}
-.opening-greeting-image { display: block; width: var(--opening-image-width); max-height: var(--opening-image-height); object-fit: contain; margin: 0 auto 8px; position: relative; z-index: 1; }
-.personal-welcome { position:relative; z-index:1; text-align:center; }
-.personal-welcome__salutation { margin:8px 0; color:var(--color-rose); font-family:var(--font-heading); font-size:var(--font-size-script); }
-.personal-welcome__guest { margin:0 0 26px; color:var(--color-rose); font-family:var(--font-display); font-size:var(--font-size-greeting); font-weight:400; line-height:1; }
 .mini-arabesque, .arabic-mark { font-family: var(--font-arabic); color: var(--rose); font-size: var(--font-size-arabic); }
 .eyebrow { text-transform: uppercase; letter-spacing: .23em; font-size: var(--font-size-eyebrow); color: var(--rose-soft); margin: 0 0 18px; }
-.opening-names { display: grid; gap: 4px; font-family: var(--font-display); color: var(--rose); font-size: var(--font-size-opening-names); line-height: .95; }
-.opening-names i { font-family: var(--font-body); font-size: .46em; font-style: normal; margin: 3px 0; }
-.opening-subtitle { margin: 5px 0 32px; font-size: var(--font-size-body); letter-spacing: .16em; }
-.open-invitation {
-  border: 1px solid var(--color-border-rose-strong);
-  color: var(--rose); background: var(--color-surface-opening);
-  border-radius: 999px; padding: 10px 18px 10px 11px;
-  display: inline-flex; align-items: center; gap: 9px; cursor: pointer;
-  box-shadow: 0 10px 30px var(--color-shadow-soft); backdrop-filter: blur(8px);
-}
-.seal { width: 31px; height: 31px; border-radius: 50%; display:grid; place-items:center; border:1px solid var(--gold); }
-.opening-hint { font-size: var(--font-size-hint); margin-top: 12px; opacity: .65; }
 
 .section-pad { padding: 0; }
 .invitation-content { height: 100svh; height: 100dvh; overflow: hidden; }
-.invitation-stage { position: relative; width: 100%; height: 100%; overflow: hidden; isolation: isolate; }
+.wedding-app--haldi { background-image: url('/assets/mobile-haldi-background.png'); background-size: cover; background-position: center; }
+.wedding-app--nikah { background-image: url('/assets/nikah-mobile-background.png'); background-size: cover; background-position: center; }
+@media (min-width: 700px) {
+  .wedding-app--haldi { background-image: url('/assets/desktop-haldi-background.png'); }
+  .wedding-app--nikah {
+    background-image: url('/assets/nikah-desktop-background.png');
+    background-size: 100% 100%;
+  }
+}
+.invitation-stage { position: relative; width: 100%; height: 100%; overflow: hidden; isolation: isolate; perspective: 1400px; }
 .invitation-slide { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; }
+.invitation-slide--background-0,
+.invitation-slide--first-reveal { background-color: var(--color-app-background); background-image: var(--invitation-background-image); background-position: center; background-repeat: no-repeat; background-size: 100% 100%; }
+.invitation-slide--background-1 { background: url('/assets/mobile-haldi-background.png') center / cover no-repeat; }
+.invitation-slide--background-2 { background: url('/assets/nikah-mobile-background.png') center / cover no-repeat; }
+@media (min-width: 700px) {
+  .invitation-slide--background-1 { background-image: url('/assets/desktop-haldi-background.png'); }
+  .invitation-slide--background-2 { background-size: 100% 100%; }
+}
+.invitation-slide--folding { clip-path: inset(0); will-change: clip-path; animation: paper-page-roll 2s cubic-bezier(.65, 0, .35, 1) forwards; }
+@keyframes paper-page-roll {
+  from { clip-path: inset(0); }
+  to { clip-path: inset(0 0 100% 0); }
+}
+.paper-roll-edge { position: absolute; z-index: 20; top: calc(100% - 42px); left: 0; width: 100%; height: 42px; border-top: 1px solid rgba(95, 62, 43, .3); background: linear-gradient(to bottom, rgba(86, 53, 35, .2), rgba(255, 250, 235, .12) 28%, rgba(58, 38, 28, .24)); box-shadow: 0 -5px 14px rgba(58, 38, 28, .12); pointer-events: none; animation: paper-roll-edge 2s cubic-bezier(.65, 0, .35, 1) both; }
+@keyframes paper-roll-edge {
+  from { top: calc(100% - 42px); }
+  to { top: 0; }
+}
 .invitation-slide > section, .invitation-slide > footer { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; height: 100%; overflow: hidden; text-align: center; }
-.invitation-slide > .opening-screen { flex-direction: column; }
 .invitation-slide .hero-copy, .invitation-slide .couple-card, .invitation-slide .event-card, .invitation-slide .closing-copy {
   position: relative;
   z-index: 4;
@@ -257,10 +256,6 @@ a { color: inherit; }
 }
 
 @media (max-height: 700px) {
-  :root { --opening-image-height:64px; }
-  .opening-screen { padding-block:18px; }
-  .opening-greeting-image { margin-bottom:4px; }
-  .personal-welcome__guest { margin-bottom:14px; }
   .wedding-details-panel { max-height:calc(100% - 88px); padding-block:12px; }
   .wedding-details-bismillah { margin-bottom:10px; }
   .wedding-details-item { gap:3px; margin-top:10px; }
