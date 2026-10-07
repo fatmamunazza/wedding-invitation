@@ -1,0 +1,141 @@
+.welcome-intro {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: #f4d8c2;
+  touch-action: manipulation;
+  will-change: opacity;
+}
+
+.welcome-intro--opening {
+  pointer-events: none;
+}
+
+.welcome-intro__artwork {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.welcome-intro__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.welcome-intro__trigger {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 25%;
+  border: 0;
+  background: transparent;
+  color: #fff5dc;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 350ms ease;
+}
+
+.welcome-intro__heart {
+  display: grid;
+  width: clamp(44px, 7vw, 68px);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(255, 238, 190, .9);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 245, 198, .36), rgba(130, 66, 23, .42));
+  box-shadow: 0 0 14px 5px rgba(255, 204, 89, .72), 0 0 38px 14px rgba(255, 186, 73, .45);
+  animation: lantern-heart-glow 2s ease-in-out infinite alternate;
+}
+
+.welcome-intro__heart svg {
+  display: block;
+  width: 62%;
+  fill: rgba(255, 230, 174, .2);
+  stroke: #fff1c6;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 5px rgba(255, 222, 147, .95));
+}
+
+.welcome-intro__label {
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 231, 179, .78);
+  border-radius: 999px;
+  background: rgba(91, 45, 21, .66);
+  box-shadow: 0 3px 14px rgba(77, 35, 11, .24);
+  color: #fff3d7;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(13px, 2vw, 18px);
+  letter-spacing: .07em;
+  text-shadow: 0 1px 5px rgba(55, 25, 9, .55);
+}
+
+.welcome-intro__trigger:focus-visible {
+  outline: 3px solid #fff1c6;
+  outline-offset: -8px;
+}
+
+.welcome-intro__trigger:disabled {
+  cursor: default;
+  opacity: 0;
+}
+
+.welcome-intro__flash {
+  position: absolute;
+  z-index: 2;
+  inset: -30%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 67%,
+    rgba(255, 255, 248, 1) 0%,
+    rgba(255, 246, 218, .96) 16%,
+    rgba(255, 222, 164, .72) 38%,
+    rgba(255, 223, 171, 0) 70%
+  );
+  transform-origin: 50% 67%;
+  animation: welcome-card-flash 4000ms cubic-bezier(.42, 0, .58, 1) both;
+}
+
+@keyframes lantern-heart-glow {
+  from { transform: scale(.96); filter: brightness(.94); }
+  to { transform: scale(1.06); filter: brightness(1.16); }
+}
+
+@keyframes welcome-card-flash {
+  0% { opacity: 0; transform: scale(.06); }
+  16% { opacity: 1; transform: scale(.5); }
+  58% { opacity: .85; transform: scale(1.2); }
+  100% { opacity: 0; transform: scale(2.2); }
+}
+
+@media (min-width: 700px) {
+  .welcome-intro__trigger { padding-bottom:18%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-intro,
+  .welcome-intro__trigger {
+    transition-duration: 300ms;
+  }
+
+  .welcome-intro__heart {
+    animation: none;
+  }
+
+  .welcome-intro__flash {
+    animation-duration: 500ms;
+  }
+}

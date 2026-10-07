@@ -1,5 +1,5 @@
-import { invitationCopy } from '../data/invitationCopy.js';
-import { weddingDetails } from '../data/weddingDetails.js';
+import { invitationCopy } from '../../data/invitationCopy.js';
+import { weddingDetails } from '../../data/weddingDetails.js';
 
 export default function WeddingCeremonyPage() {
   const { ceremony } = invitationCopy;
