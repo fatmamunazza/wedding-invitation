@@ -115,7 +115,8 @@ a { color: inherit; }
 .ceremony-invitation-copy { margin-top:10px!important; font-size:var(--font-size-ceremony-copy); line-height:1.2; }
 .ceremony-title { margin:5px 0 1px; color:var(--color-rose); font-family:var(--font-heading); font-size:var(--font-size-ceremony-title); font-weight:500; }
 .ceremony-divider { margin:5px 0!important; color:var(--color-rose-muted); font-family:var(--font-heading); font-size:var(--font-size-eyebrow); letter-spacing:.22em; }
-.ceremony-person-name { margin:1px 0 0; color:var(--color-rose); font-family:var(--font-display); font-size:var(--font-size-ceremony-name); font-weight:400; line-height:1; }
+.ceremony-divider2 { margin:15px 0!important; color:var(--color-rose-muted); font-family:var(--font-heading); font-size:var(--font-size-eyebrow); letter-spacing:.22em; }
+.ceremony-person-name { margin:1px 0 0; color:var(--color-rose); font-family:var(--font-display); font-size:var(--font-size-ceremony-name); font-weight:600; line-height:1; }
 .ceremony-relation, .ceremony-address { font-size:var(--font-size-ceremony-copy); line-height:1.2; }
 .ceremony-address { margin-top:1px!important; }
 
