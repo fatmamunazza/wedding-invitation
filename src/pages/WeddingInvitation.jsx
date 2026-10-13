@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { createPageTransition } from '../animations/pageTransition.js';
 import DoorIntro from '../components/intro/DoorIntro.jsx';
@@ -17,8 +17,8 @@ const BARAAT_REVEAL_SECONDS = 4.2 + 0.8;
 const BARAAT_READING_PAUSE_SECONDS = 2;
 const PAPER_ROLL_DURATION_SECONDS = 2;
 const NIKAH_PETAL_SHOWER_DELAY_MS = 1000;
-const NIKAH_PETAL_SHOWER_DURATION_MS = 3000;
-const NIKAH_PETAL_COUNT = 68;
+const NIKAH_PETAL_SHOWER_DURATION_MS = 4000;
+const NIKAH_PETAL_COUNT = 100;
 
 export default function WeddingInvitation() {
   const [opened, setOpened] = useState(false);
@@ -31,6 +31,38 @@ export default function WeddingInvitation() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [autoAdvance, setAutoAdvance] = useState(true);
   const [showNikahPetals, setShowNikahPetals] = useState(false);
+  const nikahPetals = useMemo(() => {
+    if (!showNikahPetals) return [];
+
+    return Array.from({ length: NIKAH_PETAL_COUNT }, (_, index) => {
+      const side = Math.floor(Math.random() * 3);
+      const left = side === 0
+        ? `${Math.random() * 110 - 5}%`
+        : side === 1
+          ? `${Math.random() * 4 - 8}%`
+          : `${104 + Math.random() * 4}%`;
+      const top = side === 0
+        ? `${-12 + Math.random() * 10}%`
+        : `${Math.random() * 88 - 4}%`;
+      const inwardDrift = side === 1
+        ? 12 + Math.random() * 38
+        : side === 2
+          ? -(12 + Math.random() * 38)
+          : (Math.random() - 0.5) * 70;
+
+      return {
+        id: index,
+        color: Math.random() < 0.5 ? 'white' : 'rose',
+        left,
+        top,
+        delay: Math.random() * 450,
+        drift: `${inwardDrift + (Math.random() - 0.5) * 20}vw`,
+        drop: `${75 + Math.random() * 55}vh`,
+        rotation: `${Math.random() * 1080 - 540}deg`,
+        duration: `${2 + Math.random() * 1.3}s`
+      };
+    });
+  }, [showNikahPetals]);
   const audioRef = useRef(null);
   const paperRollTimerRef = useRef(null);
   const nikahPetalsTimerRef = useRef(null);
@@ -166,7 +198,7 @@ export default function WeddingInvitation() {
             onPlayingChange={updateMusicPlaying}
           />
           <div className="invitation-stage">
-            <AnimatePresence mode="wait" initial={false}>
+            <AnimatePresence mode={backgroundStage >= 2 ? 'sync' : 'wait'} initial={false}>
               <motion.div
                 key={backgroundStage >= 2 ? 'nikah-scene' : activeSlide}
                 ref={invitationSlideRef}
@@ -194,27 +226,21 @@ export default function WeddingInvitation() {
             )}
             {showNikahPetals && (
               <div className="nikah-petal-shower" aria-hidden="true">
-                {Array.from({ length: NIKAH_PETAL_COUNT }, (_, index) => {
-                  const side = index % 3;
-                  const sideClass = ['top', 'left', 'right'][side];
-                  const horizontalStart = side === 0 ? `${(index * 47) % 100}%` : side === 1 ? '-2%' : '102%';
-                  const verticalStart = side === 0 ? '-4%' : `${(index * 29) % 82}%`;
-                  const horizontalDrift = side === 1 ? '14vw' : side === 2 ? '-14vw' : `${((index * 17) % 25) - 12}vw`;
-
-                  return (
-                    <span
-                      key={index}
-                      className={`nikah-petal-shower__petal nikah-petal-shower__petal--${sideClass}${index % 2 === 0 ? ' nikah-petal-shower__petal--white' : ' nikah-petal-shower__petal--rose'}`}
-                      style={{
-                        left: horizontalStart,
-                        top: verticalStart,
-                        animationDelay: `${(index % 6) * 30}ms`,
-                        '--petal-drift': horizontalDrift,
-                        '--petal-rotation': `${(index * 53) % 360}deg`
-                      }}
-                    />
-                  );
-                })}
+                {nikahPetals.map((petal) => (
+                  <span
+                    key={petal.id}
+                    className={`nikah-petal-shower__petal nikah-petal-shower__petal--${petal.color}`}
+                    style={{
+                      left: petal.left,
+                      top: petal.top,
+                      animationDelay: `${petal.delay}ms`,
+                      '--petal-drift': petal.drift,
+                      '--petal-drop': petal.drop,
+                      '--petal-rotation': petal.rotation,
+                      '--petal-duration': petal.duration
+                    }}
+                  />
+                ))}
               </div>
             )}
           </div>
