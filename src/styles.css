@@ -70,6 +70,8 @@ a { color: inherit; }
 }
 .invitation-slide > section, .invitation-slide > footer,
 .invitation-content-transition > section, .invitation-content-transition > footer { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; height: 100%; overflow: hidden; text-align: center; }
+.invitation-slide > .event-section,
+.invitation-content-transition > .event-section { align-items: flex-start; }
 .invitation-slide .hero-copy, .invitation-slide .couple-card, .invitation-slide .event-card, .invitation-slide .closing-copy {
   position: relative;
   z-index: 4;
@@ -79,6 +81,8 @@ a { color: inherit; }
   scrollbar-width: none;
   text-align: center;
 }
+.invitation-slide > .event-section > .event-card,
+.invitation-content-transition > .event-section > .event-card { margin: 0 auto; }
 .invitation-slide .hero-copy::-webkit-scrollbar, .invitation-slide .couple-card::-webkit-scrollbar, .invitation-slide .event-card::-webkit-scrollbar, .invitation-slide .closing-copy::-webkit-scrollbar { display: none; }
 .invitation-slide .text-reveal { will-change: opacity, filter; }
 .ornate-scene { min-height: 100svh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
@@ -151,7 +155,7 @@ a { color: inherit; }
 .bouquet { position:absolute; z-index:5; right:-4px; top:145px; width:47px; height:40px; border-radius:50%; background:var(--color-bouquet); box-shadow: -12px 8px 0 var(--color-bouquet-shadow-one), 8px 10px 0 var(--color-bouquet-shadow-two); }
 .couple-note { max-width:340px; margin:0 auto; font-size:var(--font-size-body); }
 
-.event-card { padding: 80px 16px 65px; max-width:500px; margin:auto; text-align:center; }
+.event-card { padding: 8px 16px 65px; max-width:500px; margin:auto; text-align:center; }
 .nikah-artwork { position:absolute; z-index:0; top:50%; left:50%; width:min(32vw, 520px); height:auto; max-height:72dvh; max-width:32vw; object-fit:contain; object-position:center; opacity:0; pointer-events:none; transform:translate(-50%, -50%) scale(1); }
 .nikah-artwork.is-animating { opacity:.64; animation:nikah-image-arrive 4.2s ease-in-out forwards; }
 .event-baraat .event-card { position:relative; z-index:1; }
@@ -167,7 +171,7 @@ a { color: inherit; }
   from { opacity:0; transform:translateY(12px); }
 }
 .event-icon { width:54px; height:54px; border:1px solid var(--color-border-gold); border-radius:50%; margin:0 auto 15px; display:grid; place-items:center; color:var(--rose); font-size:var(--font-size-event-icon); background:var(--color-surface-card); }
-.event-card h2 { font-family:var(--font-display); font-size:var(--font-size-event-title); font-weight:400; color:var(--rose); margin:2px 0 18px; }
+.event-card h2 { font-family:var(--font-display); font-size:var(--font-size-event-title); font-weight:400; color:var(--rose); margin:2px 0 0; }
 .event-inshaAllah { margin:0 0 2px; color:var(--color-gold); font-family:var(--font-display); font-size:var(--font-size-script); }
 .event-date { display:flex; align-items:baseline; justify-content:center; gap:12px; color:var(--rose); }
 .event-date span { font-size:var(--font-size-event-date); }
@@ -214,7 +218,7 @@ a { color: inherit; }
 .invitation-slide .couple-note { font-size: var(--font-size-small); }
 .invitation-slide .event-card { padding: clamp(12px, 3svh, 24px) 16px 70px; }
 .invitation-slide .event-icon { width: 48px; height: 48px; margin-bottom: 8px; }
-.invitation-slide .event-card h2 { font-size: var(--font-size-event-title); margin-bottom: 10px; }
+.invitation-slide .event-card h2 { font-size: var(--font-size-event-title); }
 .invitation-slide .event-divider { margin: 12px auto; }
 .invitation-slide .event-venue { font-size: var(--font-size-event-venue); }
 .invitation-slide .event-address { font-size: var(--font-size-small); margin-bottom: 12px; }
