@@ -4,7 +4,7 @@ export const invitationCopy = {
     greeting: 'Assalamu Alaikum'
   },
   blessings: {
-    arabic: 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ',
+    arabic: '﷽',
     lines: [
       'In the Name of Allah the Most Beneficent',
       'the Most Merciful,',
