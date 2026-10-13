@@ -57,7 +57,6 @@
   --font-size-control: 14px;
   --font-size-control-icon: 20px;
   --font-size-control-count: 13px;
-  --font-size-opening-names: 42px;
   --font-size-greeting: 40px;
   --font-size-couple: 38px;
   --font-size-plaque-title: 32px;
@@ -72,9 +71,6 @@
   --font-size-ceremony-copy: 13px;
   --font-size-ceremony-title: 23px;
   --font-size-ceremony-name: 34px;
-  --opening-image-width: clamp(128px, 28vw, 220px);
-  --opening-image-height: clamp(56px, 8vw, 88px);
-
   /* Responsive artwork fills the viewport without cropping. */
   --invitation-background-image: url('/assets/mobile-background.png');
 
@@ -91,7 +87,6 @@
 
 @media (max-width: 380px) {
   :root {
-    --font-size-opening-names: 38px;
     --font-size-greeting: 36px;
     --font-size-couple: 34px;
     --font-size-event-title: 42px;
@@ -105,7 +100,6 @@
     --invitation-background-image: url('/assets/desktop-background.png');
     --font-size-body: 18px;
     --font-size-small: 16px;
-    --font-size-opening-names: 46px;
     --font-size-greeting: 44px;
     --font-size-couple: 42px;
     --font-size-plaque-title: 36px;
@@ -138,7 +132,6 @@
     --font-size-control: 17px;
     --font-size-control-icon: 23px;
     --font-size-control-count: 16px;
-    --font-size-opening-names: 62px;
     --font-size-greeting: 60px;
     --font-size-couple: 58px;
     --font-size-plaque-title: 44px;

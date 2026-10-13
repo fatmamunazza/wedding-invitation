@@ -1,4 +1,4 @@
-import { invitationCopy } from '../data/invitationCopy.js';
+import { invitationCopy } from '../../data/invitationCopy.js';
 
 export default function IslamicBlessingsPage() {
   const { blessings } = invitationCopy;

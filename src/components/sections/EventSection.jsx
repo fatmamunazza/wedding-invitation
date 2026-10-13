@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { invitationMotionSettings } from '../data/animationSettings.js';
-import LocationMap from './LocationMap.jsx';
+import { invitationMotionSettings } from '../../data/animationSettings.js';
+import LocationMap from '../shared/LocationMap.jsx';
 
 const icons = { haldi: '✿', baraat: '◈' };
 
