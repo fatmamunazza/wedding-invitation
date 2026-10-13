@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Corinthia&family=Playfair+Display:wght@400;500;600;700&display=swap');
 @import './styles/theme.css';
 
 * { box-sizing: border-box; }
@@ -31,7 +31,7 @@ a { color: inherit; }
 .section-pad { padding: 0; }
 .invitation-content { height: 100svh; height: 100dvh; overflow: hidden; }
 .wedding-app--haldi { background-image: url('/assets/mobile-haldi-background.png'); background-size: cover; background-position: center; }
-.wedding-app--nikah { background-image: url('/assets/nikah-mobile-background.png'); background-size: cover; background-position: center; }
+.wedding-app--nikah { background-image: url('/assets/nikah-mobile-background1.png'); background-size: cover; background-position: center; }
 @media (min-width: 700px) {
   .wedding-app--haldi { background-image: url('/assets/desktop-haldi-background.png'); }
   .wedding-app--nikah {
@@ -42,6 +42,14 @@ a { color: inherit; }
 .invitation-stage { position: relative; width: 100%; height: 100%; overflow: hidden; isolation: isolate; perspective: 1400px; }
 .invitation-slide { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; }
 .invitation-content-transition { position: absolute; inset: 0; width: 100%; height: 100%; }
+.nikah-petal-shower { position: absolute; z-index: 15; inset: 0; overflow: hidden; pointer-events: none; }
+.nikah-petal-shower__petal { position: absolute; top: -4%; width: clamp(9px, 1.2vw, 16px); height: clamp(13px, 1.7vw, 21px); border-radius: 75% 15% 70% 20%; opacity: 0; animation: nikah-petal-fall 1300ms ease-in forwards; }
+.nikah-petal-shower__petal--white { background: #fffaf5; box-shadow: 0 1px 5px rgba(255, 255, 255, .65); }
+.nikah-petal-shower__petal--rose { background: #900324; box-shadow: 0 1px 5px rgba(186, 91, 119, .45); }
+@keyframes nikah-petal-fall {
+  15% { opacity: .92; }
+  100% { opacity: 0; transform: translate3d(var(--petal-drift), 110vh, 0) rotate(calc(var(--petal-rotation) + 540deg)); }
+}
 .invitation-slide--background-0,
 .invitation-slide--first-reveal { background-color: var(--color-app-background); background-image: var(--invitation-background-image); background-position: center; background-repeat: no-repeat; background-size: 100% 100%; }
 .invitation-slide--background-1 { background: url('/assets/mobile-haldi-background.png') center / cover no-repeat; }
