@@ -16,7 +16,7 @@ export default function EventDetails({ event }) {
         whileInView={{ opacity: 1, filter: 'brightness(1)' }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{
-          duration: event.id === 'baraat' ? 0.8 : invitationMotionSettings.transitionSeconds,
+          duration: event.id === 'baraat' ? invitationMotionSettings.baraatTransitionSeconds : invitationMotionSettings.transitionSeconds,
           delay: event.id === 'baraat' ? 4.2 : 0
         }}
       >

@@ -19,7 +19,9 @@ export default function Footer() {
       </div>
       <div className="closing-farewell-state">
         <div className="farewell-copy">
-          <p className="farewell-names">{weddingDetails.bride} &amp; {weddingDetails.groom} ({weddingDetails.groomNickname})</p>
+          <p className="farewell-names">{weddingDetails.bride}</p>
+          <p className="farewell-names">&amp;</p>
+          <p className="farewell-names">{weddingDetails.groom} ({weddingDetails.groomNickname})</p>
           <p className="farewell-blessing">{closing.farewellBlessing}</p>
         </div>
         <div className="farewell-signoff">
