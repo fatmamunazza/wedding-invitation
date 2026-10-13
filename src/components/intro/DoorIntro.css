@@ -26,7 +26,17 @@
   object-fit: cover;
   object-position: center;
 }
-
+.welcome-intro_text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  padding: 230px 0 0;
+}
 .welcome-intro__trigger {
   position: absolute;
   inset: 0;
@@ -38,7 +48,7 @@
   gap: 8px;
   width: 100%;
   height: 100%;
-  padding: 0 0 25%;
+  padding: 0 0 60%;
   border: 0;
   background: transparent;
   color: #fff5dc;
@@ -49,7 +59,7 @@
 
 .welcome-intro__heart {
   display: grid;
-  width: clamp(44px, 7vw, 68px);
+  width: clamp(44px, 8vw, 70px);
   aspect-ratio: 1;
   place-items: center;
   border: 1px solid rgba(255, 238, 190, .9);
@@ -57,13 +67,22 @@
   background: radial-gradient(circle, rgba(255, 245, 198, .36), rgba(130, 66, 23, .42));
   box-shadow: 0 0 14px 5px rgba(255, 204, 89, .72), 0 0 38px 14px rgba(255, 186, 73, .45);
   animation: lantern-heart-glow 2s ease-in-out infinite alternate;
+ 
 }
 
 .welcome-intro__greeting {
-  color: #fff3d7;
+  color: #693a08;
   font-family: var(--font-display, Georgia, serif);
-  font-size: clamp(20px, 3vw, 30px);
-  text-shadow: 0 2px 8px rgba(55, 25, 9, .75);
+  font-weight: 900;
+  font-size: clamp(20px, 15vw, 35px);
+  text-shadow: 0 2px 8px rgba(222, 177, 149, 0.75);
+}
+
+.welcome-intro__guest {
+  color: #461003;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(16px, 10vw, 22px);
+  text-shadow: 0 2px 8px rgba(169, 149, 139, 0.75);
 }
 
 .welcome-intro__heart svg {
@@ -85,7 +104,7 @@
   box-shadow: 0 3px 14px rgba(77, 35, 11, .24);
   color: #fff3d7;
   font-family: var(--font-heading, Georgia, serif);
-  font-size: clamp(13px, 2vw, 18px);
+  font-size: clamp(13px, 4vw, 18px);
   letter-spacing: .07em;
   text-shadow: 0 1px 5px rgba(55, 25, 9, .55);
 }
