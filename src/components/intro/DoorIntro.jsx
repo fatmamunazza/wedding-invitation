@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { invitationCopy } from '../../data/invitationCopy.js';
 import './DoorIntro.css';
 
 const MOBILE_WELCOME_IMAGE = '/assets/WelcomeCard.png';
@@ -63,6 +64,10 @@ export default function DoorIntro({ onStart, onComplete }) {
         disabled={phase !== 'ready'}
         aria-label="Open invitation"
       >
+        <span className="welcome-intro__greeting">
+          {invitationCopy.welcome.greeting}
+        </span>
+
         <span className="welcome-intro__heart" aria-hidden="true">
           <svg viewBox="0 0 48 48" focusable="false">
             <path d="M24 39S7 29 7 17.5C7 11.2 15 7 24 16c9-9 17-4.8 17 1.5C41 29 24 39 24 39Z" />

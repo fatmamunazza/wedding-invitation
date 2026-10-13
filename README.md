@@ -59,7 +59,7 @@ Keep a component beside its styles when those styles belong only to that compone
 
 The welcome card uses `WelcomeCard.png` on mobile and `welcomeCardDesktop.png` on desktop. The invitation starts with the standard mobile and desktop backgrounds, changes to the Haldi backgrounds at the Haldi section, then changes to the Nikah backgrounds at Baraat and keeps that background for the remaining sections.
 
-The invitation currently presents five sections in order: Islamic blessings, Wedding Ceremony, Haldi, Baraat, and Final Blessing. `/` and `/invite/:guestId` both render the invitation page. Guest data and lookup helpers remain in `src/data/guests.js` and `src/services/guestResolver.js`.
+The invitation is organized into four visual screens: the welcome card; a details screen that transitions between the Wedding Ceremony and Wedding Details content on one background; the Haldi screen; and a Nikah screen that transitions through Bismillah, Baraat details, and the final blessing on one shared background. The content steps are listed in order in `src/pages/WeddingInvitation.jsx`. `/` and `/invite/:guestId` both render the invitation page. Guest data and lookup helpers remain in `src/data/guests.js` and `src/services/guestResolver.js`.
 
 ## Accessibility and Motion
 

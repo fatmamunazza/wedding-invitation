@@ -59,6 +59,13 @@
   animation: lantern-heart-glow 2s ease-in-out infinite alternate;
 }
 
+.welcome-intro__greeting {
+  color: #fff3d7;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(20px, 3vw, 30px);
+  text-shadow: 0 2px 8px rgba(55, 25, 9, .75);
+}
+
 .welcome-intro__heart svg {
   display: block;
   width: 62%;

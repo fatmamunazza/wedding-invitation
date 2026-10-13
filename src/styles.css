@@ -41,13 +41,14 @@ a { color: inherit; }
 }
 .invitation-stage { position: relative; width: 100%; height: 100%; overflow: hidden; isolation: isolate; perspective: 1400px; }
 .invitation-slide { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; }
+.invitation-content-transition { position: absolute; inset: 0; width: 100%; height: 100%; }
 .invitation-slide--background-0,
 .invitation-slide--first-reveal { background-color: var(--color-app-background); background-image: var(--invitation-background-image); background-position: center; background-repeat: no-repeat; background-size: 100% 100%; }
 .invitation-slide--background-1 { background: url('/assets/mobile-haldi-background.png') center / cover no-repeat; }
 .invitation-slide--background-2 { background: url('/assets/nikah-mobile-background.png') center / cover no-repeat; }
 @media (min-width: 700px) {
   .invitation-slide--background-1 { background-image: url('/assets/desktop-haldi-background.png'); }
-  .invitation-slide--background-2 { background-size: 100% 100%; }
+  .invitation-slide--background-2 { background-image: url('/assets/nikah-desktop-background.png'); background-size: 100% 100%; }
 }
 .invitation-slide--folding { clip-path: inset(0); will-change: clip-path; animation: paper-page-roll 2s cubic-bezier(.65, 0, .35, 1) forwards; }
 @keyframes paper-page-roll {
@@ -59,7 +60,8 @@ a { color: inherit; }
   from { top: calc(100% - 42px); }
   to { top: 0; }
 }
-.invitation-slide > section, .invitation-slide > footer { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; height: 100%; overflow: hidden; text-align: center; }
+.invitation-slide > section, .invitation-slide > footer,
+.invitation-content-transition > section, .invitation-content-transition > footer { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; height: 100%; overflow: hidden; text-align: center; }
 .invitation-slide .hero-copy, .invitation-slide .couple-card, .invitation-slide .event-card, .invitation-slide .closing-copy {
   position: relative;
   z-index: 4;

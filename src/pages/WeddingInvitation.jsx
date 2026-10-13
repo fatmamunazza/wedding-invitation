@@ -150,32 +150,31 @@ export default function WeddingInvitation() {
           <div className="invitation-stage">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
-                key={activeSlide}
+                key={backgroundStage >= 2 ? 'nikah-scene' : activeSlide}
                 ref={invitationSlideRef}
                 className={`invitation-slide invitation-slide--background-${paperRollStarted ? rollingBackgroundStage : backgroundStage}${activeSlide === 0 ? ' invitation-slide--first-reveal' : ''}${paperRollStarted ? ' invitation-slide--folding' : ''}`}
                 {...pageTransitionProps}
               >
-                {slides[activeSlide]}
+                {backgroundStage >= 2 ? (
+                  <AnimatePresence mode="sync" initial={false}>
+                    <motion.div
+                      key={activeSlide}
+                      className="invitation-content-transition"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 1, ease: 'easeInOut' }}
+                    >
+                      {slides[activeSlide]}
+                    </motion.div>
+                  </AnimatePresence>
+                ) : slides[activeSlide]}
               </motion.div>
             </AnimatePresence>
             {paperRollStarted && (
               <div className="paper-roll-edge" aria-hidden="true" />
             )}
           </div>
-          {/* {opened && (
-            <nav className="slide-controls" aria-label="Invitation sections">
-              <button type="button" onClick={() => goToSlide(activeSlide - 1)} disabled={activeSlide === 0} aria-label="Previous section">‹</button>
-              <span>{activeSlide + 1} / {slides.length}</span>
-              <button
-                type="button"
-                onClick={() => setAutoAdvance((playing) => !playing)}
-                aria-label={autoAdvance ? 'Pause automatic slides' : 'Resume automatic slides'}
-              >
-                {autoAdvance ? 'Ⅱ' : '▶'}
-              </button>
-              <button type="button" onClick={() => goToSlide(activeSlide + 1)} disabled={activeSlide === slides.length - 1} aria-label="Next section">›</button>
-            </nav>
-          )} */}
       </div>
     </main>
   );
