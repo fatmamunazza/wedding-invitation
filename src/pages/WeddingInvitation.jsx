@@ -16,6 +16,9 @@ const HALDI_SLIDE_INDEX = 2;
 const BARAAT_REVEAL_SECONDS = 4.2 + 0.8;
 const BARAAT_READING_PAUSE_SECONDS = 2;
 const PAPER_ROLL_DURATION_SECONDS = 2;
+const NIKAH_PETAL_SHOWER_DELAY_MS = 1000;
+const NIKAH_PETAL_SHOWER_DURATION_MS = 3000;
+const NIKAH_PETAL_COUNT = 68;
 
 export default function WeddingInvitation() {
   const [opened, setOpened] = useState(false);
@@ -27,8 +30,10 @@ export default function WeddingInvitation() {
   const [musicPlaying, setMusicPlaying] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
   const [autoAdvance, setAutoAdvance] = useState(true);
+  const [showNikahPetals, setShowNikahPetals] = useState(false);
   const audioRef = useRef(null);
   const paperRollTimerRef = useRef(null);
+  const nikahPetalsTimerRef = useRef(null);
   const invitationSlideRef = useRef(null);
 
   const startOpening = () => {
@@ -65,6 +70,16 @@ export default function WeddingInvitation() {
 
     window.clearTimeout(paperRollTimerRef.current);
 
+    if (nextBackgroundStage === 2 && backgroundStage < 2) {
+      window.clearTimeout(nikahPetalsTimerRef.current);
+      nikahPetalsTimerRef.current = window.setTimeout(() => {
+        setShowNikahPetals(true);
+        nikahPetalsTimerRef.current = window.setTimeout(() => {
+          setShowNikahPetals(false);
+        }, NIKAH_PETAL_SHOWER_DURATION_MS);
+      }, NIKAH_PETAL_SHOWER_DELAY_MS);
+    }
+
     if (nextIndex > activeSlide && nextBackgroundStage === 1 && backgroundStage === 0) {
       invitationSlideRef.current?.classList.remove('invitation-slide--folding');
       void invitationSlideRef.current?.offsetWidth;
@@ -85,7 +100,10 @@ export default function WeddingInvitation() {
     setActiveSlide(nextIndex);
   }, [activeSlide, backgroundStage]);
 
-  useEffect(() => () => window.clearTimeout(paperRollTimerRef.current), []);
+  useEffect(() => () => {
+    window.clearTimeout(paperRollTimerRef.current);
+    window.clearTimeout(nikahPetalsTimerRef.current);
+  }, []);
 
   useEffect(() => {
     if (!opened || !autoAdvance) return;
@@ -173,6 +191,31 @@ export default function WeddingInvitation() {
             </AnimatePresence>
             {paperRollStarted && (
               <div className="paper-roll-edge" aria-hidden="true" />
+            )}
+            {showNikahPetals && (
+              <div className="nikah-petal-shower" aria-hidden="true">
+                {Array.from({ length: NIKAH_PETAL_COUNT }, (_, index) => {
+                  const side = index % 3;
+                  const sideClass = ['top', 'left', 'right'][side];
+                  const horizontalStart = side === 0 ? `${(index * 47) % 100}%` : side === 1 ? '-2%' : '102%';
+                  const verticalStart = side === 0 ? '-4%' : `${(index * 29) % 82}%`;
+                  const horizontalDrift = side === 1 ? '14vw' : side === 2 ? '-14vw' : `${((index * 17) % 25) - 12}vw`;
+
+                  return (
+                    <span
+                      key={index}
+                      className={`nikah-petal-shower__petal nikah-petal-shower__petal--${sideClass}${index % 2 === 0 ? ' nikah-petal-shower__petal--white' : ' nikah-petal-shower__petal--rose'}`}
+                      style={{
+                        left: horizontalStart,
+                        top: verticalStart,
+                        animationDelay: `${(index % 6) * 30}ms`,
+                        '--petal-drift': horizontalDrift,
+                        '--petal-rotation': `${(index * 53) % 360}deg`
+                      }}
+                    />
+                  );
+                })}
+              </div>
             )}
           </div>
       </div>

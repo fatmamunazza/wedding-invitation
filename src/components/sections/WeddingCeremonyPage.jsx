@@ -13,7 +13,7 @@ export default function WeddingCeremonyPage() {
         <h2 className="ceremony-person-name">{weddingDetails.bride}</h2>
         <p className="ceremony-relation">{weddingDetails.ceremony.brideRelation}</p>
         <p className="ceremony-address">{weddingDetails.ceremony.brideLocation}</p>
-        <p className="ceremony-divider">{ceremony.conjunction}</p>
+        <p className="ceremony-divider2">{ceremony.conjunction}</p>
         <h2 className="ceremony-person-name">{weddingDetails.groom}</h2>
         <p className="ceremony-relation">{weddingDetails.ceremony.groomRelation}</p>
         <p className="ceremony-address">{weddingDetails.ceremony.groomLocation}</p>

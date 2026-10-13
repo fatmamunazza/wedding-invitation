@@ -9,14 +9,16 @@ export default function IslamicBlessingsPage() {
         <p className="blessings-arabic" lang="ar" dir="rtl">{blessings.arabic}</p>
         <div className="blessings-copy">
           {blessings.lines.map((line, index) => (
-            <p
-              className={index === 2 ? 'blessings-copy__second-stanza' : undefined}
-              key={line}
-            >
+            <p>
               {line}
             </p>
           ))}
+           
         </div>
+        <img
+            className="logo"
+            src="/assets/logo.png"
+          />
       </div>
     </section>
   );

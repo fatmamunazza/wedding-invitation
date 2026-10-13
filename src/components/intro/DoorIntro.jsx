@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useParams } from 'react-router-dom';
 import { invitationCopy } from '../../data/invitationCopy.js';
+import { resolveGuest } from '../../services/guestResolver.js';
 import './DoorIntro.css';
 
 const MOBILE_WELCOME_IMAGE = '/assets/WelcomeCard.png';
@@ -10,6 +12,8 @@ const OPENING_DURATION = 4000;
 const OPENING_EASE = [0.42, 0, 0.58, 1];
 
 export default function DoorIntro({ onStart, onComplete }) {
+  const { guestId } = useParams();
+  const guest = resolveGuest(guestId);
   const [phase, setPhase] = useState('ready');
   const completeTimeoutRef = useRef(null);
   const startedRef = useRef(false);
@@ -56,7 +60,18 @@ export default function DoorIntro({ onStart, onComplete }) {
           fetchPriority="high"
         />
       </picture>
+      <div className="welcome-intro_text">
+         <span className="welcome-intro__greeting">
+          {invitationCopy.welcome.greeting}
+        </span>
 
+        {guest && (
+          <span className="welcome-intro__guest">
+            {guest.name}
+          </span>
+        )}
+      </div>
+      
       <button
         className="welcome-intro__trigger"
         type="button"
@@ -64,9 +79,6 @@ export default function DoorIntro({ onStart, onComplete }) {
         disabled={phase !== 'ready'}
         aria-label="Open invitation"
       >
-        <span className="welcome-intro__greeting">
-          {invitationCopy.welcome.greeting}
-        </span>
 
         <span className="welcome-intro__heart" aria-hidden="true">
           <svg viewBox="0 0 48 48" focusable="false">

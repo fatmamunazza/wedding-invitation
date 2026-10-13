@@ -9,7 +9,7 @@ export const weddingDetails = {
   },
   ceremony: {
     brideRelation: '(D/O Mr. Akbar Ali)',
-    brideLocation: 'Hamam, Pandriba Lane, Patna, Bihar',
+    brideLocation: 'Pandriba Lane, Patna, Bihar',
     groomRelation: '(S/O Late Mr. Zuhair Qain Rizvi)',
     groomLocation: 'Qazipara, Bijnor, UP'
   },
