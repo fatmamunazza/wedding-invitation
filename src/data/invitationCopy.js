@@ -6,9 +6,8 @@ export const invitationCopy = {
   blessings: {
     arabic: '﷽',
     lines: [
-      'In the Name of Allah the Most Beneficent',
-      'the Most Merciful,',
-      'and with the Blessings of',
+      'In the Name of Allah, the Most Beneficent,',
+      'the Most Merciful, and with the Blessings of',
       '14 Masoomeen (a.s.)',
       '& their Last Hujjat (a.t.f.s.)'
     ]
