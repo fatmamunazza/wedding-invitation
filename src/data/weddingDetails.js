@@ -17,9 +17,9 @@ export const weddingDetails = {
     haldi: {
       id: 'haldi',
       title: 'Haldi',
-      date: '13 January 2027',
+      date: '15 January 2027',
       time: '07:00 PM',
-      dateParts: { day: '13', month: 'January', year: '2027' },
+      dateParts: { day: '15', month: 'January', year: '2027' },
       venue: "Bride's Home",
       address: 'Hamam Pandriba Lane, Patna, Bihar 800008',
       mapLink: 'https://maps.app.goo.gl/d1wmZdqVggx9MWCE7?g_st=iw'

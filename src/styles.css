@@ -101,13 +101,14 @@ a { color: inherit; }
 .wedding-details-item .wedding-details-year { font-family:var(--font-display); font-size:var(--font-size-details-year); line-height:1; }
 
 .blessings-page { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; overflow:hidden; background:transparent; }
-.blessings-panel { width:min(88%, 620px); max-height:calc(100% - 76px); overflow-y:auto; padding:clamp(28px, 8svh, 70px) clamp(16px, 6vw, 48px); text-align:center; scrollbar-width:none; }
+.blessings-panel { display:flex; flex-direction:column; width:80%; height:70%; max-height:100%; justify-content:center;  padding:clamp(20px, 5svh, 48px) clamp(16px, 6vw, 48px) calc(20px + env(safe-area-inset-bottom)); text-align:center;  }
 .blessings-panel::-webkit-scrollbar { display:none; }
-.blessings-arabic { margin:0 0 30px; color:var(--color-rose); font-family:var(--font-arabic); font-size:var(--font-size-ceremony-arabic); line-height:1.7; }
-.blessings-copy { color:var(--color-ink); font-family:var(--font-body); font-size:var(--font-size-ceremony-copy); line-height:1.5; }
+.blessings-arabic { align-self:center; width:fit-content; max-width:100%; margin:0 0 25px; color:var(--color-rose); font-family:var(--font-arabic); font-size:var(--font-size-ceremony-arabic); line-height:1.7; }
+.blessings-copy { margin-top: 10px; color:var(--color-ink); font-family:var(--font-body); font-size:var(--font-size-ceremony-copy); line-height:1.5; }
 .blessings-copy p { margin:0; }
-.logo { width:min(30%, 620px); max-height:calc(100% - 76px); padding:10% 0 0; position:relative; z-index:1; justify-self:flex-end; align-self:end; object-fit:end; }
-
+.logo { width:min(20%, 100px); max-height:calc(100% - 76px);  z-index:1; object-fit:end; }
+.blessings-footer { display:flex; flex-direction:column; align-items:center; justify-content:flex-end; margin-top:auto; padding-top:16px; }
+.blessings-footer .closing-line { padding:0; border:0; border-radius:0; background:none; box-shadow:none; }
 .wedding-ceremony-page {
   color:var(--color-rose);
   background:transparent;
@@ -258,6 +259,8 @@ a { color: inherit; }
   .hero-copy { padding-top:120px; padding-bottom:110px; }
   .couple-illustration { height:440px; transform:scale(1.1); margin-bottom:20px; }
   .event-card, .closing-copy { padding-top:130px; padding-bottom:120px; }
+  .blessings-arabic { padding:8px 18px; border:1px solid rgba(255,239,194,.95); border-radius:14px; background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,243,220,.94)); box-shadow:0 0 8px rgba(255,247,218,.9), 0 0 22px rgba(255,230,168,.7), 0 5px 18px rgba(77,41,39,.16), inset 0 1px 5px rgba(255,255,255,.95); }
+  .blessings-footer .closing-line { padding:8px 14px; border:1px solid rgba(255,239,194,.95); border-radius:12px; background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,243,220,.94)); box-shadow:0 0 8px rgba(255,247,218,.9), 0 0 22px rgba(255,230,168,.7), 0 5px 18px rgba(77,41,39,.16), inset 0 1px 5px rgba(255,255,255,.95); }
 }
 
 @media (max-width: 699px) {
@@ -275,8 +278,8 @@ a { color: inherit; }
   .wedding-details-panel { max-height:calc(100% - 88px); padding-block:12px; }
   .wedding-details-bismillah { margin-bottom:10px; }
   .wedding-details-item { gap:3px; margin-top:10px; }
-  .blessings-panel { max-height:calc(100% - 88px); padding-block:22px; }
-  .blessings-arabic { margin-bottom:18px; }
+  .blessings-panel { padding-top:22px; }
+  .blessings-arabic { margin-bottom:8px; }
   .ceremony-panel { max-height:calc(100% - 88px); padding-block:10px; }
   .ceremony-blessing, .ceremony-invitation-copy, .ceremony-relation, .ceremony-address { line-height:1.1; }
   .farewell-copy { max-height:calc(100% - 170px); overflow-y:auto; }
