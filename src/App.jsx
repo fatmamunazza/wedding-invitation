@@ -7,6 +7,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<WeddingInvitation />} />
         <Route path="/invite/:guestId" element={<WeddingInvitation />} />
+        {/* <Route path="/card" element={<WeddingVersePage />} /> */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

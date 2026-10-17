@@ -64,3 +64,44 @@ The invitation is organized into four visual screens: the welcome card; a detail
 ## Accessibility and Motion
 
 Preserve the `prefers-reduced-motion` rules when changing animations. The invitation content panels can scroll independently when content exceeds the available screen height.
+
+
+##
+
+/* Bride and groom names */
+.font-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 56px;
+  color: #a20f36;
+}
+
+/* Wedding Ceremony heading */
+.font-heading {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  color: #a20f36;
+}
+
+/* Dates, venue, and addresses */
+.font-details {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #9f1239;
+}
+
+/* Blessings and introductory text */
+.font-blessings {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 21px;
+  color: #164b32;
+}
+
+/* Arabic Bismillah */
+.font-arabic {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 36px;
+  direction: rtl;
+}
+

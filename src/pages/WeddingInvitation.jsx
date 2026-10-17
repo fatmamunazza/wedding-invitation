@@ -20,16 +20,26 @@ const NIKAH_PETAL_SHOWER_DELAY_MS = 1000;
 const NIKAH_PETAL_SHOWER_DURATION_MS = 4000;
 const NIKAH_PETAL_COUNT = 100;
 
+const PREVIEW_SLIDE_INDEX = 1; // Set to 0-4 to open directly on a slide and pause auto-advance.
+const PREVIEW_MODE = PREVIEW_SLIDE_INDEX !== null;
+const INITIAL_SLIDE_INDEX = PREVIEW_MODE ? PREVIEW_SLIDE_INDEX : 0;
+const INITIAL_BACKGROUND_STAGE = INITIAL_SLIDE_INDEX >= BARAAT_SLIDE_INDEX
+  ? 2
+  : INITIAL_SLIDE_INDEX >= HALDI_SLIDE_INDEX
+    ? 1
+    : 0;
+
 export default function WeddingInvitation() {
-  const [opened, setOpened] = useState(false);
-  const [firstPageRevealStarted, setFirstPageRevealStarted] = useState(false);
+
+  const [opened, setOpened] = useState(PREVIEW_MODE);
+  const [firstPageRevealStarted, setFirstPageRevealStarted] = useState(PREVIEW_MODE && INITIAL_SLIDE_INDEX === 0);
   const [paperRollStarted, setPaperRollStarted] = useState(false);
-  const [backgroundStage, setBackgroundStage] = useState(0);
-  const [rollingBackgroundStage, setRollingBackgroundStage] = useState(0);
+  const [backgroundStage, setBackgroundStage] = useState(INITIAL_BACKGROUND_STAGE);
+  const [rollingBackgroundStage, setRollingBackgroundStage] = useState(INITIAL_BACKGROUND_STAGE);
   const [musicAvailable, setMusicAvailable] = useState(false);
   const [musicPlaying, setMusicPlaying] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [autoAdvance, setAutoAdvance] = useState(true);
+  const [activeSlide, setActiveSlide] = useState(INITIAL_SLIDE_INDEX);
+  const [autoAdvance, setAutoAdvance] = useState(!PREVIEW_MODE);
   const [showNikahPetals, setShowNikahPetals] = useState(false);
   const nikahPetals = useMemo(() => {
     if (!showNikahPetals) return [];
@@ -154,7 +164,7 @@ export default function WeddingInvitation() {
   }, [opened, autoAdvance, activeSlide, slides.length, goToSlide]);
 
   const updateMusicPlaying = (playing) => setMusicPlaying(playing);
-  const pageTransitionProps = backgroundStage >= 2
+  const pageTransitionProps = PREVIEW_MODE || backgroundStage >= 2
     ? {
         initial: false,
         animate: { opacity: 1, filter: 'none', scale: 1 },
