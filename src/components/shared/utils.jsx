@@ -17,6 +17,16 @@ export function FloralDivider() {
   );
 }
 
+export function DividerWithContent({ children, className = '' }) {
+  return (
+    <div className={`wedding-divider wedding-divider--content ${className}`.trim()}>
+      <span className="divider-line" aria-hidden="true" />
+      <div className="wedding-divider__content">{children}</div>
+      <span className="divider-line" aria-hidden="true" />
+    </div>
+  );
+}
+
 export function QuranVerse({ arabic, reference, translation }) {
   return (
     <section className="quran-verse">

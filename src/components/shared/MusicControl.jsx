@@ -18,8 +18,12 @@ export default function MusicControl({ audio, available, playing, onPlayingChang
   };
 
   return (
-    <button className="music-control" onClick={toggle} aria-label={playing ? 'Pause music' : 'Play music'}>
-      <span className={playing ? 'is-playing' : ''}>{playing ? '◼' : '♪'}</span>
+    <button
+      className={`music-control${playing ? ' music-control--playing' : ''}`}
+      onClick={toggle}
+      aria-label={playing ? 'Pause music' : 'Play music'}
+    >
+      <span aria-hidden="true">{playing ? 'Ⅱ' : '♪'}</span>
     </button>
   );
 }

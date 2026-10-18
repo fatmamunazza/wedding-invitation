@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Corinthia&family=Playfair+Display:wght@400;500;600;700&display=swap');
 @import './styles/theme.css';
 
 * { box-sizing: border-box; }
@@ -121,7 +120,8 @@ a { color: inherit; }
 .ceremony-title { margin:5px 0 1px; color:var(--color-rose); font-family:var(--font-heading); font-size:var(--font-size-ceremony-title); font-weight:500; }
 .ceremony-divider { margin:5px 0!important; color:var(--color-rose-muted); font-family:var(--font-heading); font-size:var(--font-size-eyebrow); letter-spacing:.22em; }
 .ceremony-divider2 { margin:15px 0!important; color:var(--color-rose-muted); font-family:var(--font-heading); font-size:var(--font-size-eyebrow); letter-spacing:.22em; }
-.ceremony-person-name { margin:1px 0 0; color:var(--color-rose); font-family:var(--font-display); font-size:var(--font-size-ceremony-name); font-weight:600; line-height:1; }
+.ceremony-divider2 p { margin:0; }
+.ceremony-person-name { margin:1px 0 0; color:var(--color-rose); font-family:var(--font-display); font-size:var(--font-size-ceremony-name); font-weight:300; line-height:1; }
 .ceremony-relation, .ceremony-address { font-size:var(--font-size-ceremony-copy); line-height:1.2; }
 .ceremony-address { margin-top:1px!important; }
 
@@ -250,9 +250,12 @@ a { color: inherit; }
 .slide-controls button { width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent; color: inherit; font-size: var(--font-size-control-icon); cursor: pointer; }
 .slide-controls button:disabled { opacity: .35; cursor: default; }
 .slide-controls span { min-width: 42px; text-align: center; font-family: var(--font-heading); font-size: var(--font-size-control-count); }
-.music-control { position:fixed; z-index:20; right:14px; top:14px; width:42px; height:42px; border-radius:50%; border:1px solid var(--color-border-rose-strong); background:var(--color-surface-music); color:var(--rose); backdrop-filter:blur(10px); cursor:pointer; box-shadow:0 5px 20px var(--color-shadow-music); }
-.music-control .is-playing { display:inline-block; animation:spin 1.5s linear infinite; }
-@keyframes spin { to { transform:rotate(360deg); } }
+.music-control { position:fixed; z-index:20; right:14px; top:14px; display:grid; place-items:center; width:46px; height:46px; padding:2px; border:1px solid #d6b45e; border-radius:50%; background:conic-gradient(from 25deg, #fff4c2, #bd8c2e, #fff9dc, #d2a642, #fff1b6, #bd8c2e, #fff4c2); color:#a87819; cursor:pointer; box-shadow:0 0 5px rgba(255,222,131,.85), 0 0 13px rgba(214,173,69,.6), 0 4px 14px var(--color-shadow-music); animation:music-gold-shimmer 2.8s ease-in-out infinite; }
+.music-control::before { content:""; position:absolute; inset:3px; border:1px solid rgba(255,255,255,.95); border-radius:50%; background:radial-gradient(circle at 32% 24%, #fff 0, #fff 14%, #fffdf5 32%, #f8f1df 68%, #e8dcc0 100%); box-shadow:inset 0 2px 5px rgba(255,255,255,.95), inset 0 -2px 5px rgba(165,134,74,.18); }
+.music-control span { position:relative; z-index:1; display:grid; place-items:center; width:100%; height:100%; color:#a87819; font-size:21px; line-height:1; text-shadow:0 1px 1px rgba(255,255,255,.9); }
+.music-control--playing span { font-size:18px; }
+.music-control:focus-visible { outline:2px solid #a87819; outline-offset:4px; }
+@keyframes music-gold-shimmer { 0%, 100% { filter:brightness(1); box-shadow:0 0 5px rgba(255,222,131,.75), 0 0 12px rgba(214,173,69,.45), 0 4px 14px var(--color-shadow-music); } 50% { filter:brightness(1.18); box-shadow:0 0 8px rgba(255,236,165,.98), 0 0 19px rgba(214,173,69,.78), 0 4px 14px var(--color-shadow-music); } }
 
 @media (min-width: 700px) {
   .ornate-scene { min-height: 900px; }

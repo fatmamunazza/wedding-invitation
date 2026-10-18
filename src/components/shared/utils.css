@@ -92,6 +92,14 @@
   background: linear-gradient(90deg, var(--wedding-gold), transparent);
 }
 
+.wedding-divider--content .wedding-divider__content {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
 .divider-flower {
   width: 32px;
   height: 32px;
