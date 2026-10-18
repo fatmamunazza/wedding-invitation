@@ -10,7 +10,7 @@ export default function CoupleSection() {
           initial={{ opacity: 0.15, filter: 'brightness(0.65)' }}
           whileInView={{ opacity: 1, filter: 'brightness(1)' }}
           viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: invitationMotionSettings.transitionSeconds }}
+          transition={{ duration: invitationMotionSettings.pages.ceremony.transitionSeconds }}
         >
           <div className="plaque">
             <p className="script-small">Join us for the union of two souls</p>
@@ -36,7 +36,7 @@ export default function CoupleSection() {
           initial={{ opacity: 0.15, filter: 'brightness(0.65)' }}
           whileInView={{ opacity: 1, filter: 'brightness(1)' }}
           viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: invitationMotionSettings.transitionSeconds }}
+          transition={{ duration: invitationMotionSettings.pages.ceremony.transitionSeconds }}
         >
           A new chapter, written with grace, family and duas.
         </motion.p>

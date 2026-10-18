@@ -1,7 +1,5 @@
-import { invitationMotionSettings } from '../data/animationSettings.js';
-
 export function createPageTransition({
-  duration = invitationMotionSettings.transitionSeconds,
+  duration,
   visible = true,
   useBrightness = true,
   ease = 'easeInOut',

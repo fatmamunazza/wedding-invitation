@@ -13,9 +13,7 @@ import { weddingDetails } from '../data/weddingDetails.js';
 
 const BARAAT_SLIDE_INDEX = 3;
 const HALDI_SLIDE_INDEX = 2;
-const BARAAT_REVEAL_SECONDS = 4.2 + 0.8;
-const BARAAT_READING_PAUSE_SECONDS = 2;
-const PAPER_ROLL_DURATION_SECONDS = 2;
+const INVITATION_PAGE_KEYS = ['blessings', 'ceremony', 'haldi', 'baraat', 'closing'];
 const NIKAH_PETAL_SHOWER_DELAY_MS = 1000;
 const NIKAH_PETAL_SHOWER_DURATION_MS = 4000;
 const NIKAH_PETAL_COUNT = 100;
@@ -91,6 +89,7 @@ export default function WeddingInvitation() {
     <EventSection key="baraat" event={weddingDetails.events.baraat} />,
     <Footer key="closing" />
   ];
+  const activePageSettings = invitationMotionSettings.pages[INVITATION_PAGE_KEYS[activeSlide]];
 
   const goToSlide = useCallback((index) => {
     const nextIndex = Math.max(0, Math.min(index, slides.length - 1));
@@ -122,7 +121,7 @@ export default function WeddingInvitation() {
       paperRollTimerRef.current = window.setTimeout(() => {
         setActiveSlide(nextIndex);
         setPaperRollStarted(false);
-      }, PAPER_ROLL_DURATION_SECONDS * 1000);
+      }, invitationMotionSettings.pages.haldi.transitionSeconds * 1000);
       return;
     }
 
@@ -144,14 +143,11 @@ export default function WeddingInvitation() {
       return;
     }
 
-    const advanceDelaySeconds = activeSlide === BARAAT_SLIDE_INDEX
-      ? BARAAT_REVEAL_SECONDS + BARAAT_READING_PAUSE_SECONDS
-      : invitationMotionSettings.transitionSeconds + invitationMotionSettings.dwellSeconds;
     const timer = window.setTimeout(() => {
       goToSlide(activeSlide + 1);
-    }, advanceDelaySeconds * 1000);
+    }, activePageSettings.autoAdvanceSeconds * 1000);
     return () => window.clearTimeout(timer);
-  }, [opened, autoAdvance, activeSlide, slides.length, goToSlide]);
+  }, [opened, autoAdvance, activeSlide, activePageSettings.autoAdvanceSeconds, slides.length, goToSlide]);
 
   const updateMusicPlaying = (playing) => setMusicPlaying(playing);
   const pageTransitionProps = backgroundStage >= 2
@@ -163,10 +159,10 @@ export default function WeddingInvitation() {
       }
     : createPageTransition({
         duration: activeSlide === 0 && firstPageRevealStarted
-          ? 4
+          ? activePageSettings.introRevealSeconds
           : activeSlide === 0 && opened
-            ? 1
-            : invitationMotionSettings.transitionSeconds,
+            ? activePageSettings.openedRevealSeconds
+            : activePageSettings.transitionSeconds,
         visible: activeSlide !== 0 || firstPageRevealStarted,
         useBrightness: activeSlide !== 0,
         ease: activeSlide === 0 && firstPageRevealStarted
@@ -203,6 +199,7 @@ export default function WeddingInvitation() {
                 key={backgroundStage >= 2 ? 'nikah-scene' : activeSlide}
                 ref={invitationSlideRef}
                 className={`invitation-slide invitation-slide--background-${paperRollStarted ? rollingBackgroundStage : backgroundStage}${activeSlide === 0 ? ' invitation-slide--first-reveal' : ''}${paperRollStarted ? ' invitation-slide--folding' : ''}`}
+                style={{ '--paper-roll-duration': `${invitationMotionSettings.pages.haldi.transitionSeconds}s` }}
                 {...pageTransitionProps}
               >
                 {backgroundStage >= 2 ? (
@@ -213,7 +210,7 @@ export default function WeddingInvitation() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 1, ease: 'easeInOut' }}
+                      transition={{ duration: activePageSettings.transitionSeconds, ease: 'easeInOut' }}
                     >
                       {slides[activeSlide]}
                     </motion.div>

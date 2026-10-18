@@ -58,12 +58,12 @@ a { color: inherit; }
   .invitation-slide--background-1 { background-image: url('/assets/desktop-haldi-background.png'); }
   .invitation-slide--background-2 { background-image: url('/assets/nikah-desktop-background.png'); background-size: 100% 100%; }
 }
-.invitation-slide--folding { clip-path: inset(0); will-change: clip-path; animation: paper-page-roll 2s cubic-bezier(.65, 0, .35, 1) forwards; }
+.invitation-slide--folding { clip-path: inset(0); will-change: clip-path; animation: paper-page-roll var(--paper-roll-duration, 2s) cubic-bezier(.65, 0, .35, 1) forwards; }
 @keyframes paper-page-roll {
   from { clip-path: inset(0); }
   to { clip-path: inset(0 0 100% 0); }
 }
-.paper-roll-edge { position: absolute; z-index: 20; top: calc(100% - 42px); left: 0; width: 100%; height: 42px; border-top: 1px solid rgba(95, 62, 43, .3); background: linear-gradient(to bottom, rgba(86, 53, 35, .2), rgba(255, 250, 235, .12) 28%, rgba(58, 38, 28, .24)); box-shadow: 0 -5px 14px rgba(58, 38, 28, .12); pointer-events: none; animation: paper-roll-edge 2s cubic-bezier(.65, 0, .35, 1) both; }
+.paper-roll-edge { position: absolute; z-index: 20; top: calc(100% - 42px); left: 0; width: 100%; height: 42px; border-top: 1px solid rgba(95, 62, 43, .3); background: linear-gradient(to bottom, rgba(86, 53, 35, .2), rgba(255, 250, 235, .12) 28%, rgba(58, 38, 28, .24)); box-shadow: 0 -5px 14px rgba(58, 38, 28, .12); pointer-events: none; animation: paper-roll-edge var(--paper-roll-duration, 2s) cubic-bezier(.65, 0, .35, 1) both; }
 @keyframes paper-roll-edge {
   from { top: calc(100% - 42px); }
   to { top: 0; }
@@ -206,7 +206,7 @@ a { color: inherit; }
 .closing-blessing-state::-webkit-scrollbar { display:none; }
 @keyframes closing-blessing-out { to { opacity:0; filter:blur(8px); } }
 .closing-farewell-state { display:flex; flex:1 1 auto; min-height:0; flex-direction:column; justify-content:space-evenly; gap:8px; overflow-y:auto; position:absolute; z-index:2; inset:0; pointer-events:none; }
-.farewell-copy { position:absolute; top:50%; left:50%; display:flex; flex-direction:column; align-items:center; width:min(88%, 680px); transform:translate(-50%, -50%); text-align:center; opacity:0; filter:blur(8px); animation:farewell-copy-appear 1.2s ease-out 4.8s forwards; }
+.farewell-copy { position:absolute; top:50%; left:50%; display:flex; flex-direction:column; align-items:center; width:min(88%, 680px); transform:translate(-50%, -50%); text-align:center; opacity:0; filter:blur(8px); animation:farewell-copy-appear 3s ease-out 4.8s forwards; }
 .farewell-copy::-webkit-scrollbar { display:none; }
 @keyframes farewell-copy-appear { to { opacity:1; filter:blur(0); } }
 .farewell-names {margin:0; color:var(--color-rose); font-family:var(--font-display); font-size:var(--font-size-closing-names); }

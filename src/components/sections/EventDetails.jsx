@@ -16,8 +16,10 @@ export default function EventDetails({ event }) {
         whileInView={{ opacity: 1, filter: 'brightness(1)' }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{
-          duration: event.id === 'baraat' ? invitationMotionSettings.baraatTransitionSeconds : invitationMotionSettings.transitionSeconds,
-          delay: event.id === 'baraat' ? 4.2 : 0
+          duration: event.id === 'baraat'
+            ? invitationMotionSettings.pages.baraat.detailsRevealSeconds
+            : invitationMotionSettings.pages.haldi.transitionSeconds,
+          delay: event.id === 'baraat' ? invitationMotionSettings.pages.baraat.detailsRevealDelaySeconds : 0
         }}
       >
         <div className={`event-date${event.dateStyle === 'stacked' ? ' event-date--stacked' : ''}`}>

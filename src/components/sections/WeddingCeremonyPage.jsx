@@ -1,6 +1,7 @@
 import { invitationCopy } from '../../data/invitationCopy.js';
 import { weddingDetails } from '../../data/weddingDetails.js';
 import { DividerWithContent } from '../shared/utils.jsx';
+import GoldFloralDivider from '../shared/GoldFloralDivider.jsx';
 
 export default function WeddingCeremonyPage() {
   const { ceremony } = invitationCopy;
@@ -27,6 +28,7 @@ export default function WeddingCeremonyPage() {
             <p className="ceremony-relation">{weddingDetails.ceremony.groomRelation}</p>
             <p className="ceremony-address">{weddingDetails.ceremony.groomLocation}</p>
           </div>
+          <GoldFloralDivider color="#8c332f" />
         </div>
       </article>
     </section>

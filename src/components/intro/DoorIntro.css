@@ -73,8 +73,8 @@
 .welcome-intro__greeting {
   color: #693a08;
   font-family: var(--font-display, Georgia, serif);
-  font-weight: 900;
-  font-size: clamp(20px, 15vw, 35px);
+  font-weight: 300;
+  font-size: clamp(20px, 15vw, 20px);
   text-shadow: 0 2px 8px rgba(222, 177, 149, 0.75);
 }
 
