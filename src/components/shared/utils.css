@@ -74,12 +74,21 @@
 
 .wedding-divider {
   display: flex;
-  margin: 1px auto;
+  margin: 9px auto;
   align-items: center;
   justify-content: center;
   gap: 9px;
   width: min(100%, 290px);
   color: var(--wedding-gold);
+}
+
+.gold-floral-divider {
+  display: block;
+  width: min(100%, 600px);
+  aspect-ratio: 3000 / 416;
+  margin-bottom: 15px;
+  -webkit-mask: url('/assets/gold-mt-divider.svg') center / contain no-repeat;
+  mask: url('/assets/gold-mt-divider.svg') center / contain no-repeat;
 }
 
 .divider-line {
@@ -125,7 +134,7 @@
 .verse-arabic {
   margin: 0 auto 1px;
   font-family: "Amiri", "Times New Roman", serif;
-  font-size: clamp(20px, 1.8vw, 43px);
+  font-size: clamp(18px, 1.8vw, 43px);
   line-height: 1.8;
   color: var(--wedding-burgundy);
 }
@@ -142,7 +151,7 @@
 .verse-translation {
   max-width: 410px;
   margin: 0 auto;
-  font-size: clamp(20px, 3.6vw, 22px);
+  font-size: clamp(18px, 3.6vw, 22px);
   font-style: italic;
   line-height: 1.42;
   color: #8c4b45;
@@ -248,7 +257,7 @@
 
   .wedding-divider {
     width: min(100%, 230px);
-    margin: 1px auto;
+    margin: 9px auto;
   }
 
   .divider-flower {
@@ -257,7 +266,7 @@
   }
 
   .verse-reference {
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: .15em;
   }
 
@@ -288,8 +297,8 @@
   }
 
   .closing-line {
-    font-size: 15px;
-    margin: auto 25px;
+    font-size: 12px;
+    margin: auto 30px;
   }
 }
 

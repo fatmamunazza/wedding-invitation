@@ -6,7 +6,9 @@
   --color-rose: #8c332f;
   --color-rose-muted: #a95b54;
   --color-gold: #a98158;
-  --color-ink: #4d2927;
+  --color-ink: #0e0848;
+  --color-relation: #0f3a26;
+  --color-divider: #25a469;
   --color-app-background: #ead0ca;
   --color-page-background: #f0d4cf;
   --color-scene-background: #f0d1cb;
@@ -39,7 +41,7 @@
   --color-bouquet-shadow-two: #f1d6cf;
   /* Font families. Add a matching font import in styles.css when using a web font. */
   --font-body: 'Cormorant Garamond', Georgia, serif;
-  --font-display: 'Corinthia', cursive;
+  --font-display: 'Playball', cursive;
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-arabic: serif;
 
@@ -62,7 +64,7 @@
   --font-size-plaque-title: 32px;
   --font-size-event-title: 46px;
   --font-size-event-venue: 18px;
-  --font-size-closing-title: 34px;
+  --font-size-closing-title: 18px;
   --font-size-closing-names: 30px;
   --font-size-details-date: 21px;
   --font-size-details-year: 34px;

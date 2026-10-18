@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+<defs><linearGradient id="gold"><stop offset="0%" stop-color="#D4A94E"/><stop offset="20%" stop-color="#F5E6A6"/><stop offset="50%" stop-color="#B78D3E"/><stop offset="80%" stop-color="#E8C765"/><stop offset="100%" stop-color="#B78D3E"/></linearGradient></defs>
+<g fill="none" stroke="url(#gold)" stroke-width="1.8" stroke-linecap="round">
+<path d="M 8 102 C 25 88, 60 108, 118 105"/>
+<path d="M 282 105 C 340 108, 375 88, 392 102" />
+</g>
+<text x="200" y="118" text-anchor="middle" font-family="Great Vibes" font-size="58" fill="url(#gold)" font-style="italic">mt</text>
+</svg>

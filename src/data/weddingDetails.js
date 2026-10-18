@@ -20,19 +20,19 @@ export const weddingDetails = {
       date: '15 January 2027',
       time: '07:00 PM',
       dateParts: { day: '15', month: 'January', year: '2027' },
-      venue: "Bride's Home",
+      venue: "At Our Residence",
       address: 'Hamam Pandriba Lane, Patna, Bihar 800008',
       mapLink: 'https://maps.app.goo.gl/d1wmZdqVggx9MWCE7?g_st=iw'
     },
     baraat: {
       id: 'baraat',
-      title: 'Baraat',
+      title: 'Nikaah',
       date: '16 January 2027',
       time: '08:00 PM',
       dateParts: { day: '16', month: 'January', year: '2027' },
       dateStyle: 'stacked',
       venue: 'Parmeshwar Banquet Hall',
-      address: 'J52P+HF8, Kumhrar Gomti, Vachaspati Nagar, Sandalpur, Patna, Bihar 800006',
+      address: 'Kumhrar Gomti, Sandalpur, Patna, Bihar 800006',
       mapLink: 'https://maps.app.goo.gl/KysNQywZqKiAmdEx7'
     }
   }

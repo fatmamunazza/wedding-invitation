@@ -8,7 +8,7 @@ export default function EventDetails({ event }) {
   return (
     <div className={`event-details event-details--${event.id}`}>
       <div className="event-icon" aria-hidden="true">{icons[event.id]}</div>
-      <p className="event-inshaAllah">InshaAllah</p>
+      <p className="event-inshaAllah">إِنْ شَاءَٱللَّٰهُ</p>
       <h2>{event.title}</h2>
       <motion.div
         className="event-copy text-reveal"
@@ -21,11 +21,8 @@ export default function EventDetails({ event }) {
         }}
       >
         <div className={`event-date${event.dateStyle === 'stacked' ? ' event-date--stacked' : ''}`}>
-          <span>{event.dateParts.day}</span>
-          <strong>{event.dateParts.month}</strong>
-          <span>{event.dateParts.year}</span>
+          {event.dateParts.day} {event.dateParts.month} {event.dateParts.year}
         </div>
-        <div className="event-divider" />
         <p className="event-time">Time : {event.time}</p>
         <p className="event-venue">{event.venue}</p>
         <p className="event-address">{event.address}</p>
