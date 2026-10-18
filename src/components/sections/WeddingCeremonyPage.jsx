@@ -8,29 +8,29 @@ export default function WeddingCeremonyPage() {
 
   return (
     <section className="wedding-ceremony-page" aria-label="Wedding ceremony invitation">
-      <article className="ceremony-panel">
-        <div className="blessings-main">
+      <div className="ceremony-panel">
+        <div className="ceremony-main">
           <p className="ceremony-invitation-copy">{ceremony.invitationLines[0]}<br />{ceremony.invitationLines[1]}</p>
           <h1 className="ceremony-title">{ceremony.title}</h1>
           <DividerWithContent className="ceremony-divider">
             <p>OF</p>
-          </DividerWithContent>
-          <h2 className="ceremony-person-name">{weddingDetails.bride}</h2>
+          </DividerWithContent> 
           <div>
+            <h2 className="ceremony-person-name">{weddingDetails.bride}</h2>
             <p className="ceremony-relation">{weddingDetails.ceremony.brideRelation}</p>
             <p className="ceremony-address">{weddingDetails.ceremony.brideLocation}</p>
           </div>
           <DividerWithContent className="ceremony-divider2">
             <p>{ceremony.conjunction}</p>
           </DividerWithContent>
-          <h2 className="ceremony-person-name">{weddingDetails.groom}</h2>
           <div>
+            <h2 className="ceremony-person-name">{weddingDetails.groom}</h2>
             <p className="ceremony-relation">{weddingDetails.ceremony.groomRelation}</p>
             <p className="ceremony-address">{weddingDetails.ceremony.groomLocation}</p>
           </div>
-          <GoldFloralDivider color="#8c332f" />
         </div>
-      </article>
+        <GoldFloralDivider color="#8c332f" />
+      </div>
     </section>
   );
 }

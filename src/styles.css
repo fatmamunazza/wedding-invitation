@@ -115,10 +115,20 @@ a { color: inherit; }
   color:var(--color-rose);
   background:transparent;
 }
-.ceremony-panel { position:relative; z-index:3; width:min(88%, 560px); max-height:calc(100% - 30px); overflow-y:auto; padding:clamp(14px, 2.5svh, 24px) clamp(18px, 5vw, 38px); text-align:center; scrollbar-width:none; }
+.ceremony-panel { height: 100%; position:relative; z-index:3; width:min(88%, 560px); max-height:calc(100% - 30px); overflow-y:auto; padding:clamp(14px, 2.5svh, 24px) clamp(18px, 5vw, 38px); text-align:center; scrollbar-width:none; 
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 8px;
+    overflow-y: auto;
+    align-items: center;
+  }
 .ceremony-panel p { margin:0; }
 .ceremony-bismillah { margin-bottom:5px!important; font-family:var(--font-arabic); font-size:var(--font-size-ceremony-arabic); color:var(--color-rose); }
 .ceremony-blessing { font-family:var(--font-body); font-size:var(--font-size-ceremony-copy); line-height:1.2; }
+.ceremony-main { margin:30px auto 30px; display:flex; flex:1 1 auto; min-height:0; flex-direction:column; justify-content:space-evenly; gap:8px; overflow-y:auto; }
 .ceremony-invitation-copy { margin-top:10px!important; font-size:var(--font-size-ceremony-copy); line-height:1.2; color:var(--color-ink); }
 .ceremony-title { margin:5px 0 1px; color:var(--color-ink); font-family:var(--font-heading); font-size:var(--font-size-ceremony-title); font-weight:500; }
 .ceremony-divider { margin:5px 0!important; font-family:var(--font-heading); font-size:var(--font-size-eyebrow); letter-spacing:.22em; color:var(--color-divider); font-weight:600; }
@@ -287,7 +297,7 @@ a { color: inherit; }
   .wedding-details-bismillah { margin-bottom:10px; }
   .wedding-details-item { gap:3px; margin-top:10px; }
   .blessings-arabic { margin-bottom: 25px;}
-  .ceremony-panel { max-height:calc(100% - 88px); padding:15px 50px; }
+  .ceremony-panel { max-height:calc(100% - 88px); padding:55px 50px 25px; }
   .ceremony-blessing, .ceremony-invitation-copy, .ceremony-relation, .ceremony-address { line-height:1.1; }
   .farewell-copy { max-height:calc(100% - 170px); overflow-y:auto; }
 }
