@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from 'react';
-import '../../animations/invitationAnimations.css';
 
 const PETAL_COUNT = 100;
 

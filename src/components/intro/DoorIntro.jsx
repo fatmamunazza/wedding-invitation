@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
 import { invitationCopy } from '../../data/invitationCopy.js';
 import { resolveGuest } from '../../services/guestResolver.js';
-import './DoorIntro.css';
 
 const MOBILE_WELCOME_IMAGE = '/assets/WelcomeCard.jpeg';
 const DESKTOP_WELCOME_IMAGE = '/assets/welcomeCardDesktop.png';

@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import '../../animations/invitationAnimations.css';
 
 export default function InvitationSlide({
   activeSlide,

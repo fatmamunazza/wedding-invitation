@@ -1,0 +1,30 @@
+.hero-copy { padding: 90px 18px 70px; }
+.hero-copy .arabic-mark { margin-bottom: 18px; font-size: var(--font-size-arabic-large); }
+.script-small { font-family: var(--font-display); font-size: var(--font-size-script); color: var(--rose); margin: 7px 0; }
+.guest-greeting, .parents-line { font-family: var(--font-display); font-weight:400; font-size: var(--font-size-greeting); color: var(--rose); margin: 0 0 16px; line-height: .95; }
+.parents-line span, .couple-display span, .closing-names span { font-family:var(--font-body); font-style:italic; }
+.ornament-rule { color: var(--gold); display:flex; align-items:center; gap:8px; justify-content:center; margin: 12px 0 20px; }
+.ornament-rule::before, .ornament-rule::after { content:''; height:1px; width: 68px; background:linear-gradient(90deg, transparent, var(--line)); }
+.ornament-rule::after { background:linear-gradient(90deg, var(--line), transparent); }
+.hero-intro { margin:0 auto 13px; max-width:340px; font-size: var(--font-size-body); }
+.couple-display { font-family:var(--font-display); font-weight:400; color:var(--rose); font-size: var(--font-size-couple); line-height:1.02; margin:0; }
+.couple-display small { display:block; font-family:var(--font-body); font-size:var(--font-size-small); letter-spacing:.2em; margin-top:6px; }
+
+.couple-card { padding: 80px 15px 65px; }
+.plaque { border:1px solid var(--color-border-gold); background:var(--color-surface-card); padding:18px 16px 12px; max-width:430px; margin:0 auto; box-shadow:0 16px 40px var(--color-shadow-card); }
+.plaque h2 { font-family:var(--font-display); font-weight:400; font-size:var(--font-size-plaque-title); color:var(--rose); margin:0; }
+.tiny-rule { color:var(--gold); letter-spacing:.1em; margin:3px 0; }
+.couple-illustration { height:360px; max-width:380px; margin: 0 auto; position:relative; }
+.couple-illustration::before { content:''; position:absolute; left:50%; bottom:15px; width:260px; height:170px; transform:translateX(-50%); border-radius:50%; background:var(--color-surface-illustration); filter:blur(8px); }
+.bride, .groom { position:absolute; bottom:28px; }
+.bride { left:18%; width:45%; height:260px; }
+.groom { right:14%; width:39%; height:255px; }
+.bride-head, .groom-head { position:absolute; border-radius:50%; background:var(--color-bride-skin); z-index:3; }
+.bride-head { width:53px; height:62px; top:27px; left:47px; }
+.groom-head { width:58px; height:65px; top:24px; left:25px; background:var(--color-groom-skin); }
+.veil { position:absolute; top:10px; left:18px; width:115px; height:178px; border-radius:55% 55% 22% 22%; background:var(--color-veil); border:1px solid var(--color-veil-border); transform:rotate(6deg); }
+.bride-body { position:absolute; left:26px; top:82px; width:95px; height:188px; background:linear-gradient(110deg,var(--color-bride-dress-shadow),var(--color-bride-dress-light) 52%,var(--color-bride-dress)); clip-path:polygon(25% 0,72% 0,100% 100%,0 100%); border-radius:30px 30px 4px 4px; }
+.groom-body { position:absolute; left:10px; top:82px; width:92px; height:182px; background:var(--color-groom-suit); clip-path:polygon(18% 0,82% 0,100% 100%,0 100%); border-radius:12px 12px 4px 4px; }
+.lapel { position:absolute; left:36px; top:88px; width:40px; height:88px; border-left:2px solid var(--color-lapel); border-right:2px solid var(--color-lapel); transform:skewY(18deg); }
+.bouquet { position:absolute; z-index:5; right:-4px; top:145px; width:47px; height:40px; border-radius:50%; background:var(--color-bouquet); box-shadow: -12px 8px 0 var(--color-bouquet-shadow-one), 8px 10px 0 var(--color-bouquet-shadow-two); }
+.couple-note { max-width:340px; margin:0 auto; font-size:var(--font-size-body); }

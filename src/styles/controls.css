@@ -1,0 +1,23 @@
+.slide-controls {
+  position: absolute;
+  z-index: 25;
+  left: 50%;
+  bottom: max(10px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  border: 1px solid var(--color-border-navigation);
+  border-radius: 999px;
+  background: var(--color-surface-navigation);
+  color: var(--rose);
+  box-shadow: 0 5px 20px var(--color-shadow-control);
+  backdrop-filter: blur(10px);
+}
+.slide-controls button { width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent; color: inherit; font-size: var(--font-size-control-icon); cursor: pointer; }
+.slide-controls button:disabled { opacity: .35; cursor: default; }
+.slide-controls span { min-width: 42px; text-align: center; font-family: var(--font-heading); font-size: var(--font-size-control-count); }
+.music-control { position:fixed; z-index:20; right:14px; top:14px; width:42px; height:42px; border-radius:50%; border:1px solid var(--color-border-rose-strong); background:var(--color-surface-music); color:var(--rose); backdrop-filter:blur(10px); cursor:pointer; box-shadow:0 5px 20px var(--color-shadow-music); }
+.music-control .is-playing { display:inline-block; animation:spin 1.5s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }

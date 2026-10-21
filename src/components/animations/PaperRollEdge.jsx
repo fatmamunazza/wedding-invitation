@@ -1,5 +1,3 @@
-import '../../animations/invitationAnimations.css';
-
 export default function PaperRollEdge({ durationSeconds }) {
   return (
     <div

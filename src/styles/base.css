@@ -1,0 +1,68 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--color-page-background);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+button, a { font: inherit; }
+a { color: inherit; }
+.wedding-app {
+  min-height: 100svh;
+  height: 100svh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: var(--color-app-background);
+  background-image: var(--invitation-background-image);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.invitation-content { position: relative; }
+
+.mini-arabesque, .arabic-mark { font-family: var(--font-arabic); color: var(--rose); font-size: var(--font-size-arabic); margin:3dvh; }
+.eyebrow { text-transform: uppercase; letter-spacing: .23em; font-size: var(--font-size-eyebrow); color: var(--rose-soft); margin: 0 0 18px; }
+
+.section-pad { padding: 0; }
+.invitation-content { height: 100svh; height: 100dvh; overflow: hidden; }
+.wedding-app--haldi { background-image: url('/assets/mobile-haldi-background.jpg'); background-size: cover; background-position: center; }
+.wedding-app--nikah { background-image: url('/assets/nikah-mobile-background.jpg'); background-size: cover; background-position: center; }
+@media (min-width: 700px) {
+  .wedding-app--haldi { background-image: url('/assets/desktop-haldi-background.png'); }
+  .wedding-app--nikah {
+    background-image: url('/assets/nikah-desktop-background.png');
+    background-size: 100% 100%;
+  }
+}
+.invitation-stage { position: relative; width: 100%; height: 100%; overflow: hidden; isolation: isolate; perspective: 1400px; }
+.invitation-slide { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; }
+.invitation-content-transition { position: absolute; inset: 0; width: 100%; height: 100%; }
+.invitation-slide--background-0,
+.invitation-slide--first-reveal { background-color: var(--color-app-background); background-image: var(--invitation-background-image); background-position: center; background-repeat: no-repeat; background-size: 100% 100%; }
+.invitation-slide--background-1 { background: url('/assets/mobile-haldi-background.jpg') center / cover no-repeat; }
+.invitation-slide--background-2 { background: url('/assets/nikah-mobile-background.jpg') center / cover no-repeat; }
+@media (min-width: 700px) {
+  .invitation-slide--background-1 { background-image: url('/assets/desktop-haldi-background.png'); }
+  .invitation-slide--background-2 { background-image: url('/assets/nikah-desktop-background.png'); background-size: 100% 100%; }
+}
+.invitation-slide > section, .invitation-slide > footer,
+.invitation-content-transition > section, .invitation-content-transition > footer { position: absolute; inset: 0; display: flex; justify-content: center; height: 100%; overflow: hidden; text-align: center; }
+.invitation-slide > .event-section,
+.invitation-content-transition > .event-section { align-items: flex-start; }
+.invitation-slide .hero-copy, .invitation-slide .couple-card, .invitation-slide .event-card, .invitation-slide .closing-copy {
+  position: relative;
+  z-index: 4;
+  width: min(92%, 680px);
+  max-height: calc(100% - 76px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  text-align: center;
+}
+.invitation-slide > .event-section > .event-card,
+.invitation-content-transition > .event-section > .event-card { margin: 0 auto; }
+.invitation-slide .hero-copy::-webkit-scrollbar, .invitation-slide .couple-card::-webkit-scrollbar, .invitation-slide .event-card::-webkit-scrollbar, .invitation-slide .closing-copy::-webkit-scrollbar { display: none; }
+.invitation-slide .text-reveal { will-change: opacity, filter; }
+.ornate-scene { min-height: 100svh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.scene-content { position: relative; z-index: 4; width: min(92%, 680px); text-align:center; }

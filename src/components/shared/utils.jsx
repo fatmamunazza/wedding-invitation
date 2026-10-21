@@ -1,5 +1,3 @@
-import "./utils.css";
-
 export function FloralDivider() {
   return (
     <div className="wedding-divider" aria-hidden="true">

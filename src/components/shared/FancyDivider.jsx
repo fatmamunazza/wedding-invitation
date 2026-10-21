@@ -1,5 +1,4 @@
 import React from 'react';
-import './utils.css';
 
 // FancyDivider.jsx
 export default function FancyDivider({ 

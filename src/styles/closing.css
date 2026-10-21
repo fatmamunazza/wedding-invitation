@@ -1,0 +1,22 @@
+.closing-section { position:relative; margin: 40px; }
+.closing-artwork { position:absolute; z-index:0; top:74%; left:50%; width:min(70vw, 480px); max-height:58dvh; object-fit:contain; opacity:1; filter:none; pointer-events:none; transform:translate(-50%, -50%) scale(.9); animation:closing-artwork-center 1.6s ease-in-out 4s forwards; }
+@keyframes closing-artwork-center {
+  to { top:50%; filter:blur(3px); transform:translate(-50%, -50%) scale(1); }
+}
+.closing-blessing-state {position:relative; margin-top:5dvh; z-index:1; width:min(88%, 680px); max-height:calc(100% - 100px); overflow-y:auto; text-align:center; scrollbar-width:none; animation:closing-blessing-out 2s ease-in 4s forwards; }
+.closing-blessing-state::-webkit-scrollbar { display:none; }
+@keyframes closing-blessing-out { to { opacity:0; filter:blur(8px); } }
+.closing-farewell-state { display:flex; flex:1 1 auto; min-height:0; flex-direction:column; justify-content:space-evenly; gap:8px; overflow-y:auto; position:absolute; z-index:2; inset:0; pointer-events:none; }
+.farewell-copy { position:absolute; top:50%; left:50%; display:flex; flex-direction:column; align-items:center; width:min(88%, 680px); transform:translate(-50%, -50%); text-align:center; opacity:0; filter:blur(8px); animation:farewell-copy-appear 3s ease-out 4.8s forwards; }
+.farewell-copy::-webkit-scrollbar { display:none; }
+@keyframes farewell-copy-appear { to { opacity:1; filter:blur(0); } }
+.farewell-names {margin:0; color:var(--color-rose); font-family:var(--font-display); font-size:var(--font-size-closing-names); }
+.farewell-blessing { max-width:600px; color: #073f16;font-weight:900; font-family:var(--font-body); font-size:var(--font-size-body); line-height:1.25; }
+.farewell-signoff { position:absolute; left:50%; bottom:calc(24px + env(safe-area-inset-bottom)); display:flex; flex-direction:column; align-items:center; gap:6px; width:min(88%, 680px); transform:translateX(-50%); text-align:center; opacity:0; filter:blur(8px); margin-bottom: 15dvh; animation:farewell-copy-appear 1s ease-out 5.2s forwards; }
+.closing-copy { position:relative; z-index:1; padding:0; max-width:520px; margin:auto; text-align:center; }
+.closing-copy h2 { font-family:var(--font-display); font-weight:400; color:var(--rose); font-size:var(--font-size-closing-title); line-height:1.05; margin:12px 0; }
+.duas { font-size:var(--font-size-body); }
+.closing-names { font-family:var(--font-display); color:var(--rose); font-size:var(--font-size-closing-names); margin:22px 0 0; }
+.closing-copy small { letter-spacing:.16em; }
+.closing-farewell { margin:0; color:var(--color-rose);font-weight:900; font-family:var(--font-display); font-size:var(--font-size-closing-title); text-align:center; }
+.farewell-message { max-width:600px; margin:0; color: #073f16;font-weight:900; font-family:var(--font-body); font-size:var(--font-size-small); line-height:1.25; }
