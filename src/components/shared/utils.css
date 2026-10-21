@@ -25,7 +25,7 @@
   align-items: center;
   padding: clamp(16px, 4vw, 44px);
   color: var(--wedding-burgundy);
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-body);
 }
 
 .wedding-card {
@@ -66,8 +66,8 @@
 
 .bismillah {
   margin: 0;
-  font-family: "Amiri", "Times New Roman", serif;
-  font-size: clamp(30px, 5.2vw, 43px);
+  font-family: var(--font-arabic-script);
+  font-size: var(--font-size-wedding-bismillah);
   line-height: 1.65;
   color: var(--wedding-burgundy);
 }
@@ -133,8 +133,8 @@
 
 .verse-arabic {
   margin: 0 auto 1px;
-  font-family: "Amiri", "Times New Roman", serif;
-  font-size: 4dvw;
+  font-family: var(--font-arabic-script);
+  font-size: var(--font-size-quran-arabic);
   line-height: 1.8;
   color: #8a0c01;
 }
@@ -142,8 +142,8 @@
 .verse-reference {
   margin: 0 0 1px;
   color: #281600;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 2.5dvw;
+  font-family: var(--font-body);
+  font-size: var(--font-size-quran-reference);
   font-weight: 600;
   letter-spacing: .22em;
 }
@@ -151,7 +151,7 @@
 .verse-translation {
   max-width: 410px;
   margin: 0 auto;
-  font-size: 5dvw;
+  font-size: var(--font-size-quran-translation);
   font-style: italic;
   font-weight: 600;
   line-height: 1.42;
@@ -160,7 +160,7 @@
 
 .blessing-text {
   margin: 26px auto 30px;
-  font-size: clamp(17px, 3.2vw, 22px);
+  font-size: var(--font-size-blessing-copy);
   line-height: 1.5;
   letter-spacing: .015em;
 }
@@ -193,7 +193,7 @@
 .monogram-m,
 .monogram-t {
   position: absolute;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-body);
   font-weight: 400;
   line-height: 1;
   text-shadow: 0 1px 0 rgba(255,255,255,.7);
@@ -202,13 +202,13 @@
 .monogram-m {
   left: 29px;
   top: 28px;
-  font-size: 72px;
+  font-size: var(--font-size-monogram-m);
 }
 
 .monogram-t {
   right: 26px;
   bottom: 25px;
-  font-size: 67px;
+  font-size: var(--font-size-monogram-t);
 }
 
 .monogram-sprig {
@@ -228,7 +228,7 @@
   max-width: 360px;
   margin: 18px auto 0;
   color: #9b7545;
-  font-size: 17px;
+  font-size: var(--font-size-closing-line);
   font-style: italic;
   line-height: 1.4;
 }
@@ -267,7 +267,7 @@
   }
 
   .verse-reference {
-    font-size: 10px;
+    font-size: var(--font-size-quran-reference-mobile);
     letter-spacing: .15em;
   }
 
@@ -288,17 +288,17 @@
   .monogram-m {
     left: 25px;
     top: 26px;
-    font-size: 61px;
+    font-size: var(--font-size-monogram-m-mobile);
   }
 
   .monogram-t {
     right: 22px;
     bottom: 22px;
-    font-size: 57px;
+    font-size: var(--font-size-monogram-t-mobile);
   }
 
   .closing-line {
-    font-size: 12px;
+    font-size: var(--font-size-closing-line-mobile);
     margin: auto 30px;
   }
 }

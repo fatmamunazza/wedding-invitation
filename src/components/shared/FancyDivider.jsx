@@ -1,4 +1,5 @@
 import React from 'react';
+import './utils.css';
 
 // FancyDivider.jsx
 export default function FancyDivider({ 
@@ -89,8 +90,8 @@ export default function FancyDivider({
           x="200"
           y="125"
           textAnchor="middle"
-          fontFamily="'Great Vibes', 'Allura', cursive"
-          fontSize="70"
+          fontFamily="var(--font-monogram)"
+          fontSize="var(--font-size-fancy-divider)"
           fill="url(#goldGradient)"
           style={{ fontStyle: 'italic', fontWeight: 400 }}
         >

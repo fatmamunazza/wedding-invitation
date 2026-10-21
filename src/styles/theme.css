@@ -1,8 +1,5 @@
 :root {
   /* Brand palette */
-  --color-paper: #fff9f3;
-  --color-blush: #f3d6d0;
-  --color-blush-deep: #e8b6ad;
   --color-rose: #8c332f;
   --color-rose-muted: #a95b54;
   --color-gold: #a98158;
@@ -11,19 +8,16 @@
   --color-divider: #25a469;
   --color-app-background: #ead0ca;
   --color-page-background: #f0d4cf;
-  --color-scene-background: #f0d1cb;
   --color-line: rgba(140, 51, 47, .28);
   --color-border-rose: rgba(140, 51, 47, .35);
   --color-border-rose-strong: rgba(140, 51, 47, .45);
   --color-border-gold: rgba(169, 129, 88, .45);
-  --color-surface-opening: rgba(255, 249, 243, .65);
   --color-surface-card: rgba(255, 249, 243, .56);
   --color-surface-control: rgba(255, 255, 255, .72);
   --color-surface-music: rgba(255, 249, 243, .75);
   --color-surface-navigation: rgba(255, 249, 243, .88);
   --color-surface-illustration: rgba(255, 255, 255, .65);
   --color-border-navigation: rgba(140, 51, 47, .25);
-  --color-shadow-soft: rgba(92, 44, 40, .10);
   --color-shadow-card: rgba(91, 47, 42, .07);
   --color-shadow-control: rgba(60, 20, 15, .12);
   --color-shadow-music: rgba(60, 20, 15, .10);
@@ -44,12 +38,13 @@
   --font-display: 'Playball', cursive;
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-arabic: serif;
+  --font-arabic-script: 'Amiri', 'Times New Roman', serif;
+  --font-monogram: 'Great Vibes', 'Allura', cursive;
 
   /* Mobile-first type scale; tablet and desktop overrides follow below. */
   --font-size-body: 4dvw;
   --font-size-small: 4.3dvw;
   --font-size-eyebrow: 4dvw;
-  --font-size-hint: 12px;
   --font-size-arabic: 8dvw;
   --font-size-arabic-large: 35px;
   --font-size-script: 5dvw;
@@ -73,80 +68,31 @@
   --font-size-ceremony-copy: 4dvw;
   --font-size-ceremony-title: 6dvw;
   --font-size-ceremony-name: 8dvw;
+  --font-size-door-greeting: 7dvw;
+  --font-size-door-guest: clamp(16px, 10vw, 22px);
+  --font-size-door-label: 5dvw;
+  --font-size-event-title-slide: 12dvw;
+  --font-size-event-invocation: 11dvw;
+  --font-size-quran-arabic: 4dvw;
+  --font-size-quran-reference: 2.5dvw;
+  --font-size-quran-reference-mobile: 10px;
+  --font-size-quran-translation: 5dvw;
+  --font-size-wedding-bismillah: clamp(30px, 5.2vw, 43px);
+  --font-size-blessing-copy: clamp(17px, 3.2vw, 22px);
+  --font-size-monogram-m: 72px;
+  --font-size-monogram-m-mobile: 61px;
+  --font-size-monogram-t: 67px;
+  --font-size-monogram-t-mobile: 57px;
+  --font-size-closing-line: 17px;
+  --font-size-closing-line-mobile: 12px;
+  --font-size-fancy-divider: 70px;
   /* Responsive artwork fills the viewport without cropping. */
   --invitation-background-image: url('/assets/mobile-background.jpeg');
 
   /* Compatibility aliases used by the existing component stylesheet. */
-  --ivory: var(--color-paper);
-  --blush: var(--color-blush);
-  --blush-deep: var(--color-blush-deep);
   --rose: var(--color-rose);
   --rose-soft: var(--color-rose-muted);
   --gold: var(--color-gold);
   --ink: var(--color-ink);
   --line: var(--color-line);
 }
-
-/* @media (max-width: 380px) {
-  :root {
-    --font-size-greeting: 36px;
-    --font-size-couple: 34px;
-    --font-size-event-title: 42px;
-    --font-size-ceremony-copy: 12px;
-    --font-size-ceremony-name: 31px;
-  }
-} */
-/* 
-@media (min-width: 700px) {
-  :root {
-    --invitation-background-image: url('/assets/desktop-background.png');
-    --font-size-body: 18px;
-    --font-size-small: 16px;
-    --font-size-greeting: 44px;
-    --font-size-couple: 42px;
-    --font-size-plaque-title: 36px;
-    --font-size-event-title: 50px;
-    --font-size-event-venue: 20px;
-    --font-size-closing-title: 38px;
-    --font-size-closing-names: 33px;
-    --font-size-details-date: 23px;
-    --font-size-details-year: 38px;
-    --font-size-details-label: 17px;
-    --font-size-ceremony-arabic: 23px;
-    --font-size-ceremony-copy: 14px;
-    --font-size-ceremony-title: 26px;
-    --font-size-ceremony-name: 38px;
-  }
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --font-size-body: 21px;
-    --font-size-small: 18px;
-    --font-size-eyebrow: 12px;
-    --font-size-hint: 14px;
-    --font-size-arabic: 40px;
-    --font-size-arabic-large: 44px;
-    --font-size-script: 32px;
-    --font-size-event-icon: 30px;
-    --font-size-event-date: 22px;
-    --font-size-event-date-emphasis: 28px;
-    --font-size-control: 17px;
-    --font-size-control-icon: 23px;
-    --font-size-control-count: 16px;
-    --font-size-greeting: 60px;
-    --font-size-couple: 58px;
-    --font-size-plaque-title: 44px;
-    --font-size-event-title: 68px;
-    --font-size-event-venue: 26px;
-    --font-size-closing-title: 50px;
-    --font-size-closing-names: 42px;
-    --font-size-details-date: 30px;
-    --font-size-details-year: 48px;
-    --font-size-details-label: 22px;
-    --font-size-ceremony-arabic: 34px;
-    --font-size-ceremony-copy: 20px;
-    --font-size-ceremony-title: 36px;
-    --font-size-ceremony-name: 54px;
-  }
-} */

@@ -73,16 +73,16 @@
 
 .welcome-intro__greeting {
   color: #693a08;
-  font-family: var(--font-display, Georgia, serif);
+  font-family: var(--font-display);
   font-weight: 300;
-  font-size: 7dvw;
+  font-size: var(--font-size-door-greeting);
   text-shadow: 0 2px 8px rgba(222, 177, 149, 0.75);
 }
 
 .welcome-intro__guest {
   color: #461003;
-  font-family: var(--font-heading, Georgia, serif);
-  font-size: clamp(16px, 10vw, 22px);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-door-guest);
   text-shadow: 0 2px 8px rgba(169, 149, 139, 0.75);
 }
 
@@ -104,8 +104,8 @@
   background: rgba(91, 45, 21, .66);
   box-shadow: 0 3px 14px rgba(77, 35, 11, .24);
   color: #fff3d7;
-  font-family: var(--font-heading, Georgia, serif);
-  font-size: 5dvw;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-door-label);
   letter-spacing: .07em;
   text-shadow: 0 1px 5px rgba(55, 25, 9, .55);
 }

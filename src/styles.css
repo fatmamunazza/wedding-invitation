@@ -165,7 +165,7 @@ a { color: inherit; }
 .event-details--baraat { margin-top: 4dvh; }
 .event-icon { width:54px; height:54px; border:1px solid var(--color-border-gold); border-radius:50%; margin:0 auto 5px; display:grid; place-items:center; color:var(--rose); font-size:var(--font-size-event-icon); background:var(--color-surface-card); }
 .event-card h2 { font-family:var(--font-display); font-size:var(--font-size-event-title); font-weight:400; color:var(--rose); margin:2px 0 0; }
-.event-inshaAllah { margin:15px 0 10px; color:var(--color-gold); font-family:var(--font-display); font-size:11dvw; }
+.event-inshaAllah { margin:15px 0 10px; color:var(--color-gold); font-family:var(--font-display); font-size:var(--font-size-event-invocation); }
 .event-date { display:flex; align-items:baseline; justify-content:center; gap:12px; color:var(--rose); font-family: var(--font-heading);
     font-size: var(--font-size-details-label)}
 .event-date span { font-size:var(--font-size-event-date); }
@@ -217,7 +217,7 @@ a { color: inherit; }
 .invitation-slide .couple-note { font-size: var(--font-size-small); }
 .invitation-slide .event-card { padding: 4dvh 3dvw; }
 .invitation-slide .event-icon { width: 35px; height: 35px; }
-.invitation-slide .event-card h2 { font-size: 12dvw; }
+.invitation-slide .event-card h2 { font-size: var(--font-size-event-title-slide); }
 .invitation-slide .event-divider { margin: 12px auto; }
 .invitation-slide .event-venue { font-size: var(--font-size-event-venue); }
 .invitation-slide .event-address { font-size: var(--font-size-eyebrow); margin: 0 55px 12px; }
