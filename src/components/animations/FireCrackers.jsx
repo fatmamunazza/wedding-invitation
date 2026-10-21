@@ -38,9 +38,14 @@ export default function Firecracker({ autoPlay = true }) {
       }
       draw() {
         ctx.globalAlpha = this.life;
-        ctx.fillStyle = this.color;
+        const particleGradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, 3.2);
+        particleGradient.addColorStop(0, '#fffef5');
+        particleGradient.addColorStop(0.28, '#fff0a8');
+        particleGradient.addColorStop(0.62, this.color);
+        particleGradient.addColorStop(1, 'rgba(255, 184, 48, 0)');
+        ctx.fillStyle = particleGradient;
         ctx.shadowBlur = 12;
-        ctx.shadowColor = this.color;
+        ctx.shadowColor = '#ffd76a';
         ctx.beginPath();
         ctx.arc(this.x, this.y, 3.2, 0, Math.PI * 2);
         ctx.fill();
@@ -48,8 +53,7 @@ export default function Firecracker({ autoPlay = true }) {
       }
     }
 
-    // const colors = ['#D2A188', '#FFD700', '#FF8FA3', '#C2185B', '#FFF5E1'];
-    const colors = [ '#FFD700', '#E8C765', '#B78D3E', '#F5DE9A','#dab673','#D4A94E'];
+    const colors = ['#fff3b0', '#ffd84d', '#e8b84f', '#d99a32', '#f5de9a', '#FFD700'];
 
     const explode = (x, y) => {
       for (let i = 0; i < 60; i++) {

@@ -3,6 +3,7 @@ import { weddingDetails } from '../../data/weddingDetails.js';
 import ClosingFireworks from '../animations/ClosingFireworks.jsx';
 import {QuranVerse, FloralDivider} from '../shared/utils.jsx';
 import Firecracker from '../animations/FireCrackers.jsx';
+import ColdSparkFountain from '../animations/ColdSparkFountain.jsx';
 export default function Footer() {
   const { closing } = invitationCopy;
 
@@ -39,6 +40,9 @@ export default function Footer() {
       </div>
       <ClosingFireworks />
       <Firecracker autoPlay={true} />
+      <ColdSparkFountain x="20%" density={4} height={320} />
+      <ColdSparkFountain x="80%" density={4} height={320} />
+
     </footer>
   );
 }
