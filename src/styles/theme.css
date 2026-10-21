@@ -133,5 +133,168 @@
     --font-size-quran-arabic: 24px;
     --font-size-quran-reference: 12px;
     --font-size-quran-translation: 20px;
+    --font-size-wedding-bismillah: 36px;
+    --font-size-blessing-copy: 18px;
+    --font-size-monogram-m: 62px;
+    --font-size-monogram-t: 58px;
+    --font-size-fancy-divider: 60px;
+    --font-size-door-guest: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --font-size-arabic: 34px;
+    --font-size-arabic-large: 38px;
+    --font-size-script: 28px;
+    --font-size-event-icon: 26px;
+    --font-size-event-date: 20px;
+    --font-size-event-date-emphasis: 25px;
+    --font-size-control-icon: 21px;
+    --font-size-greeting: 38px;
+    --font-size-couple: 38px;
+    --font-size-plaque-title: 32px;
+    --font-size-event-title: 44px;
+    --font-size-event-venue: 18px;
+    --font-size-closing-title: 34px;
+    --font-size-closing-names: 30px;
+    --font-size-details-date: 21px;
+    --font-size-details-year: 34px;
+    --font-size-ceremony-arabic: 21px;
+    --font-size-ceremony-title: 24px;
+    --font-size-ceremony-name: 34px;
+    --font-size-door-greeting: 38px;
+    --font-size-door-label: 16px;
+    --font-size-event-title-slide: 42px;
+    --font-size-event-invocation: 30px;
+    --font-size-quran-arabic: 22px;
+    --font-size-quran-translation: 18px;
+  }
+}
+
+/* Narrow, tall phones need tighter display type than wider phones. */
+@media (max-width: 480px) and (min-height: 780px) and (max-aspect-ratio: 3/5) {
+  :root {
+    --font-size-body: 15px;
+    --font-size-small: 16px;
+    --font-size-eyebrow: 12px;
+    --font-size-arabic: 30px;
+    --font-size-arabic-large: 32px;
+    --font-size-script: 22px;
+    --font-size-event-icon: 22px;
+    --font-size-event-date: 16px;
+    --font-size-event-date-emphasis: 20px;
+    --font-size-control: 15px;
+    --font-size-control-icon: 20px;
+    --font-size-control-count: 13px;
+    --font-size-greeting: 34px;
+    --font-size-couple: 34px;
+    --font-size-plaque-title: 28px;
+    --font-size-event-title: 38px;
+    --font-size-event-venue: 26px;
+    --font-size-closing-title: 30px;
+    --font-size-closing-names: 36px;
+    --font-size-details-date: 19px;
+    --font-size-details-year: 30px;
+    --font-size-details-label: 18px;
+    --font-size-ceremony-arabic: 30px;
+    --font-size-ceremony-copy: 15px;
+    --font-size-ceremony-title: 24px;
+    --font-size-ceremony-name: 34px;
+    --font-size-door-greeting: 34px;
+    --font-size-door-guest: 18px;
+    --font-size-door-label: 16px;
+    --font-size-event-title-slide: 38px;
+    --font-size-event-invocation: 32px;
+    --font-size-quran-arabic: 20px;
+    --font-size-quran-reference: 10px;
+    --font-size-quran-translation: 17px;
+    --font-size-wedding-bismillah: 30px;
+    --font-size-blessing-copy: 17px;
+    --font-size-monogram-m: 64px;
+    --font-size-monogram-t: 58px;
+    --font-size-fancy-divider: 60px;
+  }
+}
+
+/* Tablets use a compact scale instead of inheriting mobile viewport sizing. */
+@media (min-width: 700px) and (max-width: 1199px) {
+  :root {
+    --font-size-body: 16px;
+    --font-size-small: 15px;
+    --font-size-arabic: 34px;
+    --font-size-arabic-large: 38px;
+    --font-size-script: 28px;
+    --font-size-event-icon: 26px;
+    --font-size-event-date: 20px;
+    --font-size-event-date-emphasis: 25px;
+    --font-size-greeting: 38px;
+    --font-size-couple: 36px;
+    --font-size-plaque-title: 32px;
+    --font-size-event-title: 44px;
+    --font-size-event-venue: 18px;
+    --font-size-closing-title: 34px;
+    --font-size-closing-names: 30px;
+    --font-size-details-date: 21px;
+    --font-size-details-year: 34px;
+    --font-size-details-label: 16px;
+    --font-size-ceremony-arabic: 21px;
+    --font-size-ceremony-copy: 13px;
+    --font-size-ceremony-title: 24px;
+    --font-size-ceremony-name: 34px;
+    --font-size-door-greeting: 38px;
+    --font-size-door-label: 16px;
+    --font-size-event-title-slide: 42px;
+    --font-size-event-invocation: 30px;
+    --font-size-quran-arabic: 22px;
+    --font-size-quran-reference: 11px;
+    --font-size-quran-translation: 18px;
+    --font-size-wedding-bismillah: 34px;
+    --font-size-blessing-copy: 17px;
+    --font-size-monogram-m: 64px;
+    --font-size-monogram-t: 58px;
+    --font-size-fancy-divider: 60px;
+    --font-size-door-guest: 18px;
+  }
+}
+
+/* Short screens have less vertical room, regardless of their width. */
+@media (max-height: 700px) {
+  :root {
+    --font-size-body: 15px;
+    --font-size-small: 14px;
+    --font-size-arabic: 30px;
+    --font-size-arabic-large: 34px;
+    --font-size-script: 26px;
+    --font-size-event-icon: 24px;
+    --font-size-event-date: 18px;
+    --font-size-event-date-emphasis: 22px;
+    --font-size-greeting: 34px;
+    --font-size-couple: 34px;
+    --font-size-plaque-title: 30px;
+    --font-size-event-title: 40px;
+    --font-size-event-venue: 17px;
+    --font-size-closing-title: 30px;
+    --font-size-closing-names: 28px;
+    --font-size-details-date: 19px;
+    --font-size-details-year: 30px;
+    --font-size-details-label: 15px;
+    --font-size-ceremony-arabic: 30px;
+    --font-size-ceremony-copy: 13px;
+    --font-size-ceremony-title: 22px;
+    --font-size-ceremony-name: 31px;
+    --font-size-door-greeting: 34px;
+    --font-size-door-label: 15px;
+    --font-size-event-title-slide: 38px;
+    --font-size-event-invocation: 28px;
+    --font-size-quran-arabic: 20px;
+    --font-size-quran-reference: 10px;
+    --font-size-quran-translation: 16px;
+    --font-size-wedding-bismillah: 30px;
+    --font-size-blessing-copy: 16px;
+    --font-size-monogram-m: 60px;
+    --font-size-monogram-t: 54px;
+    --font-size-fancy-divider: 54px;
+    --font-size-door-guest: 18px;
   }
 }
