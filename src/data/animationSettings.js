@@ -1,24 +1,28 @@
 export const invitationMotionSettings = {
   pages: {
     blessings: {
-      transitionSeconds: 1,
-      autoAdvanceSeconds: 2,
-      introRevealSeconds: 1,
+      transitionSeconds: 2,
+      autoAdvanceSeconds: 8,
+      introRevealSeconds: 4,
       openedRevealSeconds: 1
     },
     ceremony: {
-      transitionSeconds: 1,
-      autoAdvanceSeconds: 5
+      transitionSeconds: 2,
+      autoAdvanceSeconds: 15
+    },
+    calendar: {
+      transitionSeconds: 2,
+      autoAdvanceSeconds: 10
     },
     haldi: {
-      transitionSeconds: 1,
-      autoAdvanceSeconds: 5
+      transitionSeconds: 2,
+      autoAdvanceSeconds: 8
     },
     baraat: {
       transitionSeconds: 1,
-      autoAdvanceSeconds: 10,
-      detailsRevealSeconds: 1,
-      detailsRevealDelaySeconds: 2
+      autoAdvanceSeconds: 7,
+      detailsRevealSeconds: 10,
+      detailsRevealDelaySeconds: 4.2
     },
     closing: {
       transitionSeconds: 1,

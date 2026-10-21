@@ -48,7 +48,7 @@ export default function DoorIntro({ onStart, onComplete }) {
     >
       <picture className="welcome-intro__artwork">
         <source
-          media="(min-width: 700px)"
+          media="(min-aspect-ratio: 1/1)"
           srcSet={DESKTOP_WELCOME_IMAGE}
         />
 

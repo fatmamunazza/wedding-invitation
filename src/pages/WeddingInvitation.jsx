@@ -5,6 +5,7 @@ import InvitationSlide from '../components/animations/InvitationSlide.jsx';
 import NikahPetalShower from '../components/animations/NikahPetalShower.jsx';
 import PaperRollEdge from '../components/animations/PaperRollEdge.jsx';
 import DoorIntro from '../components/intro/DoorIntro.jsx';
+import JanuaryCalendarPage from '../components/sections/JanuaryCalendarPage.jsx';
 import EventSection from '../components/sections/EventSection.jsx';
 import Footer from '../components/sections/Footer.jsx';
 import IslamicBlessingsPage from '../components/sections/IslamicBlessingsPage.jsx';
@@ -14,9 +15,9 @@ import { invitationMotionSettings } from '../data/animationSettings.js';
 import { mediaSettings } from '../data/mediaSettings.js';
 import { weddingDetails } from '../data/weddingDetails.js';
 
-const BARAAT_SLIDE_INDEX = 3;
-const HALDI_SLIDE_INDEX = 2;
-const INVITATION_PAGE_KEYS = ['blessings', 'ceremony', 'haldi', 'baraat', 'closing'];
+const BARAAT_SLIDE_INDEX = 4;
+const HALDI_SLIDE_INDEX = 3;
+const INVITATION_PAGE_KEYS = ['blessings', 'ceremony', 'calendar', 'haldi', 'baraat', 'closing'];
 export default function WeddingInvitation() {
   const [opened, setOpened] = useState(false);
   const [firstPageRevealStarted, setFirstPageRevealStarted] = useState(false);
@@ -50,6 +51,7 @@ export default function WeddingInvitation() {
   const slides = [
     <IslamicBlessingsPage key="blessings" />,
     <WeddingCeremonyPage key="ceremony" />,
+    <JanuaryCalendarPage key="calendar" />,
     <EventSection key="haldi" event={weddingDetails.events.haldi} />,
     <EventSection key="baraat" event={weddingDetails.events.baraat} />,
     <Footer key="closing" />

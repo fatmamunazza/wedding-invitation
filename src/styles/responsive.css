@@ -1,28 +1,457 @@
+@media (max-width: 480px) {
+  :root {
+    --font-size-body: clamp(14px, 4vw, 16px);
+    --font-size-small: clamp(13px, 3.7vw, 15px);
+    --font-size-eyebrow: clamp(10px, 3vw, 12px);
+    --font-size-arabic: clamp(26px, 8vw, 32px);
+    --font-size-arabic-large: clamp(30px, 9vw, 36px);
+    --font-size-script: clamp(20px, 5.5vw, 25px);
+    --font-size-event-icon: 22px;
+    --font-size-event-date: 15px;
+    --font-size-event-date-emphasis: 20px;
+    --font-size-control: 14px;
+    --font-size-control-icon: 20px;
+    --font-size-control-count: 12px;
+    --font-size-greeting: clamp(30px, 9vw, 38px);
+    --font-size-couple: clamp(30px, 8vw, 36px);
+    --font-size-plaque-title: clamp(26px, 7vw, 31px);
+    --font-size-event-title: clamp(34px, 9vw, 42px);
+    --font-size-event-venue: clamp(18px, 6vw, 24px);
+    --font-size-closing-title: clamp(27px, 7vw, 33px);
+    --font-size-closing-names: clamp(30px, 8vw, 38px);
+    --font-size-details-date: clamp(17px, 5vw, 20px);
+    --font-size-details-year: clamp(27px, 8vw, 33px);
+    --font-size-details-label: clamp(15px, 4.5vw, 18px);
+    --font-size-ceremony-arabic: clamp(27px, 8vw, 33px);
+    --font-size-ceremony-copy: clamp(13px, 3.8vw, 15px);
+    --font-size-ceremony-title: clamp(21px, 6vw, 25px);
+    --font-size-ceremony-name: clamp(29px, 8vw, 35px);
+    --font-size-event-title-slide: clamp(34px, 11vw, 42px);
+    --font-size-event-invocation: clamp(26px, 9vw, 34px);
+    --font-size-quran-arabic: clamp(17px, 5vw, 21px);
+    --font-size-quran-reference: 10px;
+    --font-size-quran-translation: clamp(15px, 4.5vw, 18px);
+    --font-size-wedding-bismillah: clamp(28px, 8vw, 34px);
+    --font-size-blessing-copy: clamp(15px, 4.5vw, 18px);
+    --font-size-closing-line: clamp(12px, 3.5vw, 14px);
+  }
+
+  .wedding-details-panel {
+    width: min(90%, 440px);
+    max-height: calc(100% - 76px - env(safe-area-inset-bottom));
+    padding: clamp(16px, 4dvh, 28px) 14px;
+  }
+  .wedding-details-bismillah { margin-bottom: 14px; }
+  .wedding-details-item { gap: 4px; margin-top: 14px; }
+  .wedding-details-item svg { width: 22px; height: 22px; }
+
+  .ceremony-panel,
+  .blessings-panel {
+    padding: clamp(64px, 11dvh, 94px) 7vw calc(78px + env(safe-area-inset-bottom));
+  }
+  .ceremony-panel { gap: clamp(4px, 1dvh, 9px); }
+  .ceremony-main { margin-top: 1dvh; }
+  .ceremony-divider,
+  .ceremony-divider2 { margin: 1dvh 0 !important; }
+  .blessings-footer { gap: 6px; margin-top: 12px; }
+  .blessings-main { gap: 6px; }
+  .blessings-copy { font-size: var(--font-size-blessing-copy); line-height: 1.35; }
+
+  .hero-copy { padding: 54px 16px 72px; }
+  .guest-greeting,
+  .parents-line { margin-bottom: 12px; }
+  .hero-intro { max-width: 32ch; }
+  .couple-card { padding: 42px 14px 72px; }
+  .plaque { padding: 14px 12px 10px; }
+  .couple-illustration { height: min(36svh, 260px); }
+  .event-card { width: 100%; padding: 12px 18px 76px; }
+  .event-icon { width: 46px; height: 46px; }
+  .event-divider { width: min(150px, 50%); margin: 12px auto; }
+  .event-address { width: min(100%, 34ch); margin: 0 auto 12px; }
+  .event-venue { line-height: 1.1; }
+  .map-button { min-height: 44px; margin-top: 8px; padding: 9px 14px; }
+
+  .closing-section { margin: 0; }
+  .closing-copy h2 { margin: 8px 0; }
+  .closing-names { margin-top: 14px; }
+  .farewell-copy { width: min(88%, 36rem); }
+  .farewell-signoff { width: min(88%, 36rem); margin-bottom: 10dvh; }
+  .farewell-message,
+  .farewell-blessing { max-width: 34ch; }
+
+  .invitation-slide .hero-copy { padding: 26px 15px 68px; }
+  .invitation-slide .couple-card { padding: 14px 12px 68px; }
+  .invitation-slide .couple-illustration { height: min(31svh, 220px); }
+  .invitation-slide .event-card { padding: 16px 18px 72px; }
+  .invitation-slide .event-address { margin: 0 auto 12px; }
+  .invitation-slide .closing-copy { padding: 0 10px 68px; }
+
+  .slide-controls { gap: 3px; padding: 4px 6px; }
+  .slide-controls button { width: 40px; height: 40px; }
+  .music-control { top: max(10px, env(safe-area-inset-top)); right: 10px; width: 42px; height: 42px; }
+}
+
+@media (min-width: 481px) and (max-width: 699px) {
+  :root {
+    --font-size-body: clamp(15px, 2.8vw, 18px);
+    --font-size-small: clamp(14px, 2.6vw, 16px);
+    --font-size-eyebrow: clamp(11px, 2vw, 13px);
+    --font-size-arabic: clamp(30px, 6vw, 40px);
+    --font-size-arabic-large: clamp(34px, 7vw, 44px);
+    --font-size-script: clamp(24px, 5vw, 31px);
+    --font-size-greeting: clamp(34px, 7vw, 44px);
+    --font-size-couple: clamp(32px, 6.5vw, 42px);
+    --font-size-plaque-title: clamp(28px, 5.5vw, 36px);
+    --font-size-event-title: clamp(38px, 7vw, 48px);
+    --font-size-event-venue: clamp(20px, 4vw, 26px);
+    --font-size-closing-title: clamp(30px, 5.8vw, 38px);
+    --font-size-closing-names: clamp(34px, 6vw, 42px);
+    --font-size-details-date: clamp(18px, 3.5vw, 22px);
+    --font-size-details-year: clamp(30px, 6vw, 38px);
+    --font-size-details-label: clamp(16px, 3.2vw, 20px);
+    --font-size-ceremony-arabic: clamp(30px, 5.5vw, 38px);
+    --font-size-ceremony-copy: clamp(14px, 2.6vw, 17px);
+    --font-size-ceremony-title: clamp(23px, 4.2vw, 28px);
+    --font-size-ceremony-name: clamp(32px, 6vw, 40px);
+    --font-size-event-title-slide: clamp(38px, 7vw, 48px);
+    --font-size-event-invocation: clamp(28px, 5vw, 36px);
+    --font-size-quran-arabic: clamp(19px, 3.5vw, 24px);
+    --font-size-quran-translation: clamp(17px, 3vw, 21px);
+    --font-size-wedding-bismillah: clamp(32px, 5vw, 38px);
+    --font-size-blessing-copy: clamp(16px, 2.8vw, 19px);
+    --font-size-closing-line: clamp(13px, 2.3vw, 16px);
+  }
+
+  .wedding-details-panel { width: min(86%, 460px); padding: 22px 22px; }
+  .wedding-details-item { margin-top: 16px; }
+  .ceremony-panel,
+  .blessings-panel { padding: 9dvh 9vw calc(76px + env(safe-area-inset-bottom)); }
+  .ceremony-main { margin-top: 2dvh; }
+  .blessings-footer { margin-top: 16px; }
+  .hero-copy { padding: 64px 22px 78px; }
+  .couple-card { padding: 52px 20px 78px; }
+  .couple-illustration { height: min(40svh, 300px); }
+  .event-card { width: min(92%, 560px); padding: 22px 24px 78px; }
+  .event-address { margin-right: auto; margin-left: auto; }
+  .closing-section { margin: 0; }
+  .invitation-slide .hero-copy { padding: 28px 22px 74px; }
+  .invitation-slide .couple-card { padding: 18px 18px 74px; }
+  .invitation-slide .couple-illustration { height: min(36svh, 280px); }
+  .invitation-slide .event-card { padding: 20px 24px 74px; }
+  .invitation-slide .event-address { margin: 0 auto 14px; }
+}
+
 @media (min-width: 700px) {
-  .ornate-scene { min-height: 900px; }
-  .hero-copy { padding-top:120px; padding-bottom:110px; }
-  .couple-illustration { height:440px; transform:scale(1.1); margin-bottom:20px; }
-  .event-card, .closing-copy { padding-top:130px; padding-bottom:120px; }
-  .nikah-artwork {
-    width:min(52vw, 680px);
-    max-height:75dvh;
+  .ornate-scene { min-height: 100svh; }
+  .hero-copy { padding: clamp(72px, 10dvh, 120px) 30px 96px; }
+  .guest-greeting,
+  .parents-line { margin-bottom: 16px; }
+  .couple-card { padding: 68px 28px 94px; }
+  .plaque { padding: 20px 22px 16px; }
+  .couple-illustration { height: clamp(340px, 44dvh, 440px); margin-bottom: 14px; }
+  .event-card,
+  .closing-copy { padding: 88px 32px 100px; }
+  .nikah-artwork { width: min(52vw, 680px); max-height: 75dvh; }
+  .welcome-intro__heart { width: clamp(64px, 6vw, 88px); }
+  .wedding-details-panel { width: min(82%, 500px); padding: clamp(24px, 4dvh, 40px) 30px; }
+  .wedding-details-bismillah { margin-bottom: 20px; }
+  .wedding-details-item { gap: 6px; margin-top: 20px; }
+  .wedding-details-item svg { width: 28px; height: 28px; }
+  .ceremony-panel,
+  .blessings-panel { padding: 10dvh 10vw calc(78px + env(safe-area-inset-bottom)); }
+  .ceremony-panel { gap: clamp(8px, 1.5dvh, 14px); }
+  .ceremony-main { width: min(100%, 720px); margin-top: 2dvh; }
+  .ceremony-divider,
+  .ceremony-divider2 { margin: 1.5dvh 0 !important; }
+  .blessings-main { gap: 12px; }
+  .blessings-copy { font-size: var(--font-size-blessing-copy); line-height: 1.5; }
+  .blessings-footer { margin-top: 18px; }
+  .event-card { width: min(92%, 620px); }
+  .event-icon { width: 54px; height: 54px; }
+  .event-divider { width: 170px; margin: 18px auto; }
+  .event-address { width: min(100%, 44ch); margin: 0 auto 18px; }
+  .map-button { min-height: 46px; padding: 10px 18px; }
+  .closing-section { margin: 0; }
+  .closing-blessing-state { width: min(88%, 680px); }
+  .farewell-copy,
+  .farewell-signoff { width: min(84%, 680px); }
+  .slide-controls { gap: 6px; padding: 6px 10px; }
+  .slide-controls button { width: 42px; height: 42px; }
+  .music-control { top: max(18px, env(safe-area-inset-top)); right: 18px; width: 46px; height: 46px; }
+}
+
+@media (min-width: 700px) and (max-width: 899px) {
+  :root {
+    --font-size-body: 16px;
+    --font-size-small: 15px;
+    --font-size-eyebrow: 12px;
+    --font-size-arabic: 32px;
+    --font-size-arabic-large: 36px;
+    --font-size-script: 26px;
+    --font-size-event-icon: 25px;
+    --font-size-event-date: 18px;
+    --font-size-event-date-emphasis: 23px;
+    --font-size-control: 15px;
+    --font-size-control-icon: 21px;
+    --font-size-control-count: 13px;
+    --font-size-greeting: 36px;
+    --font-size-couple: 34px;
+    --font-size-plaque-title: 30px;
+    --font-size-event-title: 42px;
+    --font-size-event-venue: 18px;
+    --font-size-closing-title: 32px;
+    --font-size-closing-names: 30px;
+    --font-size-details-date: 20px;
+    --font-size-details-year: 32px;
+    --font-size-details-label: 16px;
+    --font-size-ceremony-arabic: 20px;
+    --font-size-ceremony-copy: 14px;
+    --font-size-ceremony-title: 23px;
+    --font-size-ceremony-name: 32px;
+    --font-size-event-title-slide: 40px;
+    --font-size-event-invocation: 28px;
+    --font-size-quran-arabic: 21px;
+    --font-size-quran-reference: 11px;
+    --font-size-quran-translation: 17px;
+    --font-size-wedding-bismillah: 32px;
+    --font-size-blessing-copy: 16px;
+    --font-size-closing-line: 14px;
   }
-  .welcome-intro__heart {
-    width:clamp(64px, 6vw, 88px);
+  .hero-copy { padding: 64px 26px 88px; }
+  .couple-card { padding: 50px 24px 88px; }
+  .couple-illustration { height: min(42dvh, 370px); }
+  .event-card,
+  .closing-copy { padding: 72px 24px 88px; }
+  .ceremony-panel,
+  .blessings-panel { padding-right: 8vw; padding-left: 8vw; }
+  .invitation-slide .hero-copy { padding: 26px 24px 82px; }
+  .invitation-slide .couple-card { padding: 18px 20px 82px; }
+  .invitation-slide .couple-illustration { height: min(34dvh, 300px); transform: scale(.9); }
+  .invitation-slide .event-card { padding: 20px 24px 82px; }
+  .invitation-slide .event-address { margin: 0 auto 14px; }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  :root {
+    --font-size-body: 17px;
+    --font-size-small: 15px;
+    --font-size-eyebrow: 12px;
+    --font-size-arabic: 34px;
+    --font-size-arabic-large: 38px;
+    --font-size-script: 28px;
+    --font-size-event-icon: 27px;
+    --font-size-event-date: 19px;
+    --font-size-event-date-emphasis: 24px;
+    --font-size-control: 16px;
+    --font-size-control-icon: 22px;
+    --font-size-control-count: 14px;
+    --font-size-greeting: 38px;
+    --font-size-couple: 36px;
+    --font-size-plaque-title: 32px;
+    --font-size-event-title: 44px;
+    --font-size-event-venue: 19px;
+    --font-size-closing-title: 34px;
+    --font-size-closing-names: 32px;
+    --font-size-details-date: 21px;
+    --font-size-details-year: 34px;
+    --font-size-details-label: 17px;
+    --font-size-ceremony-arabic: 22px;
+    --font-size-ceremony-copy: 15px;
+    --font-size-ceremony-title: 24px;
+    --font-size-ceremony-name: 34px;
+    --font-size-event-title-slide: 42px;
+    --font-size-event-invocation: 30px;
+    --font-size-quran-arabic: 22px;
+    --font-size-quran-reference: 11px;
+    --font-size-quran-translation: 18px;
+    --font-size-wedding-bismillah: 34px;
+    --font-size-blessing-copy: 17px;
+    --font-size-closing-line: 15px;
   }
-  .blessings-arabic { padding:8px 18px; border:1px solid rgba(255,239,194,.95); border-radius:14px; background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,243,220,.94)); box-shadow:0 0 8px rgba(255,247,218,.9), 0 0 22px rgba(255,230,168,.7), 0 5px 18px rgba(77,41,39,.16), inset 0 1px 5px rgba(255,255,255,.95); }
-  .blessings-footer .closing-line { padding:8px 14px; border:1px solid rgba(255,239,194,.95); border-radius:12px; background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,243,220,.94)); box-shadow:0 0 8px rgba(255,247,218,.9), 0 0 22px rgba(255,230,168,.7), 0 5px 18px rgba(77,41,39,.16), inset 0 1px 5px rgba(255,255,255,.95); }
+  .hero-copy { padding: 76px 32px 96px; }
+  .couple-card { padding: 60px 30px 96px; }
+  .couple-illustration { height: min(44dvh, 410px); }
+  .event-card,
+  .closing-copy { padding: 82px 30px 96px; }
+  .ceremony-panel,
+  .blessings-panel { padding-right: 10vw; padding-left: 10vw; }
+  .invitation-slide .hero-copy { padding: 30px 28px 86px; }
+  .invitation-slide .couple-card { padding: 20px 24px 86px; }
+  .invitation-slide .couple-illustration { height: min(36dvh, 330px); transform: scale(.95); }
+  .invitation-slide .event-card { padding: 24px 30px 86px; }
+  .invitation-slide .event-address { margin: 0 auto 16px; }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  :root {
+    --font-size-body: 17px;
+    --font-size-small: 15px;
+    --font-size-eyebrow: 12px;
+    --font-size-arabic: 32px;
+    --font-size-arabic-large: 36px;
+    --font-size-script: 27px;
+    --font-size-event-icon: 26px;
+    --font-size-event-date: 18px;
+    --font-size-event-date-emphasis: 23px;
+    --font-size-control: 16px;
+    --font-size-control-icon: 22px;
+    --font-size-control-count: 14px;
+    --font-size-greeting: 36px;
+    --font-size-couple: 34px;
+    --font-size-plaque-title: 30px;
+    --font-size-event-title: 42px;
+    --font-size-event-venue: 18px;
+    --font-size-closing-title: 32px;
+    --font-size-closing-names: 30px;
+    --font-size-details-date: 20px;
+    --font-size-details-year: 32px;
+    --font-size-details-label: 16px;
+    --font-size-ceremony-arabic: 21px;
+    --font-size-ceremony-copy: 14px;
+    --font-size-ceremony-title: 23px;
+    --font-size-ceremony-name: 32px;
+    --font-size-event-title-slide: 40px;
+    --font-size-event-invocation: 28px;
+    --font-size-quran-arabic: 21px;
+    --font-size-quran-reference: 11px;
+    --font-size-quran-translation: 17px;
+    --font-size-wedding-bismillah: 32px;
+    --font-size-blessing-copy: 16px;
+    --font-size-closing-line: 14px;
+  }
+  .hero-copy { padding: 70px 36px 92px; }
+  .couple-card { padding: 52px 34px 92px; }
+  .couple-illustration { height: min(42dvh, 400px); }
+  .event-card,
+  .closing-copy { padding: 76px 34px 92px; }
+  .ceremony-panel,
+  .blessings-panel { padding-right: 12vw; padding-left: 12vw; }
+  .invitation-slide .hero-copy { padding: 28px 32px 82px; }
+  .invitation-slide .couple-card { padding: 18px 28px 82px; }
+  .invitation-slide .couple-illustration { height: min(34dvh, 310px); transform: scale(.92); }
+  .invitation-slide .event-card { padding: 22px 32px 82px; }
+  .invitation-slide .event-address { margin: 0 auto 14px; }
+}
+
+@media (min-width: 1400px) {
+  :root {
+    --font-size-body: 18px;
+    --font-size-small: 16px;
+    --font-size-eyebrow: 13px;
+    --font-size-arabic: 34px;
+    --font-size-arabic-large: 38px;
+    --font-size-script: 28px;
+    --font-size-event-icon: 28px;
+    --font-size-event-date: 20px;
+    --font-size-event-date-emphasis: 25px;
+    --font-size-control: 17px;
+    --font-size-control-icon: 23px;
+    --font-size-control-count: 15px;
+    --font-size-greeting: 39px;
+    --font-size-couple: 38px;
+    --font-size-plaque-title: 33px;
+    --font-size-event-title: 45px;
+    --font-size-event-venue: 19px;
+    --font-size-closing-title: 35px;
+    --font-size-closing-names: 34px;
+    --font-size-details-date: 22px;
+    --font-size-details-year: 35px;
+    --font-size-details-label: 17px;
+    --font-size-ceremony-arabic: 22px;
+    --font-size-ceremony-copy: 15px;
+    --font-size-ceremony-title: 25px;
+    --font-size-ceremony-name: 35px;
+    --font-size-event-title-slide: 43px;
+    --font-size-event-invocation: 31px;
+    --font-size-quran-arabic: 23px;
+    --font-size-quran-reference: 12px;
+    --font-size-quran-translation: 19px;
+    --font-size-wedding-bismillah: 36px;
+    --font-size-blessing-copy: 18px;
+    --font-size-closing-line: 16px;
+  }
+  .ornate-scene { min-height: 100svh; }
+  .hero-copy { padding: 76px 44px 100px; }
+  .couple-card { padding: 56px 40px 100px; }
+  .couple-illustration { height: min(46dvh, 460px); }
+  .event-card,
+  .closing-copy { padding: 84px 42px 100px; }
+  .nikah-artwork { width: min(48vw, 720px); }
+  .wedding-details-panel { width: min(76%, 560px); padding: 42px 44px; }
+  .ceremony-panel,
+  .blessings-panel { padding-right: 14vw; padding-left: 14vw; }
+  .ceremony-main { width: min(100%, 800px); }
+  .event-card { width: min(88%, 680px); }
+  .event-address { max-width: 48ch; }
+  .invitation-slide .hero-copy { padding: 34px 40px 90px; }
+  .invitation-slide .couple-card { padding: 22px 34px 90px; }
+  .invitation-slide .couple-illustration { height: min(38dvh, 350px); transform: scale(.96); }
+  .invitation-slide .event-card { padding: 26px 40px 90px; }
+  .invitation-slide .event-address { margin: 0 auto 16px; }
+  .slide-controls { gap: 8px; padding: 7px 12px; }
+  .slide-controls button { width: 44px; height: 44px; }
 }
 
 @media (max-height: 700px) {
-  .wedding-details-panel { max-height:calc(100% - 88px); padding-block:12px; }
-  .wedding-details-bismillah { margin-bottom:10px; }
-  .wedding-details-item { gap:3px; margin-top:10px; }
-  .blessings-arabic { margin-bottom: 25px;}
-  .ceremony-blessing, .ceremony-invitation-copy, .ceremony-relation, .ceremony-address { line-height:1.1; }
-  .farewell-copy { max-height:calc(100% - 170px); overflow-y:auto; }
+  :root {
+    --font-size-body: clamp(13px, 2.1vh, 15px);
+    --font-size-small: clamp(12px, 2vh, 14px);
+    --font-size-greeting: clamp(28px, 5.1vh, 34px);
+    --font-size-couple: clamp(27px, 5vh, 34px);
+    --font-size-event-title: clamp(32px, 6vh, 40px);
+    --font-size-event-title-slide: clamp(32px, 6vh, 38px);
+    --font-size-ceremony-name: clamp(27px, 5vh, 32px);
+    --font-size-door-guest: clamp(15px, 2.7vh, 18px);
+    --font-size-quran-translation: clamp(14px, 2.5vh, 17px);
+  }
+  .wedding-details-panel {
+    max-height: calc(100% - 72px - env(safe-area-inset-bottom));
+    padding-block: 12px;
+  }
+  .wedding-details-bismillah { margin-bottom: 8px; }
+  .wedding-details-item { gap: 3px; margin-top: 9px; }
+  .wedding-details-item svg { width: 20px; height: 20px; }
+  .ceremony-panel,
+  .blessings-panel { padding-top: max(36px, 7dvh); padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
+  .ceremony-panel { gap: 3px; }
+  .ceremony-main { margin-top: 0; }
+  .ceremony-divider,
+  .ceremony-divider2 { margin: 1dvh 0 !important; }
+  .blessings-footer { margin-top: 8px; }
+  .blessings-main { gap: 4px; }
+  .hero-copy { padding-top: 42px; padding-bottom: 66px; }
+  .couple-card { padding-top: 26px; padding-bottom: 66px; }
+  .couple-illustration { height: min(35dvh, 280px); }
+  .event-card,
+  .closing-copy { padding-top: 42px; padding-bottom: 68px; }
+  .event-details--baraat { margin-top: 2dvh; }
+  .event-address { margin-bottom: 8px; line-height: 1.2; }
+  .closing-blessing-state { max-height: calc(100% - 84px); }
+  .farewell-copy { max-height: calc(100% - 150px); overflow-y: auto; }
+  .farewell-signoff { margin-bottom: 5dvh; }
+  .invitation-slide .hero-copy { padding-top: 16px; padding-bottom: 62px; }
+  .invitation-slide .couple-card { padding-top: 8px; padding-bottom: 62px; }
+  .invitation-slide .couple-illustration { height: min(28dvh, 200px); transform: scale(.8); }
+  .invitation-slide .event-card { padding-top: 10px; padding-bottom: 64px; }
+  .invitation-slide .event-divider { margin: 8px auto; }
+  .slide-controls { bottom: max(6px, env(safe-area-inset-bottom)); }
+  .music-control { top: max(8px, env(safe-area-inset-top)); }
+}
+
+@media (max-height: 700px) and (min-width: 700px) {
+  .ceremony-panel,
+  .blessings-panel { padding-right: 8vw; padding-left: 8vw; }
+  .hero-copy,
+  .couple-card,
+  .event-card,
+  .closing-copy { padding-right: 24px; padding-left: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior:auto !important; animation-duration:1s !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
 }

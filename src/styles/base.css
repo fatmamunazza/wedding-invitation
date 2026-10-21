@@ -27,9 +27,9 @@ a { color: inherit; }
 
 .section-pad { padding: 0; }
 .invitation-content { height: 100svh; height: 100dvh; overflow: hidden; }
-.wedding-app--haldi { background-image: url('/assets/mobile-haldi-background.jpg'); background-size: cover; background-position: center; }
-.wedding-app--nikah { background-image: url('/assets/nikah-mobile-background.jpg'); background-size: cover; background-position: center; }
-@media (min-width: 700px) {
+.wedding-app--haldi { background-image: url('/assets/mobile-haldi-background.jpg'); background-size: 100% 100%; background-position: center; }
+.wedding-app--nikah { background-image: url('/assets/nikah-mobile-background.jpg'); background-size: 100% 100%; background-position: center; }
+@media (min-aspect-ratio: 1/1) {
   .wedding-app--haldi { background-image: url('/assets/desktop-haldi-background.png'); }
   .wedding-app--nikah {
     background-image: url('/assets/nikah-desktop-background.png');
@@ -41,9 +41,9 @@ a { color: inherit; }
 .invitation-content-transition { position: absolute; inset: 0; width: 100%; height: 100%; }
 .invitation-slide--background-0,
 .invitation-slide--first-reveal { background-color: var(--color-app-background); background-image: var(--invitation-background-image); background-position: center; background-repeat: no-repeat; background-size: 100% 100%; }
-.invitation-slide--background-1 { background: url('/assets/mobile-haldi-background.jpg') center / cover no-repeat; }
-.invitation-slide--background-2 { background: url('/assets/nikah-mobile-background.jpg') center / cover no-repeat; }
-@media (min-width: 700px) {
+.invitation-slide--background-1 { background: url('/assets/mobile-haldi-background.jpg') center / 100% 100% no-repeat; }
+.invitation-slide--background-2 { background: url('/assets/nikah-mobile-background.jpg') center / 100% 100% no-repeat; }
+@media (min-aspect-ratio: 1/1) {
   .invitation-slide--background-1 { background-image: url('/assets/desktop-haldi-background.png'); }
   .invitation-slide--background-2 { background-image: url('/assets/nikah-desktop-background.png'); background-size: 100% 100%; }
 }

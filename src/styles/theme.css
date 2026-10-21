@@ -97,9 +97,14 @@
   --line: var(--color-line);
 }
 
-@media (min-width: 700px) {
+@media (min-aspect-ratio: 1/1) {
   :root {
     --invitation-background-image: url('/assets/desktop-background.jpeg');
+  }
+}
+
+@media (min-width: 700px) {
+  :root {
     --font-size-body: 18px;
     --font-size-small: 16px;
     --font-size-eyebrow: 12px;
