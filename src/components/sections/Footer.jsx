@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="closing-section section-pad">
       <img
         className="closing-artwork"
-        src="/assets/blessing.png"
+        src="/assets/blessing.jpeg"
         alt="Bride and groom standing together"
       />
       <div className="closing-blessing-state">

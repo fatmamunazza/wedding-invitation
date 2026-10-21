@@ -5,7 +5,7 @@ import { invitationCopy } from '../../data/invitationCopy.js';
 import { resolveGuest } from '../../services/guestResolver.js';
 import './DoorIntro.css';
 
-const MOBILE_WELCOME_IMAGE = '/assets/WelcomeCard.png';
+const MOBILE_WELCOME_IMAGE = '/assets/WelcomeCard.jpeg';
 const DESKTOP_WELCOME_IMAGE = '/assets/welcomeCardDesktop.png';
 
 const OPENING_DURATION = 4000;

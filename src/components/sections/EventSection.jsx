@@ -19,7 +19,7 @@ export default function EventSection({ event }) {
       {event.id === 'baraat' && (
         <img
           className={`nikah-artwork`}
-          src="/assets/nikah.png"
+          src="/assets/nikah.jpeg"
           alt="Bride and groom seated beside a floral wedding divider"
         />
       )}

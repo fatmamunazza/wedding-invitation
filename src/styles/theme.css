@@ -74,7 +74,7 @@
   --font-size-ceremony-title: 23px;
   --font-size-ceremony-name: 34px;
   /* Responsive artwork fills the viewport without cropping. */
-  --invitation-background-image: url('/assets/mobile-background.png');
+  --invitation-background-image: url('/assets/mobile-background.jpeg');
 
   /* Compatibility aliases used by the existing component stylesheet. */
   --ivory: var(--color-paper);

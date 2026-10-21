@@ -31,7 +31,7 @@ a { color: inherit; }
 .section-pad { padding: 0; }
 .invitation-content { height: 100svh; height: 100dvh; overflow: hidden; }
 .wedding-app--haldi { background-image: url('/assets/mobile-haldi-background.jpg'); background-size: cover; background-position: center; }
-.wedding-app--nikah { background-image: url('/assets/nikah-mobile-background1.png'); background-size: cover; background-position: center; }
+.wedding-app--nikah { background-image: url('/assets/nikah-mobile-background.jpg'); background-size: cover; background-position: center; }
 @media (min-width: 700px) {
   .wedding-app--haldi { background-image: url('/assets/desktop-haldi-background.png'); }
   .wedding-app--nikah {
