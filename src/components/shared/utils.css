@@ -9,7 +9,7 @@
 :root {
   --wedding-ivory: #fff9ef;
   --wedding-burgundy: #80433e;
-  --wedding-gold: #b88b4d;
+  --wedding-gold: #380c03;
   --wedding-blush: #d8aaa0;
 }
 
@@ -74,7 +74,7 @@
 
 .wedding-divider {
   display: flex;
-  margin: 9px auto;
+  margin: 2dvh auto;
   align-items: center;
   justify-content: center;
   gap: 9px;
@@ -134,16 +134,16 @@
 .verse-arabic {
   margin: 0 auto 1px;
   font-family: "Amiri", "Times New Roman", serif;
-  font-size: clamp(18px, 1.8vw, 43px);
+  font-size: 4dvw;
   line-height: 1.8;
-  color: var(--wedding-burgundy);
+  color: #8a0c01;
 }
 
 .verse-reference {
   margin: 0 0 1px;
-  color: #9b7545;
+  color: #281600;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 10px;
+  font-size: 2.5dvw;
   font-weight: 600;
   letter-spacing: .22em;
 }
@@ -151,10 +151,11 @@
 .verse-translation {
   max-width: 410px;
   margin: 0 auto;
-  font-size: clamp(18px, 3.6vw, 22px);
+  font-size: 5dvw;
   font-style: italic;
+  font-weight: 600;
   line-height: 1.42;
-  color: #8c4b45;
+  color: #073f16;
 }
 
 .blessing-text {
@@ -257,7 +258,7 @@
 
   .wedding-divider {
     width: min(100%, 230px);
-    margin: 9px auto;
+    margin: 2dvh auto;
   }
 
   .divider-flower {

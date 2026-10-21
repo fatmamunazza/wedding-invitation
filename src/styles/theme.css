@@ -46,33 +46,33 @@
   --font-arabic: serif;
 
   /* Mobile-first type scale; tablet and desktop overrides follow below. */
-  --font-size-body: 17px;
-  --font-size-small: 15px;
-  --font-size-eyebrow: 10px;
+  --font-size-body: 4dvw;
+  --font-size-small: 4.3dvw;
+  --font-size-eyebrow: 4dvw;
   --font-size-hint: 12px;
-  --font-size-arabic: 32px;
+  --font-size-arabic: 8dvw;
   --font-size-arabic-large: 35px;
-  --font-size-script: 25px;
+  --font-size-script: 5dvw;
   --font-size-event-icon: 25px;
   --font-size-event-date: 18px;
   --font-size-event-date-emphasis: 23px;
-  --font-size-control: 14px;
+  --font-size-control: 4dvw;
   --font-size-control-icon: 20px;
   --font-size-control-count: 13px;
   --font-size-greeting: 40px;
   --font-size-couple: 38px;
   --font-size-plaque-title: 32px;
   --font-size-event-title: 46px;
-  --font-size-event-venue: 18px;
-  --font-size-closing-title: 18px;
-  --font-size-closing-names: 30px;
+  --font-size-event-venue: 8dvw;
+  --font-size-closing-title: 7dvw;
+  --font-size-closing-names: 9dvw;
   --font-size-details-date: 21px;
   --font-size-details-year: 34px;
-  --font-size-details-label: 16px;
-  --font-size-ceremony-arabic: 21px;
-  --font-size-ceremony-copy: 13px;
-  --font-size-ceremony-title: 23px;
-  --font-size-ceremony-name: 34px;
+  --font-size-details-label: 5dvw;
+  --font-size-ceremony-arabic: 8dvw;
+  --font-size-ceremony-copy: 4dvw;
+  --font-size-ceremony-title: 6dvw;
+  --font-size-ceremony-name: 8dvw;
   /* Responsive artwork fills the viewport without cropping. */
   --invitation-background-image: url('/assets/mobile-background.jpeg');
 
@@ -87,7 +87,7 @@
   --line: var(--color-line);
 }
 
-@media (max-width: 380px) {
+/* @media (max-width: 380px) {
   :root {
     --font-size-greeting: 36px;
     --font-size-couple: 34px;
@@ -95,8 +95,8 @@
     --font-size-ceremony-copy: 12px;
     --font-size-ceremony-name: 31px;
   }
-}
-
+} */
+/* 
 @media (min-width: 700px) {
   :root {
     --invitation-background-image: url('/assets/desktop-background.png');
@@ -149,4 +149,4 @@
     --font-size-ceremony-title: 36px;
     --font-size-ceremony-name: 54px;
   }
-}
+} */

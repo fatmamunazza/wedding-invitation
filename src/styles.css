@@ -25,7 +25,7 @@ a { color: inherit; }
 }
 .invitation-content { position: relative; }
 
-.mini-arabesque, .arabic-mark { font-family: var(--font-arabic); color: var(--rose); font-size: var(--font-size-arabic); }
+.mini-arabesque, .arabic-mark { font-family: var(--font-arabic); color: var(--rose); font-size: var(--font-size-arabic); margin:3dvh; }
 .eyebrow { text-transform: uppercase; letter-spacing: .23em; font-size: var(--font-size-eyebrow); color: var(--rose-soft); margin: 0 0 18px; }
 
 .section-pad { padding: 0; }
@@ -51,7 +51,7 @@ a { color: inherit; }
   .invitation-slide--background-2 { background-image: url('/assets/nikah-desktop-background.png'); background-size: 100% 100%; }
 }
 .invitation-slide > section, .invitation-slide > footer,
-.invitation-content-transition > section, .invitation-content-transition > footer { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; height: 100%; overflow: hidden; text-align: center; }
+.invitation-content-transition > section, .invitation-content-transition > footer { position: absolute; inset: 0; display: flex; justify-content: center; height: 100%; overflow: hidden; text-align: center; }
 .invitation-slide > .event-section,
 .invitation-content-transition > .event-section { align-items: flex-start; }
 .invitation-slide .hero-copy, .invitation-slide .couple-card, .invitation-slide .event-card, .invitation-slide .closing-copy {
@@ -83,38 +83,42 @@ a { color: inherit; }
 .wedding-details-item .wedding-details-year { font-family:var(--font-display); font-size:var(--font-size-details-year); line-height:1; }
 
 .blessings-page { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; overflow:hidden; background:transparent; }
-.blessings-panel { display:flex; flex-direction:column; width:100%; height:100%; min-height:0; max-height:100%; padding:clamp(20px, 8svh, 48px) clamp(16px, 6vw, 48px) calc(25px + env(safe-area-inset-bottom)); text-align:center; }
+.blessings-panel { display:flex; flex-direction:column; width:100%; height:100%; min-height:0; max-height:100%; padding:14dvh 17dvw 24dvh 17dvw; text-align:center; }
 .blessings-panel::-webkit-scrollbar { display:none; }
 .blessings-main { display:flex; flex:1 1 auto; min-height:0; flex-direction:column; justify-content:space-evenly; gap:8px; overflow-y:auto; }
 .blessings-arabic { color:var(--color-rose); font-family:var(--font-arabic); font-size:var(--font-size-ceremony-arabic); line-height:1.7; }
-.blessings-copy { margin-top: 10px; color:var(--color-ink); font-family:var(--font-body); font-size:var(--font-size-ceremony-copy); line-height:1.5; }
+.blessings-copy {  font-weight:900; color:#7e0438; font-family:var(--font-body); line-height:1.5; }
 .blessings-copy p { margin:0; }
 .logo { width:min(20%, 100px); max-height:calc(100% - 76px);  z-index:1; object-fit:end; }
 .blessings-footer { display:flex; flex:0 0 auto; flex-direction:column; align-items:center; justify-content:flex-end; gap:8px; margin-top:25px; }
 .blessings-footer .closing-line { padding:0; border:0; border-radius:0; background:none; box-shadow:none; }
-.blessings-footer .gold-floral-divider { margin:0 auto 55px; }
 .wedding-ceremony-page {
   color:var(--color-rose);
   background:transparent;
 }
-.ceremony-panel { height: 100%; position:relative; z-index:3; width:min(88%, 560px); max-height:calc(100% - 30px); overflow-y:auto; padding:clamp(14px, 2.5svh, 24px) clamp(18px, 5vw, 38px); text-align:center; scrollbar-width:none; 
-    display: flex;
-    flex: 1 1 auto;
-    min-height: 0;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 8px;
-    overflow-y: auto;
-    align-items: center;
-  }
-.ceremony-panel p { margin:0; }
+.ceremony-panel {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  gap:clamp(4px, 1.5dvh, 12px);
+  width:100%;
+  height:100%;
+  min-height:0;
+  position:relative;
+  z-index:3;
+  overflow:hidden;
+  padding:14dvh 17dvw 24dvh 17dvw;
+  text-align:center;
+}
+.ceremony-panel > .gold-floral-divider { flex:0 0 auto; }
 .ceremony-bismillah { margin-bottom:5px!important; font-family:var(--font-arabic); font-size:var(--font-size-ceremony-arabic); color:var(--color-rose); }
 .ceremony-blessing { font-family:var(--font-body); font-size:var(--font-size-ceremony-copy); line-height:1.2; }
-.ceremony-main { margin:30px auto 30px; display:flex; flex:1 1 auto; min-height:0; flex-direction:column; justify-content:space-evenly; gap:8px; overflow-y:auto; }
-.ceremony-invitation-copy { margin-top:10px!important; font-size:var(--font-size-ceremony-copy); line-height:1.2; color:var(--color-ink); }
+.ceremony-main { display:flex; align-items: center; min-height:0; width:100%; flex-direction:column; justify-content:space-between; overflow:auto; margin-top: 5dvh; }
+.ceremony-invitation-copy { margin:0!important; font-size:var(--font-size-ceremony-copy); line-height:1.2; color:var(--color-ink); }
 .ceremony-title { margin:5px 0 1px; color:var(--color-ink); font-family:var(--font-heading); font-size:var(--font-size-ceremony-title); font-weight:500; }
-.ceremony-divider { margin:5px 0!important; font-family:var(--font-heading); font-size:var(--font-size-eyebrow); letter-spacing:.22em; color:var(--color-divider); font-weight:600; }
-.ceremony-divider2 { margin:15px 0!important; font-family:var(--font-heading); font-size:var(--font-size-eyebrow); letter-spacing:.22em; color:var(--color-divider); font-weight:600;}
+.ceremony-divider { margin:2dvh 0!important; font-family:var(--font-heading); font-size:var(--font-size-eyebrow); letter-spacing:.22em; color:var(--color-divider); font-weight:600; }
+.ceremony-divider2 { margin:2dvh 0!important; font-family:var(--font-heading); font-size:var(--font-size-eyebrow); letter-spacing:.22em; color:var(--color-divider); font-weight:600;}
 .ceremony-person-name { margin:1px 0 0; color:var(--color-rose); font-family:var(--font-display); font-size:var(--font-size-ceremony-name); font-weight:400; line-height:1; }
 .ceremony-relation, .ceremony-address { font-size:var(--font-size-ceremony-copy); line-height:1.2; color:var(--color-relation); }
 .ceremony-address { margin-top:1px!important; }
@@ -150,18 +154,18 @@ a { color: inherit; }
 .bouquet { position:absolute; z-index:5; right:-4px; top:145px; width:47px; height:40px; border-radius:50%; background:var(--color-bouquet); box-shadow: -12px 8px 0 var(--color-bouquet-shadow-one), 8px 10px 0 var(--color-bouquet-shadow-two); }
 .couple-note { max-width:340px; margin:0 auto; font-size:var(--font-size-body); }
 
-.event-card { padding: 8px 16px 65px; max-width:500px; margin:auto; text-align:center; }
-.nikah-artwork { position:absolute; z-index:0; bottom:0; left:50%; width:min(32vw, 520px); height:auto; max-height:72dvh; max-width:32vw; object-fit:contain; object-position:center bottom; pointer-events:none; transform:translateX(-50%); }
+.event-card { padding: 2dvh 3dvw; max-width:500px; margin:auto; text-align:center; }
+.nikah-artwork { position:absolute; z-index:0; bottom:0; left:50%; width:86dvw; height:auto; object-fit:contain; object-position:center bottom; pointer-events:none; transform:translateX(-50%); }
 .event-baraat .event-card { position:relative; z-index:1; }
 .event-card--baraat { opacity:0; animation:baraat-copy-appear .8s ease 4.2s forwards; }
 @keyframes baraat-copy-appear {
   to { opacity:1; transform:translateY(0); }
   from { opacity:0; transform:translateY(12px); }
 }
-.event-details--baraat { margin-top: 88px; }
+.event-details--baraat { margin-top: 4dvh; }
 .event-icon { width:54px; height:54px; border:1px solid var(--color-border-gold); border-radius:50%; margin:0 auto 5px; display:grid; place-items:center; color:var(--rose); font-size:var(--font-size-event-icon); background:var(--color-surface-card); }
 .event-card h2 { font-family:var(--font-display); font-size:var(--font-size-event-title); font-weight:400; color:var(--rose); margin:2px 0 0; }
-.event-inshaAllah { margin:15px 0 10px; color:var(--color-gold); font-family:var(--font-display); font-size:var(--font-size-script); }
+.event-inshaAllah { margin:15px 0 10px; color:var(--color-gold); font-family:var(--font-display); font-size:11dvw; }
 .event-date { display:flex; align-items:baseline; justify-content:center; gap:12px; color:var(--rose); font-family: var(--font-heading);
     font-size: var(--font-size-details-label)}
 .event-date span { font-size:var(--font-size-event-date); }
@@ -187,7 +191,7 @@ a { color: inherit; }
 @keyframes closing-artwork-center {
   to { top:50%; filter:blur(3px); transform:translate(-50%, -50%) scale(1); }
 }
-.closing-blessing-state {position:relative; z-index:1; width:min(88%, 680px); max-height:calc(100% - 100px); overflow-y:auto; text-align:center; scrollbar-width:none; animation:closing-blessing-out 2s ease-in 4s forwards; }
+.closing-blessing-state {position:relative; margin-top:5dvh; z-index:1; width:min(88%, 680px); max-height:calc(100% - 100px); overflow-y:auto; text-align:center; scrollbar-width:none; animation:closing-blessing-out 2s ease-in 4s forwards; }
 .closing-blessing-state::-webkit-scrollbar { display:none; }
 @keyframes closing-blessing-out { to { opacity:0; filter:blur(8px); } }
 .closing-farewell-state { display:flex; flex:1 1 auto; min-height:0; flex-direction:column; justify-content:space-evenly; gap:8px; overflow-y:auto; position:absolute; z-index:2; inset:0; pointer-events:none; }
@@ -195,15 +199,15 @@ a { color: inherit; }
 .farewell-copy::-webkit-scrollbar { display:none; }
 @keyframes farewell-copy-appear { to { opacity:1; filter:blur(0); } }
 .farewell-names {margin:0; color:var(--color-rose); font-family:var(--font-display); font-size:var(--font-size-closing-names); }
-.farewell-blessing { max-width:600px; color:var(--color-rose); font-family:var(--font-body); font-size:var(--font-size-body); line-height:1.25; }
-.farewell-signoff { position:absolute; left:50%; bottom:calc(24px + env(safe-area-inset-bottom)); display:flex; flex-direction:column; align-items:center; gap:6px; width:min(88%, 680px); transform:translateX(-50%); text-align:center; opacity:0; filter:blur(8px); margin-bottom: 48px; animation:farewell-copy-appear 1s ease-out 5.2s forwards; }
+.farewell-blessing { max-width:600px; color: #073f16;font-weight:900; font-family:var(--font-body); font-size:var(--font-size-body); line-height:1.25; }
+.farewell-signoff { position:absolute; left:50%; bottom:calc(24px + env(safe-area-inset-bottom)); display:flex; flex-direction:column; align-items:center; gap:6px; width:min(88%, 680px); transform:translateX(-50%); text-align:center; opacity:0; filter:blur(8px); margin-bottom: 15dvh; animation:farewell-copy-appear 1s ease-out 5.2s forwards; }
 .closing-copy { position:relative; z-index:1; padding:0; max-width:520px; margin:auto; text-align:center; }
 .closing-copy h2 { font-family:var(--font-display); font-weight:400; color:var(--rose); font-size:var(--font-size-closing-title); line-height:1.05; margin:12px 0; }
 .duas { font-size:var(--font-size-body); }
 .closing-names { font-family:var(--font-display); color:var(--rose); font-size:var(--font-size-closing-names); margin:22px 0 0; }
 .closing-copy small { letter-spacing:.16em; }
-.closing-farewell { margin:0; color:var(--color-rose); font-family:var(--font-display); font-size:var(--font-size-closing-title); text-align:center; }
-.farewell-message { max-width:600px; margin:0; color:var(--color-rose); font-family:var(--font-body); font-size:var(--font-size-small); line-height:1.25; }
+.closing-farewell { margin:0; color:var(--color-rose);font-weight:900; font-family:var(--font-display); font-size:var(--font-size-closing-title); text-align:center; }
+.farewell-message { max-width:600px; margin:0; color: #073f16;font-weight:900; font-family:var(--font-body); font-size:var(--font-size-small); line-height:1.25; }
 .invitation-slide .hero-copy { padding: clamp(18px, 3svh, 34px) 16px 70px; }
 .invitation-slide .guest-greeting, .invitation-slide .parents-line { font-size: var(--font-size-greeting); }
 .invitation-slide .couple-display { font-size: var(--font-size-couple); }
@@ -211,9 +215,9 @@ a { color: inherit; }
 .invitation-slide .plaque h2 { font-size: var(--font-size-plaque-title); }
 .invitation-slide .couple-illustration { height: min(38svh, 260px); transform: scale(.82); margin: 0 auto; }
 .invitation-slide .couple-note { font-size: var(--font-size-small); }
-.invitation-slide .event-card { padding: clamp(12px, 3svh, 24px) 16px 70px; }
+.invitation-slide .event-card { padding: 4dvh 3dvw; }
 .invitation-slide .event-icon { width: 35px; height: 35px; }
-.invitation-slide .event-card h2 { font-size: 30px; }
+.invitation-slide .event-card h2 { font-size: 12dvw; }
 .invitation-slide .event-divider { margin: 12px auto; }
 .invitation-slide .event-venue { font-size: var(--font-size-event-venue); }
 .invitation-slide .event-address { font-size: var(--font-size-eyebrow); margin: 0 55px 12px; }
@@ -256,16 +260,11 @@ a { color: inherit; }
   .blessings-footer .closing-line { padding:8px 14px; border:1px solid rgba(255,239,194,.95); border-radius:12px; background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,243,220,.94)); box-shadow:0 0 8px rgba(255,247,218,.9), 0 0 22px rgba(255,230,168,.7), 0 5px 18px rgba(77,41,39,.16), inset 0 1px 5px rgba(255,255,255,.95); }
 }
 
-@media (max-width: 699px) {
-  .nikah-artwork { width:min(68vw, 250px); max-height:58dvh; max-width:78vw; }
-}
-
 @media (max-height: 700px) {
   .wedding-details-panel { max-height:calc(100% - 88px); padding-block:12px; }
   .wedding-details-bismillah { margin-bottom:10px; }
   .wedding-details-item { gap:3px; margin-top:10px; }
   .blessings-arabic { margin-bottom: 25px;}
-  .ceremony-panel { max-height:calc(100% - 88px); padding:55px 50px 25px; }
   .ceremony-blessing, .ceremony-invitation-copy, .ceremony-relation, .ceremony-address { line-height:1.1; }
   .farewell-copy { max-height:calc(100% - 170px); overflow-y:auto; }
 }

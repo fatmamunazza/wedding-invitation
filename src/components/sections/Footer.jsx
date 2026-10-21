@@ -1,6 +1,6 @@
 import { invitationCopy } from '../../data/invitationCopy.js';
 import { weddingDetails } from '../../data/weddingDetails.js';
-
+import {QuranVerse, FloralDivider} from '../shared/utils.jsx';
 export default function Footer() {
   const { closing } = invitationCopy;
 
@@ -13,9 +13,15 @@ export default function Footer() {
       />
       <div className="closing-blessing-state">
         <div className="arabic-mark">{closing.arabic}</div>
-        <p className="duas">{closing.dua}</p>
-        <div className="ornament-rule"><span>✦</span></div>
-        <p className="duas">{closing.reminder}</p>
+        <QuranVerse
+              arabic={closing.duaArabic}
+              translation={closing.dua}
+            />
+        <FloralDivider />
+        <QuranVerse
+              arabic={closing.reminderArabic}
+              translation={closing.reminder}
+            />
       </div>
       <div className="closing-farewell-state">
         <div className="farewell-copy">

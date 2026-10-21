@@ -10,23 +10,25 @@ export default function WeddingCeremonyPage() {
     <section className="wedding-ceremony-page" aria-label="Wedding ceremony invitation">
       <div className="ceremony-panel">
         <div className="ceremony-main">
-          <p className="ceremony-invitation-copy">{ceremony.invitationLines[0]}<br />{ceremony.invitationLines[1]}</p>
-          <h1 className="ceremony-title">{ceremony.title}</h1>
+          <div>
+            <p className="ceremony-invitation-copy">{ceremony.invitationLines[0]}<br />{ceremony.invitationLines[1]}</p>
+            <h1 className="ceremony-title">{ceremony.title}</h1>
+          </div>    
           <DividerWithContent className="ceremony-divider">
-            <p>OF</p>
+            <span>OF</span>
           </DividerWithContent> 
           <div>
             <h2 className="ceremony-person-name">{weddingDetails.bride}</h2>
-            <p className="ceremony-relation">{weddingDetails.ceremony.brideRelation}</p>
-            <p className="ceremony-address">{weddingDetails.ceremony.brideLocation}</p>
+            <span className="ceremony-relation">{weddingDetails.ceremony.brideRelation}</span><br/>
+            <span className="ceremony-address">{weddingDetails.ceremony.brideLocation}</span>
           </div>
           <DividerWithContent className="ceremony-divider2">
-            <p>{ceremony.conjunction}</p>
+            <span>{ceremony.conjunction}</span>
           </DividerWithContent>
           <div>
             <h2 className="ceremony-person-name">{weddingDetails.groom}</h2>
-            <p className="ceremony-relation">{weddingDetails.ceremony.groomRelation}</p>
-            <p className="ceremony-address">{weddingDetails.ceremony.groomLocation}</p>
+            <span className="ceremony-relation">{weddingDetails.ceremony.groomRelation}</span><br/>
+            <span className="ceremony-address">{weddingDetails.ceremony.groomLocation}</span>
           </div>
         </div>
         <GoldFloralDivider color="#8c332f" />

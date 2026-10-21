@@ -19,9 +19,12 @@ export const invitationCopy = {
   },
   closing: {
     arabic: '﷽',
-    dua: 'May Allah bless you, shower His blessings upon you and join you together in goodness',
+    dua: 'May Allah bless you, shower his blessings upon you and join you together in goodness',
+    duaArabic:'بَارَكَ اللَّهُ لَكُمَا، وَبَارَكَ عَلَيْكُمَا، وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ',
     reminder: 'Please keep the couple in your duas',
+    reminderArabic: 'يُرْجَى أَنْ تَذْكُرُوا الْعَرِيسَيْنِ فِي دُعَائِكُمْ',
     farewellBlessing: 'May Allah bless this union with love, happiness and barakah. Ameen.',
+    farwellBlessingArabic: 'بَارَكَ اللَّهُ فِي هَذَا الْعَرِيسَيْنِ بِالْمَحَبَّةِ وَالسَّعَادَةِ وَالْبَرَكَةِ. آمِينَ',
     farewell: 'خُدَاحَافِظ جَزَاكَ ٱللَّٰهُ خَيْرًا',
     farewellMessage: 'We look forward to celebrating this blessed occasion with you.'
   }
