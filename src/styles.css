@@ -151,16 +151,9 @@ a { color: inherit; }
 .couple-note { max-width:340px; margin:0 auto; font-size:var(--font-size-body); }
 
 .event-card { padding: 8px 16px 65px; max-width:500px; margin:auto; text-align:center; }
-.nikah-artwork { position:absolute; z-index:0; top:50%; left:50%; width:min(32vw, 520px); height:auto; max-height:72dvh; max-width:32vw; object-fit:contain; object-position:center; opacity:0; pointer-events:none; transform:translate(-50%, -50%) scale(1); }
-.nikah-artwork.is-animating { opacity:.64; animation:nikah-image-arrive 4.2s ease-in-out forwards; }
+.nikah-artwork { position:absolute; z-index:0; bottom:0; left:50%; width:min(32vw, 520px); height:auto; max-height:72dvh; max-width:32vw; object-fit:contain; object-position:center bottom; pointer-events:none; transform:translateX(-50%); }
 .event-baraat .event-card { position:relative; z-index:1; }
 .event-card--baraat { opacity:0; animation:baraat-copy-appear .8s ease 4.2s forwards; }
-@keyframes nikah-image-arrive {
-  0% { top:50%; left:50%; opacity:.64; filter:blur(18px) brightness(.72); transform:translate(-50%, -50%) scale(1); }
-  23.8% { top:50%; left:50%; opacity:.72; filter:blur(0) brightness(1); transform:translate(-50%, -50%) scale(1); }
-  71.4% { top:50%; left:50%; opacity:.72; filter:blur(0) brightness(1); transform:translate(-50%, -50%) scale(1); }
-  100% { top:72%; left:72%; opacity:.68; filter:blur(0) brightness(1); transform:translate(-50%, -50%) scale(.72); }
-}
 @keyframes baraat-copy-appear {
   to { opacity:1; transform:translateY(0); }
   from { opacity:0; transform:translateY(12px); }
@@ -264,14 +257,7 @@ a { color: inherit; }
 }
 
 @media (max-width: 699px) {
-  .nikah-artwork { top:33%; width:min(68vw, 250px); height:auto; max-height:58dvh; max-width:78vw; object-position:center; }
-  .nikah-artwork.is-animating { animation-name:nikah-image-arrive-mobile; }
-  @keyframes nikah-image-arrive-mobile {
-    0% { top:50%; left:50%; opacity:.64; filter:blur(18px) brightness(.72); transform:translate(-50%, -50%) scale(1); }
-    23.8% { top:50%; left:50%; opacity:.72; filter:blur(0) brightness(1); transform:translate(-50%, -50%) scale(1); }
-    71.4% { top:50%; left:50%; opacity:.72; filter:blur(0) brightness(1); transform:translate(-50%, -50%) scale(1); }
-    100% { top:80%; left:70%; opacity:.68; filter:blur(0) brightness(1); transform:translate(-50%, -50%) scale(.48); }
-  }
+  .nikah-artwork { width:min(68vw, 250px); max-height:58dvh; max-width:78vw; }
 }
 
 @media (max-height: 700px) {

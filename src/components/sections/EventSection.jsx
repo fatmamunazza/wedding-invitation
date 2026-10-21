@@ -16,13 +16,6 @@ export default function EventSection({ event }) {
 
   return (
     <section className={`event-section event-${event.id} section-pad`} id={event.id}>
-      {event.id === 'baraat' && (
-        <img
-          className={`nikah-artwork${playNikahAnimation ? ' is-animating' : ''}`}
-          src="/assets/nikah.png"
-          alt="Bride and groom seated beside a floral wedding divider"
-        />
-      )}
       <div className={`event-card${event.id === 'baraat' ? ' event-card--baraat' : ''}`}>
         <EventDetails event={event} />
       </div>
