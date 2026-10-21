@@ -1,0 +1,7 @@
+export function replayCssAnimation(element, className) {
+  if (!element) return;
+
+  element.classList.remove(className);
+  void element.offsetWidth;
+  element.classList.add(className);
+}

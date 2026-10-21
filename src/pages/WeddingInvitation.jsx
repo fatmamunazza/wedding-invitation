@@ -1,6 +1,9 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { createPageTransition } from '../animations/pageTransition.js';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { getInvitationStageTransition } from '../animations/pageTransition.js';
+import { replayCssAnimation } from '../animations/replayCssAnimation.js';
+import InvitationSlide from '../components/animations/InvitationSlide.jsx';
+import NikahPetalShower from '../components/animations/NikahPetalShower.jsx';
+import PaperRollEdge from '../components/animations/PaperRollEdge.jsx';
 import DoorIntro from '../components/intro/DoorIntro.jsx';
 import EventSection from '../components/sections/EventSection.jsx';
 import Footer from '../components/sections/Footer.jsx';
@@ -14,10 +17,6 @@ import { weddingDetails } from '../data/weddingDetails.js';
 const BARAAT_SLIDE_INDEX = 3;
 const HALDI_SLIDE_INDEX = 2;
 const INVITATION_PAGE_KEYS = ['blessings', 'ceremony', 'haldi', 'baraat', 'closing'];
-const NIKAH_PETAL_SHOWER_DELAY_MS = 1000;
-const NIKAH_PETAL_SHOWER_DURATION_MS = 4000;
-const NIKAH_PETAL_COUNT = 100;
-
 export default function WeddingInvitation() {
   const [opened, setOpened] = useState(false);
   const [firstPageRevealStarted, setFirstPageRevealStarted] = useState(false);
@@ -28,42 +27,8 @@ export default function WeddingInvitation() {
   const [musicPlaying, setMusicPlaying] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
   const [autoAdvance, setAutoAdvance] = useState(true);
-  const [showNikahPetals, setShowNikahPetals] = useState(false);
-  const nikahPetals = useMemo(() => {
-    if (!showNikahPetals) return [];
-
-    return Array.from({ length: NIKAH_PETAL_COUNT }, (_, index) => {
-      const side = Math.floor(Math.random() * 3);
-      const left = side === 0
-        ? `${Math.random() * 110 - 5}%`
-        : side === 1
-          ? `${Math.random() * 4 - 8}%`
-          : `${104 + Math.random() * 4}%`;
-      const top = side === 0
-        ? `${-12 + Math.random() * 10}%`
-        : `${Math.random() * 88 - 4}%`;
-      const inwardDrift = side === 1
-        ? 12 + Math.random() * 38
-        : side === 2
-          ? -(12 + Math.random() * 38)
-          : (Math.random() - 0.5) * 70;
-
-      return {
-        id: index,
-        color: Math.random() < 0.5 ? 'white' : 'rose',
-        left,
-        top,
-        delay: Math.random() * 450,
-        drift: `${inwardDrift + (Math.random() - 0.5) * 20}vw`,
-        drop: `${75 + Math.random() * 55}vh`,
-        rotation: `${Math.random() * 1080 - 540}deg`,
-        duration: `${2 + Math.random() * 1.3}s`
-      };
-    });
-  }, [showNikahPetals]);
   const audioRef = useRef(null);
   const paperRollTimerRef = useRef(null);
-  const nikahPetalsTimerRef = useRef(null);
   const invitationSlideRef = useRef(null);
 
   const startOpening = () => {
@@ -101,20 +66,8 @@ export default function WeddingInvitation() {
 
     window.clearTimeout(paperRollTimerRef.current);
 
-    if (nextBackgroundStage === 2 && backgroundStage < 2) {
-      window.clearTimeout(nikahPetalsTimerRef.current);
-      nikahPetalsTimerRef.current = window.setTimeout(() => {
-        setShowNikahPetals(true);
-        nikahPetalsTimerRef.current = window.setTimeout(() => {
-          setShowNikahPetals(false);
-        }, NIKAH_PETAL_SHOWER_DURATION_MS);
-      }, NIKAH_PETAL_SHOWER_DELAY_MS);
-    }
-
     if (nextIndex > activeSlide && nextBackgroundStage === 1 && backgroundStage === 0) {
-      invitationSlideRef.current?.classList.remove('invitation-slide--folding');
-      void invitationSlideRef.current?.offsetWidth;
-      invitationSlideRef.current?.classList.add('invitation-slide--folding');
+      replayCssAnimation(invitationSlideRef.current, 'animation--page-roll');
       setRollingBackgroundStage(backgroundStage);
       setPaperRollStarted(true);
       setBackgroundStage(nextBackgroundStage);
@@ -133,7 +86,6 @@ export default function WeddingInvitation() {
 
   useEffect(() => () => {
     window.clearTimeout(paperRollTimerRef.current);
-    window.clearTimeout(nikahPetalsTimerRef.current);
   }, []);
 
   useEffect(() => {
@@ -150,28 +102,21 @@ export default function WeddingInvitation() {
   }, [opened, autoAdvance, activeSlide, activePageSettings.autoAdvanceSeconds, slides.length, goToSlide]);
 
   const updateMusicPlaying = (playing) => setMusicPlaying(playing);
-  const pageTransitionProps = backgroundStage >= 2
-    ? {
-        initial: false,
-        animate: { opacity: 1, filter: 'none', scale: 1 },
-        exit: { opacity: 1, filter: 'none', scale: 1 },
-        transition: { duration: 0 }
-      }
-    : createPageTransition({
-        duration: activeSlide === 0 && firstPageRevealStarted
-          ? activePageSettings.introRevealSeconds
-          : activeSlide === 0 && opened
-            ? activePageSettings.openedRevealSeconds
-            : activePageSettings.transitionSeconds,
-        visible: activeSlide !== 0 || firstPageRevealStarted,
-        useBrightness: activeSlide !== 0,
-        ease: activeSlide === 0 && firstPageRevealStarted
-          ? [0.42, 0, 0.58, 1]
-          : 'easeInOut'
-      });
+  const pageTransitionProps = getInvitationStageTransition({
+    activePageSettings,
+    activeSlide,
+    backgroundStage,
+    firstPageRevealStarted,
+    opened
+  });
+  const sceneClassName = backgroundStage === 1
+    ? ' wedding-app--haldi'
+    : backgroundStage >= 2
+      ? ' wedding-app--nikah'
+      : '';
 
   return (
-    <main className={`wedding-app${backgroundStage === 1 ? ' wedding-app--haldi' : ''}${backgroundStage >= 2 ? ' wedding-app--nikah' : ''}`}>
+    <main className={`wedding-app${sceneClassName}`}>
       <audio
         ref={audioRef}
         src={mediaSettings.backgroundMusicUrl}
@@ -187,60 +132,30 @@ export default function WeddingInvitation() {
         />
       )}
       <div className="invitation-content">
-          <MusicControl
-            audio={audioRef.current}
-            available={musicAvailable}
-            playing={musicPlaying}
-            onPlayingChange={updateMusicPlaying}
-          />
-          <div className="invitation-stage">
-            <AnimatePresence mode={backgroundStage >= 2 ? 'sync' : 'wait'} initial={false}>
-              <motion.div
-                key={backgroundStage >= 2 ? 'nikah-scene' : activeSlide}
-                ref={invitationSlideRef}
-                className={`invitation-slide invitation-slide--background-${paperRollStarted ? rollingBackgroundStage : backgroundStage}${activeSlide === 0 ? ' invitation-slide--first-reveal' : ''}${paperRollStarted ? ' invitation-slide--folding' : ''}`}
-                style={{ '--paper-roll-duration': `${invitationMotionSettings.pages.haldi.transitionSeconds}s` }}
-                {...pageTransitionProps}
-              >
-                {backgroundStage >= 2 ? (
-                  <AnimatePresence mode="sync" initial={false}>
-                    <motion.div
-                      key={activeSlide}
-                      className="invitation-content-transition"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: activePageSettings.transitionSeconds, ease: 'easeInOut' }}
-                    >
-                      {slides[activeSlide]}
-                    </motion.div>
-                  </AnimatePresence>
-                ) : slides[activeSlide]}
-              </motion.div>
-            </AnimatePresence>
-            {paperRollStarted && (
-              <div className="paper-roll-edge" aria-hidden="true" />
-            )}
-            {showNikahPetals && (
-              <div className="nikah-petal-shower" aria-hidden="true">
-                {nikahPetals.map((petal) => (
-                  <span
-                    key={petal.id}
-                    className={`nikah-petal-shower__petal nikah-petal-shower__petal--${petal.color}`}
-                    style={{
-                      left: petal.left,
-                      top: petal.top,
-                      animationDelay: `${petal.delay}ms`,
-                      '--petal-drift': petal.drift,
-                      '--petal-drop': petal.drop,
-                      '--petal-rotation': petal.rotation,
-                      '--petal-duration': petal.duration
-                    }}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
+        <MusicControl
+          audio={audioRef.current}
+          available={musicAvailable}
+          playing={musicPlaying}
+          onPlayingChange={setMusicPlaying}
+        />
+        <div className="invitation-stage">
+          <InvitationSlide
+            activeSlide={activeSlide}
+            backgroundStage={backgroundStage}
+            contentTransitionDuration={activePageSettings.transitionSeconds}
+            paperRollDuration={invitationMotionSettings.pages.haldi.transitionSeconds}
+            paperRollStarted={paperRollStarted}
+            rollingBackgroundStage={rollingBackgroundStage}
+            slideRef={invitationSlideRef}
+            transitionProps={pageTransitionProps}
+          >
+            {slides[activeSlide]}
+          </InvitationSlide>
+          {paperRollStarted && (
+            <PaperRollEdge durationSeconds={invitationMotionSettings.pages.haldi.transitionSeconds} />
+          )}
+          <NikahPetalShower active={backgroundStage >= 2} />
+        </div>
       </div>
     </main>
   );

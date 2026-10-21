@@ -42,14 +42,6 @@ a { color: inherit; }
 .invitation-stage { position: relative; width: 100%; height: 100%; overflow: hidden; isolation: isolate; perspective: 1400px; }
 .invitation-slide { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; }
 .invitation-content-transition { position: absolute; inset: 0; width: 100%; height: 100%; }
-.nikah-petal-shower { position: absolute; z-index: 15; inset: 0; overflow: hidden; pointer-events: none; }
-.nikah-petal-shower__petal { position: absolute; width: clamp(9px, 1.2vw, 16px); height: clamp(13px, 1.7vw, 21px); border-radius: 75% 15% 70% 20%; opacity: 0; animation: nikah-petal-fall var(--petal-duration, 3s) ease-in forwards; }
-.nikah-petal-shower__petal--white { background: #fffaf5; box-shadow: 0 1px 5px rgba(255, 255, 255, .65); }
-.nikah-petal-shower__petal--rose { background: #900324; box-shadow: 0 1px 5px rgba(186, 91, 119, .45); }
-@keyframes nikah-petal-fall {
-  12% { opacity: .92; }
-  100% { opacity: 0; transform: translate3d(var(--petal-drift), var(--petal-drop), 0) rotate(var(--petal-rotation)); }
-}
 .invitation-slide--background-0,
 .invitation-slide--first-reveal { background-color: var(--color-app-background); background-image: var(--invitation-background-image); background-position: center; background-repeat: no-repeat; background-size: 100% 100%; }
 .invitation-slide--background-1 { background: url('/assets/mobile-haldi-background.jpg') center / cover no-repeat; }
@@ -57,16 +49,6 @@ a { color: inherit; }
 @media (min-width: 700px) {
   .invitation-slide--background-1 { background-image: url('/assets/desktop-haldi-background.png'); }
   .invitation-slide--background-2 { background-image: url('/assets/nikah-desktop-background.png'); background-size: 100% 100%; }
-}
-.invitation-slide--folding { clip-path: inset(0); will-change: clip-path; animation: paper-page-roll var(--paper-roll-duration, 2s) cubic-bezier(.65, 0, .35, 1) forwards; }
-@keyframes paper-page-roll {
-  from { clip-path: inset(0); }
-  to { clip-path: inset(0 0 100% 0); }
-}
-.paper-roll-edge { position: absolute; z-index: 20; top: calc(100% - 42px); left: 0; width: 100%; height: 42px; border-top: 1px solid rgba(95, 62, 43, .3); background: linear-gradient(to bottom, rgba(86, 53, 35, .2), rgba(255, 250, 235, .12) 28%, rgba(58, 38, 28, .24)); box-shadow: 0 -5px 14px rgba(58, 38, 28, .12); pointer-events: none; animation: paper-roll-edge var(--paper-roll-duration, 2s) cubic-bezier(.65, 0, .35, 1) both; }
-@keyframes paper-roll-edge {
-  from { top: calc(100% - 42px); }
-  to { top: 0; }
 }
 .invitation-slide > section, .invitation-slide > footer,
 .invitation-content-transition > section, .invitation-content-transition > footer { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; height: 100%; overflow: hidden; text-align: center; }

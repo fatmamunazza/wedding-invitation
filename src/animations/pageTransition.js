@@ -20,3 +20,35 @@ export function createPageTransition({
     transition: { duration, ease }
   };
 }
+
+export function getInvitationStageTransition({
+  activePageSettings,
+  activeSlide,
+  backgroundStage,
+  firstPageRevealStarted,
+  opened
+}) {
+  if (backgroundStage >= 2) {
+    return {
+      initial: false,
+      animate: { opacity: 1, filter: 'none', scale: 1 },
+      exit: { opacity: 1, filter: 'none', scale: 1 },
+      transition: { duration: 0 }
+    };
+  }
+
+  const duration = activeSlide === 0 && firstPageRevealStarted
+    ? activePageSettings.introRevealSeconds
+    : activeSlide === 0 && opened
+      ? activePageSettings.openedRevealSeconds
+      : activePageSettings.transitionSeconds;
+
+  return createPageTransition({
+    duration,
+    visible: activeSlide !== 0 || firstPageRevealStarted,
+    useBrightness: activeSlide !== 0,
+    ease: activeSlide === 0 && firstPageRevealStarted
+      ? [0.42, 0, 0.58, 1]
+      : 'easeInOut'
+  });
+}
