@@ -96,3 +96,42 @@
   --ink: var(--color-ink);
   --line: var(--color-line);
 }
+
+@media (min-width: 700px) {
+  :root {
+    --invitation-background-image: url('/assets/desktop-background.jpeg');
+    --font-size-body: 18px;
+    --font-size-small: 16px;
+    --font-size-eyebrow: 12px;
+    --font-size-arabic: 40px;
+    --font-size-arabic-large: 44px;
+    --font-size-script: 32px;
+    --font-size-event-icon: 30px;
+    --font-size-event-date: 22px;
+    --font-size-event-date-emphasis: 28px;
+    --font-size-control: 17px;
+    --font-size-control-icon: 23px;
+    --font-size-control-count: 16px;
+    --font-size-greeting: 44px;
+    --font-size-couple: 42px;
+    --font-size-plaque-title: 36px;
+    --font-size-event-title: 50px;
+    --font-size-event-venue: 20px;
+    --font-size-closing-title: 38px;
+    --font-size-closing-names: 33px;
+    --font-size-details-date: 23px;
+    --font-size-details-year: 38px;
+    --font-size-details-label: 17px;
+    --font-size-ceremony-arabic: 23px;
+    --font-size-ceremony-copy: 14px;
+    --font-size-ceremony-title: 26px;
+    --font-size-ceremony-name: 38px;
+    --font-size-door-greeting: 44px;
+    --font-size-door-label: 18px;
+    --font-size-event-title-slide: 46px;
+    --font-size-event-invocation: 36px;
+    --font-size-quran-arabic: 24px;
+    --font-size-quran-reference: 12px;
+    --font-size-quran-translation: 20px;
+  }
+}

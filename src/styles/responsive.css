@@ -3,6 +3,13 @@
   .hero-copy { padding-top:120px; padding-bottom:110px; }
   .couple-illustration { height:440px; transform:scale(1.1); margin-bottom:20px; }
   .event-card, .closing-copy { padding-top:130px; padding-bottom:120px; }
+  .nikah-artwork {
+    width:min(52vw, 680px);
+    max-height:75dvh;
+  }
+  .welcome-intro__heart {
+    width:clamp(64px, 6vw, 88px);
+  }
   .blessings-arabic { padding:8px 18px; border:1px solid rgba(255,239,194,.95); border-radius:14px; background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,243,220,.94)); box-shadow:0 0 8px rgba(255,247,218,.9), 0 0 22px rgba(255,230,168,.7), 0 5px 18px rgba(77,41,39,.16), inset 0 1px 5px rgba(255,255,255,.95); }
   .blessings-footer .closing-line { padding:8px 14px; border:1px solid rgba(255,239,194,.95); border-radius:12px; background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,243,220,.94)); box-shadow:0 0 8px rgba(255,247,218,.9), 0 0 22px rgba(255,230,168,.7), 0 5px 18px rgba(77,41,39,.16), inset 0 1px 5px rgba(255,255,255,.95); }
 }
