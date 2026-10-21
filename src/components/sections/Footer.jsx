@@ -1,6 +1,8 @@
 import { invitationCopy } from '../../data/invitationCopy.js';
 import { weddingDetails } from '../../data/weddingDetails.js';
+import ClosingFireworks from '../animations/ClosingFireworks.jsx';
 import {QuranVerse, FloralDivider} from '../shared/utils.jsx';
+import Firecracker from '../animations/FireCrackers.jsx';
 export default function Footer() {
   const { closing } = invitationCopy;
 
@@ -35,6 +37,8 @@ export default function Footer() {
           <p className="farewell-message">{closing.farewellMessage}</p>
         </div>
       </div>
+      <ClosingFireworks />
+      <Firecracker autoPlay={true} />
     </footer>
   );
 }
