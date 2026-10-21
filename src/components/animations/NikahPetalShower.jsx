@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-const PETAL_COUNT = 100;
+const PETAL_COUNT = 300;
 
 function createPetals() {
   return Array.from({ length: PETAL_COUNT }, (_, id) => {
@@ -35,7 +35,7 @@ function createPetals() {
 
 export default function NikahPetalShower({
   active,
-  delayMs = 1000,
+  delayMs = 500,
   durationMs = 4000
 }) {
   const [visible, setVisible] = useState(false);

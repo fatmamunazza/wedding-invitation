@@ -99,7 +99,13 @@
   fill: rgba(198, 83, 91, .12);
   stroke: #a33e43;
   stroke-width: 1.8;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(.72);
+  filter: drop-shadow(0 0 0 rgba(255, 204, 94, 0));
+  animation: calendar-heart-pop 1.45s ease-in-out 1.8s infinite;
+}
+
+.calendar-date--day-16 .calendar-date__heart {
+  animation-delay: 2s;
 }
 
 .calendar-date--event span {
@@ -121,14 +127,40 @@
 
 .calendar-page__events p {
   margin: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: calendar-event-reveal .65s ease-out 3.3s forwards;
 }
 
-.calendar-page__event-heart {
-  margin-right: 5px;
-  color: #a33e43;
-  font-family: Georgia, serif;
-  font-size: 1.2em;
-  line-height: 0;
+.calendar-page__event--nikaah {
+  animation-delay: 3.55s !important;
+}
+
+@keyframes calendar-heart-pop {
+  0%, 100% {
+    fill: rgba(198, 83, 91, .12);
+    filter: drop-shadow(0 0 1px rgba(255, 204, 94, .25));
+    transform: translate(-50%, -50%) scale(.76);
+  }
+  48% {
+    fill: rgba(255, 216, 120, .42);
+    filter:
+      drop-shadow(0 0 4px rgba(255, 225, 145, .95))
+      drop-shadow(0 0 10px rgba(239, 177, 60, .85));
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+  62% {
+    fill: rgba(255, 216, 120, .32);
+    filter: drop-shadow(0 0 7px rgba(255, 208, 104, .75));
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes calendar-event-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (min-aspect-ratio: 1/1) {
@@ -172,4 +204,14 @@
   .calendar-grid { row-gap: 0; }
   .calendar-grid__weekday { padding-bottom: 2px; }
   .calendar-page__events { gap: 2px; margin-top: 8px; padding-top: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calendar-date__heart,
+  .calendar-page__events p {
+    animation: none !important;
+    filter: none;
+    opacity: 1;
+    transform: none;
+  }
 }

@@ -9,7 +9,7 @@ function CalendarDate({ day }) {
 
   return (
     <div
-      className={`calendar-date${isEventDate ? ' calendar-date--event' : ''}`}
+      className={`calendar-date${isEventDate ? ` calendar-date--event calendar-date--day-${day}` : ''}`}
       aria-label={day ? `January ${day}, 2027${isEventDate ? ', event date' : ''}` : undefined}
       aria-hidden={day ? undefined : 'true'}
     >
@@ -44,8 +44,8 @@ export default function JanuaryCalendarPage() {
         </div>
 
         <div className="calendar-page__events" aria-label="Wedding events">
-          <p><span className="calendar-page__event-heart" aria-hidden="true">♡</span> Haldi - 15 Jan 2027</p>
-          <p><span className="calendar-page__event-heart" aria-hidden="true">♡</span> Nikaah - 16 Jan 2027</p>
+          <p className="calendar-page__event--haldi">Haldi - 15 Jan 2027</p>
+          <p className="calendar-page__event--nikaah">Nikaah - 16 Jan 2027</p>
         </div>
       </div>
     </section>
