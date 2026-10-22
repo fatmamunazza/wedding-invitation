@@ -107,13 +107,8 @@
   }
   .plaque { padding: 14px 12px 10px; }
   .couple-illustration { height: 250px; margin-bottom: 8px; }
-  .event-card {
-    width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), 520px);
-    padding: var(--event-top-space) var(--layout-panel-padding) var(--event-bottom-space);
-  }
   .event-icon { width: 46px; height: 46px; }
   .event-divider { width: min(150px, 50%); margin: 12px auto; }
-  .event-details--baraat { margin-top: 16px; }
   .event-address { width: min(100%, 34ch); margin: 0 auto 12px; line-height: 1.25; }
   .event-venue { line-height: 1.1; }
   .nikah-artwork { width: min(88vw, 540px); max-height: 52svh; }
@@ -134,14 +129,9 @@
   .farewell-message,
   .farewell-blessing { max-width: 34ch; }
 
-  .invitation-slide .hero-copy,
-  .invitation-slide .couple-card,
-  .invitation-slide .event-card,
-  .invitation-slide .closing-copy { max-height: calc(100% - 76px); }
   .invitation-slide .hero-copy { padding: var(--slide-hero-top-space) 16px var(--slide-bottom-space); }
   .invitation-slide .couple-card { padding: var(--slide-couple-top-space) 14px var(--slide-bottom-space); }
   .invitation-slide .couple-illustration { height: 210px; transform: scale(.84); }
-  .invitation-slide .event-card { padding: var(--slide-event-top-space) 16px var(--slide-bottom-space); }
   .invitation-slide .event-address { margin: 0 auto 12px; }
   .invitation-slide .closing-copy { padding: 0 10px var(--slide-bottom-space); }
 
@@ -229,11 +219,9 @@
   .blessings-footer { margin-top: 18px; }
   .hero-copy,
   .couple-card,
-  .event-card { width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), 640px); }
   .hero-copy { padding: var(--hero-top-space) 36px var(--hero-bottom-space); }
   .couple-card { padding: var(--couple-top-space) 28px var(--couple-bottom-space); }
   .couple-illustration { height: 340px; }
-  .event-card { padding: var(--event-top-space) 34px var(--event-bottom-space); }
   .event-address { max-width: 42ch; margin: 0 auto 16px; }
   .nikah-artwork { width: min(58vw, 620px); max-height: 68svh; }
   .closing-blessing-state { width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), 640px); }
@@ -242,7 +230,6 @@
   .invitation-slide .hero-copy { padding: var(--slide-hero-top-space) 30px var(--slide-bottom-space); }
   .invitation-slide .couple-card { padding: var(--slide-couple-top-space) 24px var(--slide-bottom-space); }
   .invitation-slide .couple-illustration { height: 270px; transform: scale(.9); }
-  .invitation-slide .event-card { padding: var(--slide-event-top-space) 28px var(--slide-bottom-space); }
   .invitation-slide .event-address { margin: 0 auto 14px; }
 
   .calendar-page { padding: var(--calendar-top-space) var(--layout-gutter) var(--calendar-bottom-space); }
@@ -324,12 +311,10 @@
   .blessings-footer { margin-top: 22px; }
   .hero-copy,
   .couple-card,
-  .event-card { width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), 720px); }
   .hero-copy { padding: var(--hero-top-space) 48px var(--hero-bottom-space); }
   .couple-card { padding: var(--couple-top-space) 38px var(--couple-bottom-space); }
   .plaque { padding: 22px 24px 18px; }
   .couple-illustration { height: 380px; margin-bottom: 16px; }
-  .event-card { padding: var(--event-top-space) 44px var(--event-bottom-space); }
   .event-icon { width: 56px; height: 56px; }
   .event-divider { width: 180px; margin: 20px auto; }
   .event-address { max-width: 46ch; margin: 0 auto 18px; }
@@ -343,7 +328,6 @@
   .invitation-slide .hero-copy { padding: var(--slide-hero-top-space) 40px var(--slide-bottom-space); }
   .invitation-slide .couple-card { padding: var(--slide-couple-top-space) 34px var(--slide-bottom-space); }
   .invitation-slide .couple-illustration { height: 300px; transform: scale(.94); }
-  .invitation-slide .event-card { padding: var(--slide-event-top-space) 40px var(--slide-bottom-space); }
   .invitation-slide .event-address { margin: 0 auto 16px; }
   .invitation-slide .closing-copy { padding: 0 24px 84px; }
 
@@ -411,15 +395,12 @@
   .hero-copy { padding-top: var(--hero-top-space); }
   .couple-card { padding-top: var(--couple-top-space); }
   .couple-illustration { height: 190px; }
-  .event-card { padding-top: var(--event-top-space); }
-  .event-details--baraat { margin-top: 8px; }
   .closing-blessing-state { max-height: calc(100% - var(--closing-top-space) - var(--closing-bottom-space)); }
   .farewell-copy { max-height: calc(100% - 136px); overflow-y: auto; }
   .farewell-signoff { margin-bottom: 28px; }
   .invitation-slide .couple-illustration { height: 160px; transform: scale(.78); }
   .invitation-slide .hero-copy { padding-top: var(--slide-hero-top-space); }
   .invitation-slide .couple-card { padding-top: var(--slide-couple-top-space); }
-  .invitation-slide .event-card { padding-top: var(--slide-event-top-space); }
   .calendar-page__month { margin-bottom: 8px; font-size: 30px; }
   .calendar-grid { row-gap: 0; }
   .calendar-grid__weekday { padding-bottom: 2px; }

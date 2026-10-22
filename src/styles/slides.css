@@ -5,14 +5,13 @@
 .invitation-slide .plaque h2 { font-size: var(--font-size-plaque-title); }
 .invitation-slide .couple-illustration { height: min(38svh, 260px); transform: scale(.82); margin: 0 auto; }
 .invitation-slide .couple-note { font-size: var(--font-size-small); }
-.invitation-slide .event-card { padding: 4dvh 3dvw; }
+.invitation-slide .event-card { padding: 4dvh 3dvw 48dvh; }
 .invitation-slide .event-icon { width: 35px; height: 35px; }
 .invitation-slide .event-card h2 { font-size: var(--font-size-event-title-slide); }
 .invitation-slide .event-divider { margin: 12px auto; }
 .invitation-slide .event-venue { font-size: var(--font-size-event-venue); }
-.invitation-slide .event-address { font-size: var(--font-size-eyebrow); margin: 0 55px 12px; }
+.invitation-slide .event-address { font-size: var(--font-size-small); margin: 0 55px 12px; }
 .invitation-slide .event-copy { overflow: visible; }
-.invitation-slide .event-card > .map-button { margin-top: 12px; }
 .invitation-slide .closing-copy { padding: 0; }
 .invitation-slide .closing-copy h2 { font-size: var(--font-size-closing-title); }
 .invitation-slide .duas { font-size: var(--font-size-small); }

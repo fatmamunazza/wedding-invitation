@@ -55,7 +55,7 @@ a { color: inherit; }
   position: relative;
   z-index: 4;
   width: min(92%, 680px);
-  max-height: calc(100% - 76px);
+  height: 100%;
   overflow-y: auto;
   scrollbar-width: none;
   text-align: center;

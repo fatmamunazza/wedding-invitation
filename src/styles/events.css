@@ -1,4 +1,6 @@
 .event-card { padding: 2dvh 3dvw; max-width:500px; margin:auto; text-align:center; }
+.event-section > .event-card { height:100%; }
+.event-details { display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; height:100%; }
 .nikah-artwork { position:absolute; z-index:0; bottom:0; left:50%; width:86dvw; height:auto; object-fit:contain; object-position:center bottom; pointer-events:none; transform:translateX(-50%); }
 .event-baraat .event-card { position:relative; z-index:1; }
 .event-card--baraat { opacity:0; animation:baraat-copy-appear .8s ease 4.2s forwards; }
@@ -6,7 +8,6 @@
   to { opacity:1; transform:translateY(0); }
   from { opacity:0; transform:translateY(12px); }
 }
-.event-details--baraat { margin-top: 4dvh; }
 .event-icon { width:54px; height:54px; border:1px solid var(--color-border-gold); border-radius:50%; margin:0 auto 5px; display:grid; place-items:center; color:var(--rose); font-size:var(--font-size-event-icon); background:var(--color-surface-card); }
 .event-card h2 { font-family:var(--font-display); font-size:var(--font-size-event-title); font-weight:400; color:var(--rose); margin:2px 0 0; }
 .event-inshaAllah { margin:15px 0 10px; color:var(--color-gold); font-family:var(--font-display); font-size:var(--font-size-event-invocation); }
