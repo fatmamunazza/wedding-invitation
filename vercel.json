@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/invite/:path*",
-      "destination": "/"
+      "source": "/invite/:guestId",
+      "destination": "/invite/:guestId.html"
     }
   ]
 }
