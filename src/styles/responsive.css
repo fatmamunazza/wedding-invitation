@@ -43,8 +43,8 @@
   --font-size-plaque-title: 28px;
   --font-size-event-title: 38px;
   --font-size-event-venue: 21px;
-  --font-size-closing-title: 29px;
-  --font-size-closing-names: 33px;
+  --font-size-closing-title: 25px;
+  --font-size-closing-names: 30px;
   --font-size-details-date: 19px;
   --font-size-details-year: 31px;
   --font-size-details-label: 16px;
@@ -121,11 +121,7 @@
     margin-top: 0;
   }
   .farewell-copy { width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), 520px); }
-  .farewell-signoff {
-    bottom: calc(14px + env(safe-area-inset-bottom));
-    width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), 520px);
-    margin-bottom: 8dvh;
-  }
+
   .farewell-message,
   .farewell-blessing { max-width: 34ch; }
 
@@ -226,7 +222,6 @@
   .nikah-artwork { width: min(58vw, 620px); max-height: 68svh; }
   .closing-blessing-state { width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), 640px); }
   .farewell-copy,
-  .farewell-signoff { width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), 640px); }
   .invitation-slide .hero-copy { padding: var(--slide-hero-top-space) 30px var(--slide-bottom-space); }
   .invitation-slide .couple-card { padding: var(--slide-couple-top-space) 24px var(--slide-bottom-space); }
   .invitation-slide .couple-illustration { height: 270px; transform: scale(.9); }
@@ -322,9 +317,6 @@
   .closing-section { margin: 0; }
   .closing-artwork { width: min(54vw, 500px); max-height: 60svh; }
   .closing-blessing-state { width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), 720px); }
-  .farewell-copy,
-  .farewell-signoff { width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), 720px); }
-  .farewell-signoff { margin-bottom: 12vh; }
   .invitation-slide .hero-copy { padding: var(--slide-hero-top-space) 40px var(--slide-bottom-space); }
   .invitation-slide .couple-card { padding: var(--slide-couple-top-space) 34px var(--slide-bottom-space); }
   .invitation-slide .couple-illustration { height: 300px; transform: scale(.94); }
@@ -397,7 +389,6 @@
   .couple-illustration { height: 190px; }
   .closing-blessing-state { max-height: calc(100% - var(--closing-top-space) - var(--closing-bottom-space)); }
   .farewell-copy { max-height: calc(100% - 136px); overflow-y: auto; }
-  .farewell-signoff { margin-bottom: 28px; }
   .invitation-slide .couple-illustration { height: 160px; transform: scale(.78); }
   .invitation-slide .hero-copy { padding-top: var(--slide-hero-top-space); }
   .invitation-slide .couple-card { padding-top: var(--slide-couple-top-space); }
