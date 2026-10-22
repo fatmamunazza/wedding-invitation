@@ -6,7 +6,7 @@ export const guests = {
     events: ['haldi', 'baraat']
   },
   celebrations: {
-    name: 'Fatima & Family',
+    name: '',
     events: ['baraat']
   },
   ayesha: {
