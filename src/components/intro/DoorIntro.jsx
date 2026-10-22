@@ -64,7 +64,7 @@ export default function DoorIntro({ onStart, onComplete }) {
           {invitationCopy.welcome.greeting}
         </span>
 
-        {guest && (
+        {guest?.name && (
           <span className="welcome-intro__guest">
             {guest.name}
           </span>
