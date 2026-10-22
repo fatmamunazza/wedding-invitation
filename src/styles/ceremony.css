@@ -6,7 +6,7 @@
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:space-between;
+  justify-content:center;
   gap:clamp(4px, 1.5dvh, 12px);
   width:100%;
   height:100%;
@@ -17,10 +17,29 @@
   padding:14dvh 17dvw 24dvh 17dvw;
   text-align:center;
 }
-.ceremony-panel > .gold-floral-divider { flex:0 0 auto; }
+.ceremony-panel > .gold-floral-divider {
+  position:static;
+  flex:0 0 auto;
+  align-self:center;
+  width:min(calc(100% - var(--layout-gutter, 18px) - var(--layout-gutter, 18px)), 600px);
+  margin-bottom:10%;
+  transform:none;
+}
 .ceremony-bismillah { margin-bottom:5px!important; font-family:var(--font-arabic); font-size:var(--font-size-ceremony-arabic); color:var(--color-rose); }
 .ceremony-blessing { font-family:var(--font-body); font-size:var(--font-size-ceremony-copy); line-height:1.2; }
-.ceremony-main { display:flex; align-items: center; min-height:0; width:100%; flex-direction:column; justify-content:space-between; overflow:auto; margin-top: 5dvh; }
+.ceremony-main {
+  display:flex;
+  flex:1 1 auto;
+  align-items:center;
+  justify-content:center;
+  min-height:0;
+  width:100%;
+  flex-direction:column;
+  gap:clamp(8px, 1.5vh, 14px);
+  overflow-y:auto;
+  margin:0;
+  padding-block:12px;
+}
 .ceremony-invitation-copy { margin:0!important; font-size:var(--font-size-ceremony-copy); line-height:1.2; color:var(--color-ink); }
 .ceremony-title { margin:5px 0 1px; color:var(--color-ink); font-family:var(--font-heading); font-size:var(--font-size-ceremony-title); font-weight:500; }
 .ceremony-divider { margin:2dvh 0!important; font-family:var(--font-heading); font-size:var(--font-size-eyebrow); letter-spacing:.22em; color:var(--color-divider); font-weight:600; }

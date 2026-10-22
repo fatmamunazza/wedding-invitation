@@ -30,9 +30,9 @@ a { color: inherit; }
 .wedding-app--haldi { background-image: url('/assets/mobile-haldi-background.jpg'); background-size: 100% 100%; background-position: center; }
 .wedding-app--nikah { background-image: url('/assets/nikah-mobile-background.jpg'); background-size: 100% 100%; background-position: center; }
 @media (min-aspect-ratio: 1/1) {
-  .wedding-app--haldi { background-image: url('/assets/desktop-haldi-background.png'); }
+  .wedding-app--haldi { background-image: url('/assets/desktop-haldi-background.jpeg'); }
   .wedding-app--nikah {
-    background-image: url('/assets/nikah-desktop-background.png');
+    background-image: url('/assets/nikah-desktop-background.jpg');
     background-size: 100% 100%;
   }
 }
@@ -44,8 +44,8 @@ a { color: inherit; }
 .invitation-slide--background-1 { background: url('/assets/mobile-haldi-background.jpg') center / 100% 100% no-repeat; }
 .invitation-slide--background-2 { background: url('/assets/nikah-mobile-background.jpg') center / 100% 100% no-repeat; }
 @media (min-aspect-ratio: 1/1) {
-  .invitation-slide--background-1 { background-image: url('/assets/desktop-haldi-background.png'); }
-  .invitation-slide--background-2 { background-image: url('/assets/nikah-desktop-background.png'); background-size: 100% 100%; }
+  .invitation-slide--background-1 { background-image: url('/assets/desktop-haldi-background.jpeg'); }
+  .invitation-slide--background-2 { background-image: url('/assets/nikah-desktop-background.jpg'); background-size: 100% 100%; }
 }
 .invitation-slide > section, .invitation-slide > footer,
 .invitation-content-transition > section, .invitation-content-transition > footer { position: absolute; inset: 0; display: flex; justify-content: center; height: 100%; overflow: hidden; text-align: center; }
