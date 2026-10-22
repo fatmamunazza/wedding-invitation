@@ -1,11 +1,11 @@
 // Add/edit guests here. The UI never depends directly on this object;
 // guestResolver.js is the boundary that can later be replaced by an API.
 export const guests = {
-  abc123: {
-    name: 'Ali & Family',
+  shazia: {
+    name: 'Shazia & Family',
     events: ['haldi', 'baraat']
   },
-  xyz456: {
+  celebrations: {
     name: 'Fatima & Family',
     events: ['baraat']
   },

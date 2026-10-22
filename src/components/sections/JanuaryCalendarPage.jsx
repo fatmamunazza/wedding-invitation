@@ -4,8 +4,8 @@ const JANUARY_2027_DAYS = [
   ...Array.from({ length: 31 }, (_, index) => index + 1)
 ];
 
-function CalendarDate({ day }) {
-  const isEventDate = day === 15 || day === 16;
+function CalendarDate({ day, eventDays }) {
+  const isEventDate = eventDays.includes(day);
 
   return (
     <div
@@ -23,7 +23,9 @@ function CalendarDate({ day }) {
   );
 }
 
-export default function JanuaryCalendarPage() {
+export default function JanuaryCalendarPage({ events }) {
+  const eventDays = events.map((event) => Number(event.dateParts.day));
+
   return (
     <section className="calendar-page" aria-label="Save the date">
       <div className="calendar-page__content">
@@ -38,14 +40,20 @@ export default function JanuaryCalendarPage() {
           ))}
           {JANUARY_2027_DAYS.map((day, index) => (
             <div className="calendar-grid__cell" role="gridcell" key={day ?? `blank-${index}`}>
-              {day && <CalendarDate day={day} />}
+              {day && <CalendarDate day={day} eventDays={eventDays} />}
             </div>
           ))}
         </div>
 
         <div className="calendar-page__events" aria-label="Wedding events">
-          <p className="calendar-page__event--haldi">Haldi - 15 Jan 2027</p>
-          <p className="calendar-page__event--nikaah">Nikaah - 16 Jan 2027</p>
+          {events.map((event) => (
+            <p
+              className={`calendar-page__event--${event.id === 'baraat' ? 'nikaah' : event.id}`}
+              key={event.id}
+            >
+              {event.title} - {event.dateParts.day} Jan {event.dateParts.year}
+            </p>
+          ))}
         </div>
       </div>
     </section>

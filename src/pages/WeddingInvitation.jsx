@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { getInvitationStageTransition } from '../animations/pageTransition.js';
 import { replayCssAnimation } from '../animations/replayCssAnimation.js';
 import InvitationSlide from '../components/animations/InvitationSlide.jsx';
@@ -14,11 +15,26 @@ import MusicControl from '../components/shared/MusicControl.jsx';
 import { invitationMotionSettings } from '../data/animationSettings.js';
 import { mediaSettings } from '../data/mediaSettings.js';
 import { weddingDetails } from '../data/weddingDetails.js';
+import { resolveGuest } from '../services/guestResolver.js';
 
-const BARAAT_SLIDE_INDEX = 4;
-const HALDI_SLIDE_INDEX = 3;
-const INVITATION_PAGE_KEYS = ['blessings', 'ceremony', 'calendar', 'haldi', 'baraat', 'closing'];
+const EVENT_ORDER = ['haldi', 'baraat'];
 export default function WeddingInvitation() {
+  const { guestId } = useParams();
+  const guest = useMemo(() => resolveGuest(guestId), [guestId]);
+  const guestEvents = useMemo(() => guest
+    ? EVENT_ORDER.filter((eventId) => guest.events.includes(eventId))
+    : EVENT_ORDER, [guest]);
+  const invitationPages = useMemo(() => [
+    { key: 'blessings', content: <IslamicBlessingsPage /> },
+    { key: 'ceremony', content: <WeddingCeremonyPage /> },
+    { key: 'calendar', content: <JanuaryCalendarPage events={guestEvents.map((eventId) => weddingDetails.events[eventId])} /> },
+    ...guestEvents.map((eventId) => ({
+      key: eventId,
+      content: <EventSection event={weddingDetails.events[eventId]} />
+    })),
+    { key: 'closing', content: <Footer /> }
+  ], [guestEvents]);
+  const pageKeys = useMemo(() => invitationPages.map(({ key }) => key), [invitationPages]);
   const [opened, setOpened] = useState(false);
   const [firstPageRevealStarted, setFirstPageRevealStarted] = useState(false);
   const [paperRollStarted, setPaperRollStarted] = useState(false);
@@ -48,27 +64,21 @@ export default function WeddingInvitation() {
     setOpened(true);
   };
 
-  const slides = [
-    <IslamicBlessingsPage key="blessings" />,
-    <WeddingCeremonyPage key="ceremony" />,
-    <JanuaryCalendarPage key="calendar" />,
-    <EventSection key="haldi" event={weddingDetails.events.haldi} />,
-    <EventSection key="baraat" event={weddingDetails.events.baraat} />,
-    <Footer key="closing" />
-  ];
-  const activePageSettings = invitationMotionSettings.pages[INVITATION_PAGE_KEYS[activeSlide]];
+  const activePageKey = pageKeys[activeSlide];
+  const activePageSettings = invitationMotionSettings.pages[activePageKey];
 
   const goToSlide = useCallback((index) => {
-    const nextIndex = Math.max(0, Math.min(index, slides.length - 1));
-    const nextBackgroundStage = nextIndex >= BARAAT_SLIDE_INDEX
+    const nextIndex = Math.max(0, Math.min(index, invitationPages.length - 1));
+    const nextPageKey = pageKeys[nextIndex];
+    const nextBackgroundStage = nextPageKey === 'baraat' || nextPageKey === 'closing'
       ? 2
-      : nextIndex >= HALDI_SLIDE_INDEX
+      : nextPageKey === 'haldi'
         ? 1
         : 0;
 
     window.clearTimeout(paperRollTimerRef.current);
 
-    if (nextIndex > activeSlide && nextBackgroundStage === 1 && backgroundStage === 0) {
+    if (nextIndex > activeSlide && nextPageKey === 'haldi' && backgroundStage === 0) {
       replayCssAnimation(invitationSlideRef.current, 'animation--page-roll');
       setRollingBackgroundStage(backgroundStage);
       setPaperRollStarted(true);
@@ -84,7 +94,7 @@ export default function WeddingInvitation() {
     setRollingBackgroundStage(backgroundStage);
     setBackgroundStage((currentStage) => Math.max(currentStage, nextBackgroundStage));
     setActiveSlide(nextIndex);
-  }, [activeSlide, backgroundStage]);
+  }, [activeSlide, backgroundStage, guestEvents, invitationPages.length, pageKeys]);
 
   useEffect(() => () => {
     window.clearTimeout(paperRollTimerRef.current);
@@ -92,7 +102,7 @@ export default function WeddingInvitation() {
 
   useEffect(() => {
     if (!opened || !autoAdvance) return;
-    if (activeSlide >= slides.length - 1) {
+    if (activeSlide >= invitationPages.length - 1) {
       setAutoAdvance(false);
       return;
     }
@@ -101,7 +111,7 @@ export default function WeddingInvitation() {
       goToSlide(activeSlide + 1);
     }, activePageSettings.autoAdvanceSeconds * 1000);
     return () => window.clearTimeout(timer);
-  }, [opened, autoAdvance, activeSlide, activePageSettings.autoAdvanceSeconds, slides.length, goToSlide]);
+  }, [opened, autoAdvance, activeSlide, activePageSettings.autoAdvanceSeconds, invitationPages.length, goToSlide]);
 
   const updateMusicPlaying = (playing) => setMusicPlaying(playing);
   const pageTransitionProps = getInvitationStageTransition({
@@ -151,12 +161,17 @@ export default function WeddingInvitation() {
             slideRef={invitationSlideRef}
             transitionProps={pageTransitionProps}
           >
-            {slides[activeSlide]}
+            {invitationPages[activeSlide].content}
           </InvitationSlide>
           {paperRollStarted && (
             <PaperRollEdge durationSeconds={invitationMotionSettings.pages.haldi.transitionSeconds} />
           )}
-          <NikahPetalShower active={backgroundStage >= 2} />
+          <NikahPetalShower
+            active={backgroundStage >= 2 && (
+              activePageKey === 'baraat'
+              || (activePageKey === 'closing' && guestEvents.includes('baraat'))
+            )}
+          />
         </div>
       </div>
     </main>
